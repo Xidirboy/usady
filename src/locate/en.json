@@ -1,7 +1,6 @@
 {
-    "translations":{
-        "head": {
-            "home": "Home"
-        }
+    "translations": {
+      "site_name": "Tripusk"
     }
-}
+  }
+  
