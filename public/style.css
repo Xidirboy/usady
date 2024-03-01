@@ -1,0 +1,144 @@
+@charset "UTF-8";
+@-ms-viewport {
+  width: device-width;
+}
+@font-face {
+  src: url("/fonts/Urbanist-ExtraBold.ttf");
+  font-family: "Urbanist";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 900;
+}
+@font-face {
+  src: url("/fonts/Urbanist-Bold.ttf");
+  font-family: "Urbanist";
+  font-style: normal;
+  font-display: swap;
+  font-weight: bold;
+}
+@font-face {
+  src: url("/fonts/Urbanist-BoldItalic.ttf");
+  font-family: "Urbanist";
+  font-style: italic;
+  font-display: swap;
+  font-weight: bold;
+}
+@font-face {
+  src: url("/fonts/Urbanist-Medium.ttf");
+  font-family: "Urbanist";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+}
+@font-face {
+  src: url("/fonts/Urbanist-Regular.ttf");
+  font-family: "Urbanist";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+}
+@font-face {
+  src: url("/fonts/Urbanist-RegularItalic.ttf");
+  font-family: "Urbanist";
+  font-style: italic;
+  font-display: swap;
+  font-weight: 400;
+}
+:root {
+  --bold: #2b3f5a !important;
+  --black: #1c1f26 !important;
+  --brown: #6e7892 !important;
+  --blue: #235dff !important;
+  --yellow: #ffe984 !important;
+  --light-brown: #f9f6f3 !important;
+  --brown-light: rgba(110, 120, 146, 0.5) !important;
+  --white: #ffffff !important;
+  --red: #ff5749 !important;
+  --green: #46cb5c !important;
+  --toastify-color-info: #5254f1;
+  --toastify-color-success: #46cb5c;
+  --toastify-color-warning: #f1c40f;
+  --toastify-color-error: #ff5749;
+}
+* {
+  box-sizing: border-box;
+  user-select: text;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background: #fff !important;
+  overflow-y: scroll;
+  font-weight: 500 !important;
+  margin: 0;
+  color: var(--bold);
+}
+body,
+button,
+select,
+input,
+textarea {
+  font-family: "Urbanist", sans-serif !important;
+}
+::selection {
+  background: var(--yellow);
+  color: var(--black);
+}
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: var(--white);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--blue);
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+}
+a {
+  text-decoration: none !important;
+  cursor: pointer;
+}
+ul {
+  list-style-type: none !important;
+  padding: 0;
+}
+input {
+  outline: none !important;
+  box-shadow: none !important;
+  font-family: "Urbanist", sans-serif;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+input[type="date"] {
+  cursor: text !important;
+}
+textarea {
+  resize: none !important;
+}
+button {
+  outline: none !important;
+  box-shadow: none !important;
+  cursor: pointer;
+}
+.container_body {
+  width: 100% !important;
+  box-sizing: border-box !important;
+  padding: 0 calc(50% - 620px) !important;
+}
+
+.chakra-modal__overlay,
+.chakra-modal__content-container {
+  width: 100% !important;
+  height: 100% !important;
+}
