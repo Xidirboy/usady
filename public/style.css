@@ -216,10 +216,10 @@ button {
   box-shadow: none !important;
   cursor: pointer;
 }
-.container_body {
+.container_main {
   width: 100% !important;
   box-sizing: border-box !important;
-  padding: 0 calc(50% - 620px) !important;
+  padding: 0 calc(50% - 720px) !important;
 }
 
 .chakra-modal__overlay,
