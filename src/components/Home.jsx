@@ -1,7 +1,7 @@
 const Home = () => {
   return (
     <>
-      Home
+      Home <span>Профиль</span>
       <img src="/images/logo.svg" />
       <img src="/images/logoM.svg" />
     </>

@@ -155,7 +155,7 @@ html {
 body {
   background: #fff !important;
   overflow-y: scroll;
-  font-weight: 500 !important;
+  font-weight: 400 !important;
   margin: 0;
   color: var(--bold);
 }
