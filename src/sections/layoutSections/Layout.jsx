@@ -2,11 +2,11 @@ import styled from "styled-components";
 import Header from "./Header";
 
 const LayoutStyle = styled.div``;
-const Layout = () => {
+const Layout = ({ children }) => {
   return (
     <LayoutStyle>
       <Header />
-      Layout
+      {children}
     </LayoutStyle>
   );
 };
