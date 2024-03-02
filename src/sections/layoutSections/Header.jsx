@@ -131,6 +131,11 @@ const Header = () => {
         </div>
         <div className="dc_flex item_right">
           <Link to="/profile" className="dc_flex user">
+            <div className="user_name">
+              <div className="name">Войти</div>
+            </div>
+          </Link>
+          <Link to="/profile" className="dc_flex user">
             <div className="user_icon">
               <img src="/images/profile/user.svg" alt="tripusk user" />
             </div>
