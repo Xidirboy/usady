@@ -11,7 +11,7 @@ import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 
 const LanSelectStyle = styled.div`
-  width: 50px;
+  width: 90px;
   padding: 0 5px;
   align-items: center;
   justify-content: center;
@@ -30,6 +30,13 @@ const LanSelectStyle = styled.div`
     }
     & > .arrow {
       padding: 5px 0 0 5px;
+    }
+    & > .lan_text_small {
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 22px;
+      letter-spacing: 0em;
+      padding: 0 8px;
     }
   }
   & .lan_item {
@@ -59,7 +66,7 @@ const LanSelect = () => {
                 src={`/images/lans/${selectLan}.svg`}
                 alt={selectLan}
               />
-              <spam>Uz</spam>
+              <spam className="lan_text_small">{t(`lan._${selectLan}`)}</spam>
               <span className="arrow">
                 <svg
                   width="10"
@@ -92,7 +99,9 @@ const LanSelect = () => {
             }
           >
             <img className="flag" src="/images/lans/uz.svg" alt="uz" />
-            <span>{t("lan.uz")}</span>
+            <span style={selectLan === "uz" ? { color: "#fff" } : {}}>
+              {t("lan.uz")}
+            </span>
           </MenuItem>
           <MenuItem
             className="lan_item"
@@ -106,7 +115,9 @@ const LanSelect = () => {
             }
           >
             <img className="flag" src="/images/lans/en.svg" alt="uz" />
-            <span>{t("lan.en")}</span>
+            <span style={selectLan === "en" ? { color: "#fff" } : {}}>
+              {t("lan.en")}
+            </span>
           </MenuItem>
           <MenuItem
             className="lan_item"
@@ -120,7 +131,9 @@ const LanSelect = () => {
             }
           >
             <img className="flag" src="/images/lans/ru.svg" alt="uz" />
-            <span>{t("lan.ru")}</span>
+            <span style={selectLan === "ru" ? { color: "#fff" } : {}}>
+              {t("lan.ru")}
+            </span>
           </MenuItem>
         </MenuList>
       </Menu>

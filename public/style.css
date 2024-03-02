@@ -156,6 +156,8 @@
 * {
   box-sizing: border-box;
   user-select: text;
+  font-family: "Urbanist", sans-serif !important;
+  color: var(--black);
 }
 html {
   scroll-behavior: smooth;

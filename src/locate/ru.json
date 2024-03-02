@@ -4,7 +4,10 @@
     "lan": {
       "uz": "O'zbekcha",
       "ru": "Русский",
-      "en": "Inglish"
+      "en": "Inglish",
+      "_uz": "O'z",
+      "_ru": "Ру",
+      "_en": "En"
     },
     "tooltips": {
       "profile": "Профиль",
