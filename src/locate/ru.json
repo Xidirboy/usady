@@ -1,5 +1,18 @@
 {
   "translations": {
-    "site_name": "Tripusk"
+    "site_name": "Tripusk",
+    "lan": {
+      "uz": "O'zbekcha",
+      "ru": "Русский",
+      "en": "Inglish"
+    },
+    "tooltips": {
+      "profile": "Профиль",
+      "audio": "Голосовое сопровождение",
+      "dark": "Переход на черно-белый фон",
+      "lan": "Изменить язык платформы",
+      "zoom": "Изменить размер экрана",
+      "back": "Назад"
+    }
   }
 }

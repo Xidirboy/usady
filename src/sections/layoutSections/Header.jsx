@@ -1,46 +1,46 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import styled from "styled-components";
-import {
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  MenuItemOption,
-  MenuGroup,
-  MenuOptionGroup,
-  MenuDivider,
-  Button,
-} from "@chakra-ui/react";
-import { ChevronDownIcon } from "@chakra-ui/icons";
-const HeaderStyle = styled.div``;
+import LanSelect from "./headerSections/LanSelect";
+const HeaderStyle = styled.div`
+  & .navs {
+    border-bottom: 1px solid #235dff;
+  }
+  & .left_nav {
+    padding: 20px 0;
+    & .logo {
+      & img {
+      }
+    }
+  }
+  & .right_nav {
+    & .right_links {
+      & .r_link {
+        margin: 0 16px;
+      }
+    }
+  }
+`;
 const Header = () => {
   return (
     <HeaderStyle className="container_main">
       <div className="ds_flex navs">
         <div className=" left_nav ">
-          <Link to="/">
+          <Link to="/" className="logo">
             <img src="/images/logo.svg" />
           </Link>
         </div>
         <div className="ds_flex right_nav">
           <div className="right_links">
-            <NavLink to={"/"}>Контакты</NavLink>
-            <NavLink to={"/"}>О компании</NavLink>
+            <NavLink to={"/"} className={"r_link"}>
+              Контакты
+            </NavLink>
+            <NavLink to={"/"} className={"r_link"}>
+              О компании
+            </NavLink>
           </div>
           <div className="lan">
-            <Menu>
-              <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
-                Actions
-              </MenuButton>
-              <MenuList>
-                <MenuItem>Download</MenuItem>
-                <MenuItem>Create a Copy</MenuItem>
-                <MenuItem>Mark as Draft</MenuItem>
-                <MenuItem>Delete</MenuItem>
-                <MenuItem>Attend a Workshop</MenuItem>
-              </MenuList>
-            </Menu>
+            <LanSelect />
           </div>
         </div>
       </div>
