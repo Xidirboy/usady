@@ -7,13 +7,28 @@ const HeaderStyle = styled.div`
     border-bottom: 1px solid #235dff;
     & .left_nav {
       padding: 20px 0;
+      @media (max-width: 900px) {
+        padding: 10px 0;
+      }
       & .logo {
-        & img {
+        & .logo_desktop {
+          @media (max-width: 900px) {
+            display: none;
+          }
+        }
+        & .logo_mobile {
+          display: none;
+          @media (max-width: 900px) {
+            display: block;
+          }
         }
       }
     }
     & .right_nav {
       & .right_links {
+        @media (max-width: 900px) {
+          display: none;
+        }
         & .r_link {
           font-size: 20px;
           font-weight: 500;
@@ -25,6 +40,9 @@ const HeaderStyle = styled.div`
     }
   }
   & .second_navs {
+    @media (max-width: 900px) {
+      display: none;
+    }
     & .item_left {
       & .item {
         font-size: 24px;
@@ -97,7 +115,8 @@ const Header = () => {
       <div className="ds_flex navs">
         <div className=" left_nav ">
           <Link to="/" className="logo">
-            <img src="/images/logo.svg" />
+            <img src="/images/logo.svg" className="logo_desktop" />
+            <img src="/images/logoM.svg" className="logo_mobile" />
           </Link>
         </div>
         <div className="ds_flex right_nav">
