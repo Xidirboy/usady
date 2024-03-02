@@ -6,6 +6,10 @@ const ShowTitleStyle = styled.div`
     background-image: url("/images/global/fon.png");
     max-width: 1770px;
     margin: auto;
+
+    @media (max-width: 900px) {
+      border-radius: 0 0 20px 20px;
+    }
     & .title {
       font-size: 36px;
       font-weight: 600;
@@ -14,9 +18,19 @@ const ShowTitleStyle = styled.div`
       text-align: center;
       color: #fff;
       padding-top: 40px;
+      @media (max-width: 900px) {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 38px;
+        letter-spacing: 0em;
+        padding-top: 20px;
+      }
     }
     & .children {
       padding: 20px 0;
+      @media (max-width: 900px) {
+        padding: 10px 0;
+      }
     }
   }
 `;

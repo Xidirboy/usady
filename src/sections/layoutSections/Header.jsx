@@ -5,6 +5,9 @@ import LanSelect from "./headerSections/LanSelect";
 const HeaderStyle = styled.div`
   & .navs {
     border-bottom: 1px solid #235dff;
+    @media (max-width: 900px) {
+      border-bottom: none;
+    }
     & .left_nav {
       padding: 20px 0;
       @media (max-width: 900px) {
