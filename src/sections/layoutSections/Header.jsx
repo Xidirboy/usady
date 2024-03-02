@@ -16,6 +16,10 @@ const HeaderStyle = styled.div`
   & .right_nav {
     & .right_links {
       & .r_link {
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 32px;
+        letter-spacing: 0em;
         margin: 0 20px;
       }
     }
@@ -33,7 +37,7 @@ const Header = () => {
         <div className="ds_flex right_nav">
           <div className="right_links">
             <NavLink to={"/contacts"} className={"r_link"}>
-              Контакты
+              Kонтакты
             </NavLink>
             <NavLink to={"/abaut"} className={"r_link"}>
               О компании
