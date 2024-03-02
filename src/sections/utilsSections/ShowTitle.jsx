@@ -4,6 +4,8 @@ const ShowTitleStyle = styled.div`
   & .show_target {
     border-radius: 20px 20px 100px 100px;
     background-image: url("/images/global/fon.png");
+    background-repeat: repeat;
+    background-size: 100%;
     max-width: 1770px;
     margin: auto;
 
