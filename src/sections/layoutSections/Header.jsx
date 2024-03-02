@@ -42,6 +42,53 @@ const HeaderStyle = styled.div`
         margin-left: 0;
       }
     }
+    & .item_right {
+      & .user {
+        & .user_icon {
+          & img {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            border: 1px solid #e0e0e0;
+          }
+        }
+        & .user_name {
+          margin: 20px 0;
+          padding: 0 20px;
+          & .top_text {
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 22px;
+            letter-spacing: 0.2px;
+          }
+          & .name {
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 29px;
+            letter-spacing: 0em;
+          }
+        }
+        &:hover {
+          & .user_icon {
+            & img {
+              border-color: var(--blue);
+            }
+          }
+          & .name {
+            color: var(--blue);
+          }
+        }
+      }
+      & .user_notification {
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        border: 1px solid #e0e0e0;
+        &:hover {
+          border-color: var(--blue);
+        }
+      }
+    }
   }
 `;
 const Header = () => {
@@ -83,21 +130,21 @@ const Header = () => {
           </NavLink>
         </div>
         <div className="dc_flex item_right">
-          <div className="dc_flex user">
+          <Link to="/profile" className="dc_flex user">
             <div className="user_icon">
-              <img src="/images/profile/user.png" alt="tripusk user" />
+              <img src="/images/profile/user.svg" alt="tripusk user" />
             </div>
             <div className="user_name">
               <div className="top_text">Good morning! 🌤️</div>
               <div className="name">Andrew Ainsley</div>
             </div>
-          </div>
-          <div className="user_notifi">
+          </Link>
+          <Link to="/notification" className="dc_flex user_notification">
             <img
               src="/images/profile/notificationHas.svg"
               alt="notification user"
             />
-          </div>
+          </Link>
         </div>
       </div>
     </HeaderStyle>
