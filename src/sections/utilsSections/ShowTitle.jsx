@@ -24,8 +24,12 @@ const ShowTitle = ({ children, title = "", bgColor = "#235DFF" }) => {
   return (
     <ShowTitleStyle>
       <div className="show_target" style={{ backgroundColor: bgColor }}>
-        <div className="title">{title}</div>
-        <div className="children">{children}</div>
+        <div className="title">
+          <div className="container_main">{title}</div>
+        </div>
+        <div className="children">
+          <div className="container_main">{children}</div>
+        </div>
       </div>
     </ShowTitleStyle>
   );
