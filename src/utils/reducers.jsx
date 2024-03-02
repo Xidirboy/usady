@@ -3,6 +3,7 @@
 const INITIAL_STATE = {
   loading: false,
   user: {},
+  auth_modal: false,
 };
 
 const reducers = (state = INITIAL_STATE, action) => {
@@ -16,6 +17,11 @@ const reducers = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         user: action?.payload,
+      };
+    case "SET_AUTH_MODAL":
+      return {
+        ...state,
+        auth_modal: action?.payload,
       };
     default:
       return state;

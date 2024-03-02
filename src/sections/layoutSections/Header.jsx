@@ -2,6 +2,7 @@ import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import styled from "styled-components";
 import LanSelect from "./headerSections/LanSelect";
+import { useDispatch } from "react-redux";
 const HeaderStyle = styled.div`
   & .navs {
     border-bottom: 1px solid #235dff;
@@ -113,6 +114,7 @@ const HeaderStyle = styled.div`
   }
 `;
 const Header = () => {
+  const dispatch = useDispatch();
   return (
     <HeaderStyle className="container_main">
       <div className="ds_flex navs">
@@ -152,11 +154,16 @@ const Header = () => {
           </NavLink>
         </div>
         <div className="dc_flex item_right">
-          <Link to="/profile" className="dc_flex user">
-            <div className="user_name">
+          <div className="dc_flex user">
+            <div
+              className="user_name"
+              onClick={() => {
+                dispatch({ type: "SET_AUTH_MODAL", payload: true });
+              }}
+            >
               <div className="name">Войти</div>
             </div>
-          </Link>
+          </div>
           <Link to="/profile" className="dc_flex user">
             <div className="user_icon">
               <img src="/images/profile/user.svg" alt="tripusk user" />
