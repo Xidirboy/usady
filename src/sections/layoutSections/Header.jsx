@@ -66,6 +66,7 @@ const HeaderStyle = styled.div`
     }
     & .item_right {
       & .user {
+        cursor: pointer;
         & .user_icon {
           & img {
             width: 52px;
