@@ -216,14 +216,25 @@ button {
   box-shadow: none !important;
   cursor: pointer;
 }
+.chakra-modal__overlay,
+.chakra-modal__content-container {
+  width: 100% !important;
+  height: 100% !important;
+}
+
 .container_main {
   width: 100% !important;
   box-sizing: border-box !important;
   padding: 0 calc(50% - 720px) !important;
 }
 
-.chakra-modal__overlay,
-.chakra-modal__content-container {
-  width: 100% !important;
-  height: 100% !important;
+.dc_flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ds_flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
