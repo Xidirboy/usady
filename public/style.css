@@ -188,6 +188,10 @@ a {
   text-decoration: none !important;
   cursor: pointer;
 }
+a:hover,
+a.active {
+  color: var(--blue);
+}
 ul {
   list-style-type: none !important;
   padding: 0;

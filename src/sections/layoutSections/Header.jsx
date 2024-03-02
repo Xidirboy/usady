@@ -16,7 +16,7 @@ const HeaderStyle = styled.div`
   & .right_nav {
     & .right_links {
       & .r_link {
-        margin: 0 16px;
+        margin: 0 20px;
       }
     }
   }
@@ -32,10 +32,10 @@ const Header = () => {
         </div>
         <div className="ds_flex right_nav">
           <div className="right_links">
-            <NavLink to={"/"} className={"r_link"}>
+            <NavLink to={"/contacts"} className={"r_link"}>
               Контакты
             </NavLink>
-            <NavLink to={"/"} className={"r_link"}>
+            <NavLink to={"/abaut"} className={"r_link"}>
               О компании
             </NavLink>
           </div>

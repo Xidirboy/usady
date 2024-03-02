@@ -59,6 +59,7 @@ const LanSelect = () => {
                 src={`/images/lans/${selectLan}.svg`}
                 alt={selectLan}
               />
+              <spam>Uz</spam>
               <span className="arrow">
                 <svg
                   width="10"
