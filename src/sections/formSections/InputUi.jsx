@@ -36,7 +36,7 @@ const InputUiStyle = styled.div`
     }
   }
 `;
-const InputUi = ({ label, placeholder = "" }) => {
+const InputUi = ({ label, placeholder = "", type = "text" }) => {
   return (
     <InputUiStyle>
       <FormControl>
@@ -64,11 +64,19 @@ const InputUi = ({ label, placeholder = "" }) => {
               />
             </svg>
           </InputLeftElement>
-          <Input
-            type="tel"
-            placeholder={placeholder}
-            focusBorderColor="#235dff"
-          />
+          {type === "number" ? (
+            <Input
+              type={type}
+              placeholder={placeholder}
+              focusBorderColor="#235dff"
+            />
+          ) : (
+            <Input
+              type={type}
+              placeholder={placeholder}
+              focusBorderColor="#235dff"
+            />
+          )}
         </InputGroup>
         {/* <FormHelperText>We'll never share your email.</FormHelperText> */}
       </FormControl>
