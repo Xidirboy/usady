@@ -19,7 +19,7 @@ const UiModalStyle = styled.div`
     @media (max-width: 900px) {
       font-size: 22px;
       font-weight: 600;
-      line-height: 128px;
+      line-height: 36px;
       letter-spacing: 0em;
     }
   }
