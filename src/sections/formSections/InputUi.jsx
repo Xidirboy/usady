@@ -61,6 +61,10 @@ const InputUi = ({
   placeholder = "",
   type = "text",
   icon = null,
+  name = "",
+  value = "",
+  onChange = () => {},
+  is_error = false,
 }) => {
   const [showPass, setShowPass] = useState(false);
   return (
@@ -85,12 +89,24 @@ const InputUi = ({
             />
           ) : type === "password" ? (
             <Input
+              isInvalid={is_error}
+              value={value}
+              onChange={(e) => {
+                onChange(e);
+              }}
+              name={name}
               type={showPass ? "text" : "password"}
               placeholder={placeholder}
               focusBorderColor="#235dff"
             />
           ) : (
             <Input
+              isInvalid={is_error}
+              value={value}
+              onChange={(e) => {
+                onChange(e);
+              }}
+              name={name}
               type={type}
               placeholder={placeholder}
               focusBorderColor="#235dff"
