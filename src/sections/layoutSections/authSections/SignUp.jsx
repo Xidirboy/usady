@@ -16,6 +16,11 @@ const SignUp = () => {
           placeholder="+998 -- --- -- --"
           mask="+998 nn nnn nn nn"
         />
+        <InputUi
+          label="Придумайте пароль"
+          placeholder="Пароль"
+          type="password"
+        />
         <Btn>Login</Btn>
       </form>
     </AuthStyle>
