@@ -7,6 +7,7 @@ import {
   InputLeftElement,
 } from "@chakra-ui/react";
 import styled from "styled-components";
+import InputMask from "react-input-mask";
 
 const InputUiStyle = styled.div`
   & .chakra-form-control {
@@ -66,7 +67,13 @@ const InputUi = ({ label, placeholder = "", type = "text" }) => {
           </InputLeftElement>
           {type === "number" ? (
             <Input
-              type={type}
+              as={InputMask}
+              mask="+998 nn nnn nn nn"
+              formatChars={{
+                n: "[0-9]",
+                a: "[A-Za-z]",
+                "*": "[A-Za-z0-9]",
+              }}
               placeholder={placeholder}
               focusBorderColor="#235dff"
             />
