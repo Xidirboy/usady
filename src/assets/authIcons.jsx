@@ -36,7 +36,7 @@ export const phoneIcon = (
     />
   </svg>
 );
-export const lockIcon = () => (
+export const lockIcon = (
   <svg
     width="20"
     height="21"
