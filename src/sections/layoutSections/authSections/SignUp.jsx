@@ -10,7 +10,7 @@ const SignUp = () => {
   return (
     <AuthStyle>
       <form onSubmit={onSubmit}>
-        <InputUi />
+        <InputUi label="ФИО" placeholder="ФИО" />
         <InputUi />
         <Btn>Login</Btn>
       </form>
