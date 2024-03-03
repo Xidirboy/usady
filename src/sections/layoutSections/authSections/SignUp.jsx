@@ -1,9 +1,8 @@
-import React, { useState } from "react";
-import styled from "styled-components";
+import React, { useState } from "react"; 
 import InputUi from "../../formSections/InputUi";
 import { Btn } from "../../../styleComponents/GlobalStyle";
 import { lockIcon, phoneIcon, userIcon } from "../../../assets/authIcons";
-const AuthStyle = styled.div``;
+import { AuthStyle } from "./AuthStyle";
 const SignUp = () => {
   const [sdata, setSdata] = useState({});
   const [errors, setErrors] = useState({});
