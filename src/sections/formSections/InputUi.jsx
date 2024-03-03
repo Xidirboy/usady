@@ -37,7 +37,7 @@ const InputUiStyle = styled.div`
     }
   }
 `;
-const InputUi = ({ label, placeholder = "", type = "text" }) => {
+const InputUi = ({ label, mask, placeholder = "", type = "text" }) => {
   return (
     <InputUiStyle>
       <FormControl>
@@ -65,10 +65,10 @@ const InputUi = ({ label, placeholder = "", type = "text" }) => {
               />
             </svg>
           </InputLeftElement>
-          {type === "number" ? (
+          {mask ? (
             <Input
               as={InputMask}
-              mask="+998 nn nnn nn nn"
+              mask={mask}
               formatChars={{
                 n: "[0-9]",
                 a: "[A-Za-z]",

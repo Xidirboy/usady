@@ -10,8 +10,12 @@ const SignUp = () => {
   return (
     <AuthStyle>
       <form onSubmit={onSubmit}>
-        <InputUi label="ФИО" placeholder="ФИО" type="number" />
-        <InputUi />
+        <InputUi label="ФИО" placeholder="ФИО" />
+        <InputUi
+          label="Введите номер телефона"
+          placeholder="+998 -- --- -- --"
+          mask="+998 nn nnn nn nn"
+        />
         <Btn>Login</Btn>
       </form>
     </AuthStyle>
