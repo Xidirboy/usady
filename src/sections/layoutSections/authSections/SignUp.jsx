@@ -75,7 +75,7 @@ const SignUp = () => {
             });
           }}
         />
-        <Btn>Login</Btn>
+        <Btn>Регистирация </Btn>
       </form>
     </AuthStyle>
   );
