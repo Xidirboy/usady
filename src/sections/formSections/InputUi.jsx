@@ -10,6 +10,7 @@ import styled from "styled-components";
 
 const InputUiStyle = styled.div`
   & .chakra-form-control {
+    padding-bottom: 20px;
     & .chakra-form__label {
       font-size: 18px;
       font-weight: 600;

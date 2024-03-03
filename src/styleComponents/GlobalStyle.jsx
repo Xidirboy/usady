@@ -10,6 +10,7 @@ export const Btn = styled.button`
   letter-spacing: 0em;
   text-align: center;
   border-radius: 12px;
+  height: 60px;
   @media (max-width: 900px) {
     font-size: 18px;
     font-weight: 700;
