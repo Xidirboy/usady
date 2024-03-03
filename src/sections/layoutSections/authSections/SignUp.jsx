@@ -1,4 +1,4 @@
-import React, { useState } from "react"; 
+import React, { useState } from "react";
 import InputUi from "../../formSections/InputUi";
 import { Btn } from "../../../styleComponents/GlobalStyle";
 import { lockIcon, phoneIcon, userIcon } from "../../../assets/authIcons";
@@ -76,6 +76,11 @@ const SignUp = () => {
         />
         <Btn>Регистирация </Btn>
       </form>
+      <div className="auth_bottom_section">
+        <div className="info_text">
+          Есть аккаунт ?<button className="auth_btn">Войти</button>
+        </div>
+      </div>
     </AuthStyle>
   );
 };
