@@ -10,6 +10,7 @@ import {
 import styled from "styled-components";
 import InputMask from "react-input-mask";
 import { eyeIcon } from "../../assets/authIcons";
+import { useState } from "react";
 
 const InputUiStyle = styled.div`
   & .chakra-form-control {
@@ -47,6 +48,7 @@ const InputUi = ({
   type = "text",
   icon = null,
 }) => {
+  const [showPass, setShowPass] = useState(false);
   return (
     <InputUiStyle>
       <FormControl>
@@ -67,6 +69,12 @@ const InputUi = ({
               placeholder={placeholder}
               focusBorderColor="#235dff"
             />
+          ) : type === "password" ? (
+            <Input
+              type={showPass ? "text" : "password"}
+              placeholder={placeholder}
+              focusBorderColor="#235dff"
+            />
           ) : (
             <Input
               type={type}
@@ -76,7 +84,13 @@ const InputUi = ({
           )}
           {type === "password" ? (
             <InputRightElement pointerEvents="none">
-              {eyeIcon}
+              <button
+                onClick={() => {
+                  setShowPass(showPass ? false : true);
+                }}
+              >
+                {eyeIcon}
+              </button>
             </InputRightElement>
           ) : null}
         </InputGroup>
