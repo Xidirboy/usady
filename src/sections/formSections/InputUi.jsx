@@ -30,6 +30,7 @@ const InputUiStyle = styled.div`
       & .chakra-input__right-element {
         pointer-events: all;
         & button {
+          padding: 5px;
           &:hover,
           &.show_eye {
             & svg {
