@@ -8,7 +8,7 @@ import {
 import React from "react";
 import styled from "styled-components";
 const UiModalStyle = styled.div`
-  padding: 30px 20px;
+  padding: 30px;
   & .m_head {
     font-size: 24px;
     font-weight: 600;
