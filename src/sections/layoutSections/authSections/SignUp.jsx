@@ -38,6 +38,21 @@ const SignUp = () => {
           placeholder="+998 -- --- -- --"
           mask="+998 nn nnn nn nn"
           icon={phoneIcon}
+          name="phone"
+          value={sdata?.phone}
+          is_error={errors?.phone}
+          onChange={(e) => {
+            setSdata({
+              ...sdata,
+              [e?.target?.name]: e?.target?.value,
+              common: "",
+            });
+            setErrors({
+              ...errors,
+              [e?.target?.name]: false,
+              common: "",
+            });
+          }}
         />
         <InputUi
           label="Придумайте пароль"

@@ -77,6 +77,12 @@ const InputUi = ({
           ) : null}
           {mask ? (
             <Input
+              isInvalid={is_error}
+              value={value}
+              onChange={(e) => {
+                onChange(e);
+              }}
+              name={name}
               as={InputMask}
               mask={mask}
               formatChars={{
