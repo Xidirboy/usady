@@ -11,10 +11,14 @@ export const Btn = styled.button`
   text-align: center;
   border-radius: 12px;
   height: 60px;
+  opacity: 0.9;
   @media (max-width: 900px) {
     font-size: 18px;
     font-weight: 700;
     line-height: 32px;
     letter-spacing: 0em;
+  }
+  &:hover {
+    opacity: 1;
   }
 `;
