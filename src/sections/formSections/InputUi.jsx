@@ -27,6 +27,19 @@ const InputUiStyle = styled.div`
       & .chakra-input__right-element {
         height: 100%;
       }
+      & .chakra-input__right-element {
+        pointer-events: all;
+        & button {
+          &:hover,
+          &.show_eye {
+            & svg {
+              & path {
+                fill: #235dff;
+              }
+            }
+          }
+        }
+      }
       & .chakra-input {
         height: 60px;
         background: #fafafa;
@@ -85,6 +98,7 @@ const InputUi = ({
           {type === "password" ? (
             <InputRightElement pointerEvents="none">
               <button
+                className={showPass ? "show_eye" : ""}
                 onClick={() => {
                   setShowPass(showPass ? false : true);
                 }}
