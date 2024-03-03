@@ -8,6 +8,7 @@ const AuthModal = () => {
   return (
     <>
       <UiModal
+        title={"Зарегистрироваться"}
         isOpen={auth_modal}
         setIsOpen={(o) => {
           dispatch({ type: "SET_AUTH_MODAL", payload: o });

@@ -236,6 +236,10 @@ button {
   width: 100% !important;
   height: 100% !important;
 }
+.ui_modal_content {
+  border-radius: 16px !important;
+  max-width: 452px !important;
+}
 
 .container_main {
   width: 100% !important;
