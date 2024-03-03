@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import UiModal from "../../utilsSections/UiModal";
 import { useDispatch, useSelector } from "react-redux";
 import SignUp from "./SignUp";
@@ -6,6 +6,7 @@ import SignUp from "./SignUp";
 const AuthModal = () => {
   const { auth_modal } = useSelector((s) => s);
   const dispatch = useDispatch();
+  const [action, setAction] = useState(1);
   return (
     <>
       <UiModal
@@ -15,7 +16,7 @@ const AuthModal = () => {
           dispatch({ type: "SET_AUTH_MODAL", payload: o });
         }}
       >
-        <SignUp />
+        <SignUp setAction={setAction} />
       </UiModal>
     </>
   );

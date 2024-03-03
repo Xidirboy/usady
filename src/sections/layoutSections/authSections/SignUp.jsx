@@ -3,7 +3,7 @@ import InputUi from "../../formSections/InputUi";
 import { Btn } from "../../../styleComponents/GlobalStyle";
 import { lockIcon, phoneIcon, userIcon } from "../../../assets/authIcons";
 import { AuthStyle } from "./AuthStyle";
-const SignUp = () => {
+const SignUp = ({ setAction }) => {
   const [sdata, setSdata] = useState({});
   const [errors, setErrors] = useState({});
   const onSubmit = (e) => {
@@ -78,7 +78,10 @@ const SignUp = () => {
       </form>
       <div className="auth_bottom_section">
         <div className="info_text">
-          Есть аккаунт ?<button className="auth_btn">Войти</button>
+          Есть аккаунт ?
+          <button className="auth_btn" onClick={() => setAction(1)}>
+            Войти
+          </button>
         </div>
       </div>
     </AuthStyle>

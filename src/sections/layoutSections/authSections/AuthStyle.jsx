@@ -11,6 +11,7 @@ export const AuthStyle = styled.div`
     font-weight: 500;
     line-height: 29px;
     letter-spacing: 0.2px;
+    text-align: center;
   }
   & .auth_btn {
     font-size: 18px;
@@ -21,5 +22,8 @@ export const AuthStyle = styled.div`
     text-align: center;
     color: #235dff;
     text-align: center;
+    &:hover {
+      text-decoration: underline;
+    }
   }
 `;
