@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import ShowTitle from "../sections/utilsSections/ShowTitle";
+import Section2 from "../sections/homeSections/Section2";
 const HomeStyle = styled.div`
   border-radius: 50px 50px 0 0;
   background: linear-gradient(
@@ -31,6 +32,10 @@ const HomeStyle = styled.div`
       background-position: left;
     }
   }
+  & .section_2 {
+    & .swiper_target {
+    }
+  }
 `;
 const Home = () => {
   return (
@@ -39,12 +44,14 @@ const Home = () => {
         <div className="ds_flex container_main section_1 ">
           <div className="ds_flex s1">
             <div className="title">
-              <span>100+</span>Турагентов готовы подобрать лучший тур
+              <span>100+</span> Турагентов готовы подобрать лучший тур
             </div>
           </div>
           <div className="s2"></div>
         </div>
-        <div className="section_2"></div>
+        <div className="container_main section_2">
+          <Section2 />
+        </div>
         <div className="section_3"></div>
         <div className="section_4"></div>
       </section>
