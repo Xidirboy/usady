@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import ShowTitle from "../sections/utilsSections/ShowTitle";
 import Section2 from "../sections/homeSections/Section2";
+import Section4 from "../sections/homeSections/Section4";
 const HomeStyle = styled.div`
   border-radius: 50px 50px 0 0;
   background: linear-gradient(
@@ -33,8 +34,10 @@ const HomeStyle = styled.div`
     }
   }
   & .section_2 {
-    & .swiper_target {
-    }
+  }
+  & .section_3 {
+  }
+  & .section_4 {
   }
 `;
 const Home = () => {
@@ -53,7 +56,9 @@ const Home = () => {
           <Section2 />
         </div>
         <div className="section_3"></div>
-        <div className="section_4"></div>
+        <div className="container_main section_4">
+          <Section4 />
+        </div>
       </section>
     </HomeStyle>
   );
