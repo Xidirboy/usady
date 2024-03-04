@@ -3,6 +3,7 @@ import { Outlet, Route, Routes } from "react-router-dom";
 import Layout from "../sections/layoutSections/Layout";
 
 const Home = lazy(() => import("../components/Home"));
+const Profile = lazy(() => import("../components/profile_pages/Profile"));
 const NotFount = lazy(() => import("../components/NotFount"));
 
 const Routers = () => {
@@ -21,6 +22,14 @@ const Routers = () => {
             element={
               <Suspense>
                 <Home />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/profile"
+            element={
+              <Suspense>
+                <Profile />
               </Suspense>
             }
           />
