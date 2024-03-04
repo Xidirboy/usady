@@ -4,6 +4,8 @@ import Section2 from "../sections/homeSections/Section2";
 import Section4 from "../sections/homeSections/Section4";
 const HomeStyle = styled.div`
   border-radius: 50px 50px 0 0;
+  margin: auto;
+  max-width: 1920px;
   background: linear-gradient(
     0deg,
     #0450c2 0%,
