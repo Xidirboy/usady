@@ -2,6 +2,7 @@ import styled from "styled-components";
 import ShowTitle from "../sections/utilsSections/ShowTitle";
 import Section2 from "../sections/homeSections/Section2";
 import Section4 from "../sections/homeSections/Section4";
+import Section3 from "../sections/homeSections/Section3";
 const HomeStyle = styled.div`
   border-radius: 50px 50px 0 0;
   margin: auto;
@@ -57,7 +58,9 @@ const Home = () => {
         <div className="container_main section_2">
           <Section2 />
         </div>
-        <div className="section_3"></div>
+        <div className="section_3">
+          <Section3 />
+        </div>
         <div className="container_main section_4">
           <Section4 />
         </div>
