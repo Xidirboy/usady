@@ -3,6 +3,16 @@ import styled from "styled-components";
 import InputUi from "../formSections/InputUi";
 import { userIcon } from "../../assets/authIcons";
 import { Btn } from "../../styleComponents/GlobalStyle";
+import {
+  babyIcon,
+  dateIcon,
+  footIcon,
+  fromCIcon,
+  hotelIcon,
+  toCIcon,
+  typeIcon,
+  usersIcon,
+} from "../../assets/homeS3Icon";
 const Section3Style = styled.div`
   background-image: url("/images/home/s31.png");
   background-size: cover;
@@ -53,9 +63,33 @@ const Section3 = () => {
           <div className="fi50">
             <InputUi
               type="select"
-              label="Взрослых"
-              placeholder="Взрослых"
-              icon={userIcon}
+              label="Откуда"
+              placeholder="Откуда"
+              icon={fromCIcon}
+              name="full_name"
+              value={sdata?.full_name}
+              is_error={errors?.full_name}
+              thin_label={true}
+              onChange={(e) => {
+                setSdata({
+                  ...sdata,
+                  [e?.target?.name]: e?.target?.value,
+                  common: "",
+                });
+                setErrors({
+                  ...errors,
+                  [e?.target?.name]: false,
+                  common: "",
+                });
+              }}
+            />
+          </div>
+          <div className="fi50">
+            <InputUi
+              type="select"
+              label="Куда"
+              placeholder="Куда"
+              icon={toCIcon}
               name="full_name"
               value={sdata?.full_name}
               is_error={errors?.full_name}
@@ -78,7 +112,7 @@ const Section3 = () => {
             <InputUi
               label="Взрослых"
               placeholder="Взрослых"
-              icon={userIcon}
+              icon={usersIcon}
               name="full_name"
               value={sdata?.full_name}
               is_error={errors?.full_name}
@@ -101,7 +135,7 @@ const Section3 = () => {
             <InputUi
               label="Детей"
               placeholder="Детей"
-              icon={userIcon}
+              icon={babyIcon}
               name="full_name"
               value={sdata?.full_name}
               is_error={errors?.full_name}
@@ -123,8 +157,8 @@ const Section3 = () => {
           <div className="fi50">
             <InputUi
               label="Дата вылета  и кол-во дней"
-              placeholder="ФИО"
-              icon={userIcon}
+              placeholder="Дата вылета  и кол-во дней"
+              icon={dateIcon}
               name="full_name"
               value={sdata?.full_name}
               is_error={errors?.full_name}
@@ -145,9 +179,58 @@ const Section3 = () => {
           </div>
           <div className="fi50">
             <InputUi
+              type="select"
               label="Класс самолета"
               placeholder="Класс самолета"
-              icon={userIcon}
+              icon={typeIcon}
+              name="full_name"
+              value={sdata?.full_name}
+              is_error={errors?.full_name}
+              thin_label={true}
+              onChange={(e) => {
+                setSdata({
+                  ...sdata,
+                  [e?.target?.name]: e?.target?.value,
+                  common: "",
+                });
+                setErrors({
+                  ...errors,
+                  [e?.target?.name]: false,
+                  common: "",
+                });
+              }}
+            />
+          </div>
+          <div className="fi50">
+            <InputUi
+              type="select"
+              label="Рейтинг отелей"
+              placeholder="Рейтинг отелей"
+              icon={hotelIcon}
+              name="full_name"
+              value={sdata?.full_name}
+              is_error={errors?.full_name}
+              thin_label={true}
+              onChange={(e) => {
+                setSdata({
+                  ...sdata,
+                  [e?.target?.name]: e?.target?.value,
+                  common: "",
+                });
+                setErrors({
+                  ...errors,
+                  [e?.target?.name]: false,
+                  common: "",
+                });
+              }}
+            />
+          </div>
+          <div className="fi50">
+            <InputUi
+              type="select"
+              label="Тип питания"
+              placeholder="Тип питания"
+              icon={footIcon}
               name="full_name"
               value={sdata?.full_name}
               is_error={errors?.full_name}
@@ -170,7 +253,6 @@ const Section3 = () => {
             <InputUi
               label="Напишите ваш бюджет"
               placeholder="до 15 000 000 сум "
-              icon={userIcon}
               name="full_name"
               value={sdata?.full_name}
               is_error={errors?.full_name}

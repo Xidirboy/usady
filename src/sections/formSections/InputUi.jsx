@@ -32,6 +32,12 @@ const InputUiStyle = styled.div`
       & .chakra-input__right-element {
         height: 100%;
       }
+      & .chakra-input__left-element {
+        & svg {
+          width: 20px;
+          height: 20px;
+        }
+      }
       & .chakra-input__right-element {
         pointer-events: all;
         & button {
