@@ -23,6 +23,7 @@ const Section3Style = styled.div`
       line-height: 51px;
       letter-spacing: 0.27px;
       text-align: center;
+      padding-bottom: 30px;
     }
     & .app_form {
       display: flex;
@@ -49,6 +50,30 @@ const Section3 = () => {
       <div className="form_target">
         <div className="title_s3">Подать заявку</div>
         <form className="app_form" onSubmit={onSubmit}>
+          <div className="fi50">
+            <InputUi
+              type="select"
+              label="Взрослых"
+              placeholder="Взрослых"
+              icon={userIcon}
+              name="full_name"
+              value={sdata?.full_name}
+              is_error={errors?.full_name}
+              thin_label={true}
+              onChange={(e) => {
+                setSdata({
+                  ...sdata,
+                  [e?.target?.name]: e?.target?.value,
+                  common: "",
+                });
+                setErrors({
+                  ...errors,
+                  [e?.target?.name]: false,
+                  common: "",
+                });
+              }}
+            />
+          </div>
           <div className="fi50">
             <InputUi
               label="Взрослых"

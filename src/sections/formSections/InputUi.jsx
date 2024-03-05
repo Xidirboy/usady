@@ -6,6 +6,7 @@ import {
   InputGroup,
   InputLeftElement,
   InputRightElement,
+  Select,
   Textarea,
 } from "@chakra-ui/react";
 import styled from "styled-components";
@@ -46,7 +47,8 @@ const InputUiStyle = styled.div`
         }
       }
       & .chakra-input,
-      & .chakra-textarea {
+      & .chakra-textarea,
+      & .chakra-select {
         height: 60px;
         background: #fafafa;
         /* border: 1px solid #e0e0e0; */
@@ -56,6 +58,9 @@ const InputUiStyle = styled.div`
         line-height: 29px;
         letter-spacing: 0.2px;
         text-align: left;
+      }
+      & .chakra-select {
+        box-shadow: none !important;
       }
       & .chakra-textarea {
         height: none;
@@ -132,6 +137,23 @@ const InputUi = ({
               placeholder={placeholder}
               focusBorderColor="#235dff"
             />
+          ) : type === "select" ? (
+            <Select
+              isInvalid={is_error}
+              value={value}
+              onChange={(e) => {
+                onChange(e);
+              }}
+              name={name}
+              type={type}
+              placeholder={placeholder}
+              focusBorderColor="#235dff"
+              style={icon ? { paddingLeft: 40 } : {}}
+            >
+              <option value="option1">Option 1</option>
+              <option value="option2">Option 2</option>
+              <option value="option3">Option 3</option>
+            </Select>
           ) : (
             <Input
               isInvalid={is_error}
