@@ -5,6 +5,7 @@ const Section3Style = styled.div`
   background-size: cover;
   background-position: center;
   border-radius: 16px;
+  padding: 30px 0;
   & .form_target {
     background-color: #fff;
     max-width: 729px;
@@ -20,6 +21,16 @@ const Section3Style = styled.div`
       letter-spacing: 0.27px;
       text-align: center;
     }
+    & .app_form {
+      display: flex;
+      flex-wrap: wrap;
+      & .fi50 {
+        width: 50%;
+      }
+      & .fi100 {
+        width: 50%;
+      }
+    }
   }
 `;
 const Section3 = () => {
@@ -27,6 +38,15 @@ const Section3 = () => {
     <Section3Style>
       <div className="form_target">
         <div className="title_s3">Подать заявку</div>
+        <form className="app_form">
+          <div className="fi50">1</div>
+          <div className="fi50">1</div>
+          <div className="fi50">1</div>
+          <div className="fi50">1</div>
+          <div className="fi50">1</div>
+          <div className="fi50">1</div>
+          <div className="fi100">1</div>
+        </form>
       </div>
     </Section3Style>
   );
