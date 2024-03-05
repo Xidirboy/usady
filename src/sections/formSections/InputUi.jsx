@@ -6,6 +6,7 @@ import {
   InputGroup,
   InputLeftElement,
   InputRightElement,
+  Textarea,
 } from "@chakra-ui/react";
 import styled from "styled-components";
 import InputMask from "react-input-mask";
@@ -21,6 +22,9 @@ const InputUiStyle = styled.div`
       line-height: 29px;
       letter-spacing: 0.2px;
       text-align: left;
+    }
+    & .thin_label {
+      font-weight: 500;
     }
     & .chakra-input__group {
       & .chakra-input__left-element,
@@ -41,7 +45,8 @@ const InputUiStyle = styled.div`
           }
         }
       }
-      & .chakra-input {
+      & .chakra-input,
+      & .chakra-textarea {
         height: 60px;
         background: #fafafa;
         /* border: 1px solid #e0e0e0; */
@@ -51,6 +56,11 @@ const InputUiStyle = styled.div`
         line-height: 29px;
         letter-spacing: 0.2px;
         text-align: left;
+      }
+      & .chakra-textarea {
+        height: none;
+        min-height: 200px;
+        box-shadow: none !important;
       }
     }
   }
@@ -65,12 +75,17 @@ const InputUi = ({
   value = "",
   onChange = () => {},
   is_error = false,
+  thin_label = false,
 }) => {
   const [showPass, setShowPass] = useState(false);
   return (
     <InputUiStyle>
       <FormControl>
-        {label ? <FormLabel>{label}</FormLabel> : null}
+        {label ? (
+          <FormLabel className={thin_label ? "thin_label" : ""}>
+            {label}
+          </FormLabel>
+        ) : null}
         <InputGroup>
           {icon ? (
             <InputLeftElement pointerEvents="none">{icon}</InputLeftElement>
@@ -102,6 +117,18 @@ const InputUi = ({
               }}
               name={name}
               type={showPass ? "text" : "password"}
+              placeholder={placeholder}
+              focusBorderColor="#235dff"
+            />
+          ) : type === "textarea" ? (
+            <Textarea
+              isInvalid={is_error}
+              value={value}
+              onChange={(e) => {
+                onChange(e);
+              }}
+              name={name}
+              type={type}
               placeholder={placeholder}
               focusBorderColor="#235dff"
             />
