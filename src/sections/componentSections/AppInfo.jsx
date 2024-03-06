@@ -11,11 +11,11 @@ const AppInfoStyle = styled.div`
   background-image: url("/images/profile/appinfo.png");
   background-repeat: no-repeat;
   background-position: top right;
-  @media (max-width: 800px) {
-    background-image: none;
-  }
   @media (max-width: 900px) {
     padding: 15px;
+  }
+  @media (max-width: 800px) {
+    background-image: none;
   }
   & .i_title {
     font-size: 26px;
@@ -25,20 +25,35 @@ const AppInfoStyle = styled.div`
     color: #2b3f5a;
     text-align: left;
     padding-bottom: 30px;
+    @media (max-width: 900px) {
+      padding-bottom: 10px;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 26px;
+    }
   }
   & .route {
     justify-content: left;
     flex-wrap: wrap;
     padding-bottom: 24px;
+    @media (max-width: 900px) {
+      padding-bottom: 10px;
+    }
     & span {
       font-size: 24px;
       font-weight: 500;
       line-height: 34px;
       letter-spacing: -0.52px;
       text-align: left;
+      @media (max-width: 900px) {
+        font-size: 20px;
+      }
     }
     & .icon {
       padding: 0 30px;
+      @media (max-width: 900px) {
+        padding: 0 15px;
+      }
     }
   }
   & .items {
