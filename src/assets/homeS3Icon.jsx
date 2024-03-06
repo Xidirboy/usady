@@ -254,3 +254,17 @@ export const planIcon = (
     />
   </svg>
 );
+export const starIcon = (
+  <svg
+    width="25"
+    height="24"
+    viewBox="0 0 25 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M12.5 0.5L15.3064 9.13729H24.3882L17.0409 14.4754L19.8473 23.1127L12.5 17.7746L5.15268 23.1127L7.95911 14.4754L0.611794 9.13729H9.69357L12.5 0.5Z"
+      fill="#FFCD00"
+    />
+  </svg>
+);
