@@ -6,11 +6,18 @@ const MyAppStyle = styled.div`
     padding-top: 30px;
     padding-bottom: 50px;
     & .app {
+      align-items: stretch;
       & .app_info {
         border: 1px solid #e0e0e0;
         background-color: #fff;
-        max-width: 1120px;
+        width: 100%;
         border-radius: 15.13px;
+      }
+      & .app_v {
+        width: 290px;
+        min-width: 290px;
+        background: #d9d9d9;
+        margin-left: 30px;
       }
     }
   }
@@ -21,7 +28,7 @@ const MyApp = () => {
       <ShowTitle title="Мои заявки"></ShowTitle>
       <div className="container_main ">
         <div className="apps">
-          <div className="app">
+          <div className="ds_flex app">
             <div className="app_info">
               <AppInfo />
             </div>
