@@ -7,6 +7,10 @@ import {
   usersIcon,
 } from "../../assets/homeS3Icon";
 const AppInfoStyle = styled.div`
+  padding: 30px;
+  background-image: url("/images/profile/appinfo.png");
+  background-repeat: no-repeat;
+  background-position: top right;
   & .i_title {
     font-size: 26px;
     font-weight: 600;
@@ -14,10 +18,12 @@ const AppInfoStyle = styled.div`
     letter-spacing: 0em;
     color: #2b3f5a;
     text-align: left;
+    padding-bottom: 30px;
   }
   & .route {
     justify-content: left;
     flex-wrap: wrap;
+    padding-bottom: 24px;
     & span {
       font-size: 24px;
       font-weight: 500;
@@ -33,6 +39,7 @@ const AppInfoStyle = styled.div`
     justify-content: left;
     flex-wrap: wrap;
     margin: -5px;
+    padding-right: 150px;
     & .item {
       background: #ebf7ff;
       padding: 20px;
@@ -61,6 +68,12 @@ const AppInfo = () => {
       </div>
       <div className=" ds_flex items">
         <div className="dc_flex item star">{starIcon}3-5</div>
+        <div className="dc_flex item">{usersIcon}2 взрослых</div>
+        <div className="dc_flex item">{cashIcon}15 000 000 сумм</div>
+        <div className="dc_flex item">{usersIcon}2 взрослых</div>
+        <div className="dc_flex item">{cashIcon}15 000 000 сумм</div>
+        <div className="dc_flex item">{usersIcon}2 взрослых</div>
+        <div className="dc_flex item">{cashIcon}15 000 000 сумм</div>
         <div className="dc_flex item">{usersIcon}2 взрослых</div>
         <div className="dc_flex item">{cashIcon}15 000 000 сумм</div>
       </div>
