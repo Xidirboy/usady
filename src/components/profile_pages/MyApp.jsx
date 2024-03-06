@@ -8,6 +8,7 @@ const MyAppStyle = styled.div`
     padding-bottom: 50px;
     & .app {
       align-items: stretch;
+      margin-bottom: 30px;
       & .app_info {
         border: 1px solid #e0e0e0;
         background-color: #fff;
@@ -17,8 +18,19 @@ const MyAppStyle = styled.div`
           border-top: 2px dashed #235dff4d;
           padding: 30px;
           & .count {
+            font-size: 26px;
+            font-weight: 400;
+            line-height: 34px;
+            letter-spacing: -0.5px;
             & span {
+              font-size: 32px;
+              font-weight: 600;
+              line-height: 34px;
+              letter-spacing: -0.5;
             }
+          }
+          & .btn_target {
+            width: 450px;
           }
         }
       }
@@ -37,6 +49,20 @@ const MyApp = () => {
       <ShowTitle title="Мои заявки"></ShowTitle>
       <div className="container_main ">
         <div className="apps">
+          <div className="ds_flex app">
+            <div className="app_info">
+              <AppInfo />
+              <div className="ds_flex footer_app">
+                <div className="count">
+                  Ответов: <span>56</span>
+                </div>
+                <div className="btn_target">
+                  <Btn>Посмотреть все предложения</Btn>
+                </div>
+              </div>
+            </div>
+            <div className="app_v"></div>
+          </div>
           <div className="ds_flex app">
             <div className="app_info">
               <AppInfo />
