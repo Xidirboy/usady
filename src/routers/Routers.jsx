@@ -3,6 +3,7 @@ import { Outlet, Route, Routes } from "react-router-dom";
 import Layout from "../sections/layoutSections/Layout";
 
 const Home = lazy(() => import("../components/Home"));
+const MyApp = lazy(() => import("../components/profile_pages/MyApp"));
 const Profile = lazy(() => import("../components/profile_pages/Profile"));
 const NotFount = lazy(() => import("../components/NotFount"));
 
@@ -30,6 +31,14 @@ const Routers = () => {
             element={
               <Suspense>
                 <Profile />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/my-apps"
+            element={
+              <Suspense>
+                <MyApp />
               </Suspense>
             }
           />
