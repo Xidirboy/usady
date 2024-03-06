@@ -29,6 +29,9 @@ const MyAppStyle = styled.div`
             font-weight: 400;
             line-height: 34px;
             letter-spacing: -0.5px;
+            @media (max-width: 900px) {
+              display: none;
+            }
             & span {
               font-size: 32px;
               font-weight: 600;
@@ -38,6 +41,13 @@ const MyAppStyle = styled.div`
           }
           & .btn_target {
             width: 450px;
+            & .btn__c {
+              display: none;
+              @media (max-width: 900px) {
+                display: inline-block;
+                margin-left: 5px;
+              }
+            }
           }
         }
       }
@@ -67,7 +77,10 @@ const MyApp = () => {
                   Ответов: <span>56</span>
                 </div>
                 <div className="btn_target">
-                  <Btn>Посмотреть все предложения</Btn>
+                  <Btn>
+                    Посмотреть все предложения
+                    <span className="btn__c">- 56</span>
+                  </Btn>
                 </div>
               </div>
             </div>
