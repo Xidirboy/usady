@@ -11,6 +11,9 @@ const AppInfoStyle = styled.div`
   background-image: url("/images/profile/appinfo.png");
   background-repeat: no-repeat;
   background-position: top right;
+  @media (max-width: 800px) {
+    background-image: none;
+  }
   @media (max-width: 900px) {
     padding: 15px;
   }
@@ -43,6 +46,9 @@ const AppInfoStyle = styled.div`
     flex-wrap: wrap;
     margin: -5px;
     padding-right: 150px;
+    @media (max-width: 900px) {
+      padding-right: 0px;
+    }
     & .item {
       background: #ebf7ff;
       padding: 20px;

@@ -94,7 +94,10 @@ const MyApp = () => {
                   Ответов: <span>56</span>
                 </div>
                 <div className="btn_target">
-                  <Btn>Посмотреть все предложения</Btn>
+                  <Btn>
+                    Посмотреть все предложения
+                    <span className="btn__c">- 56</span>
+                  </Btn>
                 </div>
               </div>
             </div>
