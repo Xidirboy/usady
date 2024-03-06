@@ -6,6 +6,10 @@ const MyAppStyle = styled.div`
   & .apps {
     padding-top: 30px;
     padding-bottom: 50px;
+    @media (max-width: 900px) {
+      padding-top: 20px;
+      padding-bottom: 30px;
+    }
     & .app {
       align-items: stretch;
       margin-bottom: 30px;
@@ -18,6 +22,9 @@ const MyAppStyle = styled.div`
         box-shadow: 0px 22.7px 60.5px 0px #c7ceda40;
         width: 100%;
         border-radius: 15.13px;
+        @media (max-width: 900px) {
+          border-radius: 10px;
+        }
         & .footer_app {
           border-top: 2px dashed #235dff4d;
           padding: 30px;
