@@ -11,6 +11,9 @@ const AppInfoStyle = styled.div`
   background-image: url("/images/profile/appinfo.png");
   background-repeat: no-repeat;
   background-position: top right;
+  @media (max-width: 900px) {
+    padding: 15px;
+  }
   & .i_title {
     font-size: 26px;
     font-weight: 600;

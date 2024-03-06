@@ -9,6 +9,9 @@ const MyAppStyle = styled.div`
     & .app {
       align-items: stretch;
       margin-bottom: 30px;
+      @media (max-width: 900px) {
+        margin-bottom: 15px;
+      }
       & .app_info {
         border: 1px solid #e0e0e0;
         background-color: #fff;
@@ -18,6 +21,9 @@ const MyAppStyle = styled.div`
         & .footer_app {
           border-top: 2px dashed #235dff4d;
           padding: 30px;
+          @media (max-width: 900px) {
+            padding: 15px;
+          }
           & .count {
             font-size: 26px;
             font-weight: 400;
@@ -40,6 +46,9 @@ const MyAppStyle = styled.div`
         min-width: 290px;
         background: #d9d9d9;
         margin-left: 30px;
+        @media (max-width: 1200px) {
+          display: none;
+        }
       }
     }
   }
