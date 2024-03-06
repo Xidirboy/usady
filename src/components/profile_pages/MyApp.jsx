@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import ShowTitle from "../../sections/utilsSections/ShowTitle";
 import AppInfo from "../../sections/componentSections/AppInfo";
+import { Btn } from "../../styleComponents/GlobalStyle";
 const MyAppStyle = styled.div`
   & .apps {
     padding-top: 30px;
@@ -12,6 +13,14 @@ const MyAppStyle = styled.div`
         background-color: #fff;
         width: 100%;
         border-radius: 15.13px;
+        & .footer_app {
+          border-top: 2px dashed #235dff4d;
+          padding: 30px;
+          & .count {
+            & span {
+            }
+          }
+        }
       }
       & .app_v {
         width: 290px;
@@ -31,6 +40,14 @@ const MyApp = () => {
           <div className="ds_flex app">
             <div className="app_info">
               <AppInfo />
+              <div className="ds_flex footer_app">
+                <div className="count">
+                  Ответов: <span>56</span>
+                </div>
+                <div className="btn_target">
+                  <Btn>Посмотреть все предложения</Btn>
+                </div>
+              </div>
             </div>
             <div className="app_v"></div>
           </div>
