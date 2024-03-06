@@ -73,10 +73,22 @@ const AppInfoStyle = styled.div`
       line-height: 20px;
       letter-spacing: 0.2px;
       margin: 5px;
+      @media (max-width: 900px) {
+        font-size: 15px;
+        line-height: 12px;
+        letter-spacing: 0.12px;
+        padding: 10px;
+        border-radius: 6px;
+      }
       & svg {
         width: 25px;
         height: 25px;
         margin-right: 10px;
+        @media (max-width: 900px) {
+          width: 15px;
+          height: 15px;
+          margin-right: 5px;
+        }
       }
     }
   }
