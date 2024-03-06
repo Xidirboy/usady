@@ -5,6 +5,7 @@ import { userIcon } from "../../assets/authIcons";
 import { Btn } from "../../styleComponents/GlobalStyle";
 import {
   babyIcon,
+  cashIcon,
   dateIcon,
   footIcon,
   fromCIcon,
@@ -256,6 +257,7 @@ const Section3 = () => {
               name="full_name"
               value={sdata?.full_name}
               is_error={errors?.full_name}
+              icon={cashIcon}
               thin_label={true}
               onChange={(e) => {
                 setSdata({
