@@ -12,6 +12,7 @@ const MyAppStyle = styled.div`
       & .app_info {
         border: 1px solid #e0e0e0;
         background-color: #fff;
+        box-shadow: 0px 22.7px 60.5px 0px #c7ceda40;
         width: 100%;
         border-radius: 15.13px;
         & .footer_app {
