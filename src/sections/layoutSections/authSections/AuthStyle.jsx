@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 export const AuthStyle = styled.div`
+  & .set_password {
+    padding-top: 20px;
+  }
   & .auth_bottom_section {
     padding-top: 30px;
     margin-top: 30px;

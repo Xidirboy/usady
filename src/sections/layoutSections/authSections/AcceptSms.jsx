@@ -6,6 +6,7 @@ import { AuthStyle } from "./AuthStyle";
 import PinInputUi from "../../formSections/PinInputUi";
 import Axios from "../../../utils/httpClient";
 import { useDispatch } from "react-redux";
+import { setToken } from "../../../utils/tokenStorge";
 const AcceptSms = ({ setAction }) => {
   const dispatch = useDispatch();
   const [sdata, setSdata] = useState({});
@@ -20,9 +21,13 @@ const AcceptSms = ({ setAction }) => {
       err = {};
     if (tt) {
       Axios()
-        .post(`api/v1/auth/accept`, { name: "", sms_code: sms_code })
+        .post(`api/v1/auth/accept`, {
+          name: sessionStorage.getItem("name"),
+          sms_code: sms_code,
+        })
         .then((r) => {
           setStep(2);
+          setToken(r?.data?.access_token);
         })
         .catch((e) => {})
         .finally(() => {
@@ -37,6 +42,7 @@ const AcceptSms = ({ setAction }) => {
     <AuthStyle>
       <form onSubmit={onSubmit}>
         <PinInputUi
+          is_disabled={step > 1}
           value={sdata?.sms_code}
           onChange={(e) => {
             console.log(e);
@@ -47,7 +53,7 @@ const AcceptSms = ({ setAction }) => {
           }}
         />
         {step > 1 ? (
-          <>
+          <div className="set_password">
             <InputUi
               label="Введите новый пароль"
               placeholder="Пароль"
@@ -90,25 +96,27 @@ const AcceptSms = ({ setAction }) => {
                 });
               }}
             />
-            <Btn>Войти</Btn>
-          </>
+            <Btn>Отправка</Btn>
+          </div>
         ) : null}
       </form>
-      <div className="auth_bottom_section">
-        <div className="info_text">
-          +998932981798
-          <button className="auth_btn" onClick={() => setAction(2)}>
-            Поменять номер
-          </button>
-          <br />
-          Не получили СМС ?
-          <br />
-          Отправить новый код через <button className="auth_btn">
-            52
-          </button>{" "}
-          секунды.
+      {step === 1 ? (
+        <div className="auth_bottom_section">
+          <div className="info_text">
+            +{sessionStorage.getItem("name")}
+            <button className="auth_btn" onClick={() => setAction(2)}>
+              Поменять номер
+            </button>
+            <br />
+            Не получили СМС ?
+            <br />
+            Отправить новый код через <button className="auth_btn">
+              52
+            </button>{" "}
+            секунды.
+          </div>
         </div>
-      </div>
+      ) : null}
     </AuthStyle>
   );
 };

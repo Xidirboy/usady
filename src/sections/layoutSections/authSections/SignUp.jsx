@@ -23,6 +23,7 @@ const SignUp = ({ setAction }) => {
         .post(`api/v1/auth/register`, { name: sdata?.name })
         .then((r) => {
           setAction(3);
+          sessionStorage.setItem("name", sdata?.name);
         })
         .catch((e) => {})
         .finally(() => {

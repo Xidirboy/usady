@@ -18,11 +18,11 @@ const PinInputUiStyle = styled.div`
     }
   }
 `;
-const PinInputUi = ({ value, onChange }) => {
+const PinInputUi = ({ value, onChange, is_disabled }) => {
   return (
     <PinInputUiStyle>
       <HStack className="pin_row">
-        <PinInput value={value} onChange={onChange}>
+        <PinInput value={value} onChange={onChange} isDisabled={is_disabled}>
           <PinInputField />
           <PinInputField />
           <PinInputField />
