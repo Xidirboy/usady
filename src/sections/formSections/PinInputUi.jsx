@@ -2,7 +2,7 @@ import { HStack, PinInput, PinInputField } from "@chakra-ui/react";
 import React from "react";
 import styled from "styled-components";
 const PinInputUiStyle = styled.div`
-  padding-bottom: 20px;
+  /* padding-bottom: 20px; */
   & .pin_row {
     justify-content: space-between;
     & .chakra-pin-input {
