@@ -117,6 +117,13 @@ const HeaderStyle = styled.div`
 const Header = () => {
   const dispatch = useDispatch();
   const { user } = useSelector((s) => s);
+  const showUserName = () => {
+    if (user?.first_name || user?.last_name) {
+      return `${user?.first_name} ${user?.last_name}`;
+    } else {
+      return `+${user?.name}`;
+    }
+  };
   return (
     <HeaderStyle className="container_main">
       <div className="ds_flex navs">
@@ -164,7 +171,7 @@ const Header = () => {
                 </div>
                 <div className="user_name">
                   <div className="top_text">Good morning! 🌤️</div>
-                  <div className="name">Andrew Ainsley</div>
+                  <div className="name">{showUserName()}</div>
                 </div>
               </Link>
               <Link to="/notification" className="dc_flex user_notification">
