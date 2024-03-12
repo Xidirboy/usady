@@ -21,7 +21,9 @@ const SignUp = ({ setAction }) => {
     if (tt) {
       Axios()
         .post(`api/v1/auth/register`, { name: sdata?.name })
-        .then((r) => {})
+        .then((r) => {
+          setAction(3);
+        })
         .catch((e) => {})
         .finally(() => {
           dispatch({ type: "SET_LOADING", payload: false });
