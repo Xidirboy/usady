@@ -14,6 +14,34 @@ const AcceptSms = ({ setAction }) => {
   const [errors, setErrors] = useState({});
   const onSubmit = (e) => {
     e.preventDefault();
+    dispatch({ type: "SET_LOADING", payload: true });
+    let tt = true,
+      err = {};
+    if (!sdata?.password) {
+      tt = false;
+      err = { ...err, password: true };
+    }
+    if (!sdata?.password_confirm) {
+      tt = false;
+      err = { ...err, password_confirm: true };
+    } else {
+      if (sdata?.password_confirm !== sdata?.password) {
+        tt = false;
+        err = { ...err, password_confirm: true, password: true };
+      }
+    }
+    if (tt) {
+      Axios()
+        .post(`api/v1/auth/set-password`, sdata)
+        .then((r) => {})
+        .catch((e) => {})
+        .finally(() => {
+          dispatch({ type: "SET_LOADING", payload: false });
+        });
+    } else {
+      setErrors({ ...errors, ...err });
+      dispatch({ type: "SET_LOADING", payload: false });
+    }
   };
   const onCheckSmsCode = (sms_code) => {
     dispatch({ type: "SET_LOADING", payload: true });
@@ -80,9 +108,9 @@ const AcceptSms = ({ setAction }) => {
               placeholder="Пароль"
               type="password"
               icon={lockIcon}
-              name="password"
-              value={sdata?.password}
-              is_error={errors?.password}
+              name="password_confirm"
+              value={sdata?.password_confirm}
+              is_error={errors?.password_confirm}
               onChange={(e) => {
                 setSdata({
                   ...sdata,
