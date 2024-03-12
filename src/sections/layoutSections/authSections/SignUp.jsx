@@ -3,16 +3,32 @@ import InputUi from "../../formSections/InputUi";
 import { Btn } from "../../../styleComponents/GlobalStyle";
 import { lockIcon, phoneIcon, userIcon } from "../../../assets/authIcons";
 import { AuthStyle } from "./AuthStyle";
+import Axios from "../../../utils/httpClient";
 const SignUp = ({ setAction }) => {
   const [sdata, setSdata] = useState({});
   const [errors, setErrors] = useState({});
   const onSubmit = (e) => {
     e.preventDefault();
+    let tt = true,
+      err = {};
+    if (!sdata?.name) {
+      tt = false;
+      err = { ...err, name: true };
+    }
+    if (tt) {
+      Axios()
+        .post(`api/v1/auth/register`, { name: sdata?.name })
+        .then((r) => {})
+        .catch((e) => {})
+        .finally(() => {});
+    } else {
+      setErrors({ ...errors, ...err });
+    }
   };
   return (
     <AuthStyle>
       <form onSubmit={onSubmit}>
-        <InputUi
+        {/* <InputUi
           label="ФИО"
           placeholder="ФИО"
           icon={userIcon}
@@ -31,15 +47,15 @@ const SignUp = ({ setAction }) => {
               common: "",
             });
           }}
-        />
+        /> */}
         <InputUi
           label="Введите номер телефона"
           placeholder="+998 -- --- -- --"
           mask="+998 nn nnn nn nn"
           icon={phoneIcon}
-          name="phone"
-          value={sdata?.phone}
-          is_error={errors?.phone}
+          name="name"
+          value={sdata?.name}
+          is_error={errors?.name}
           onChange={(e) => {
             setSdata({
               ...sdata,
@@ -53,7 +69,7 @@ const SignUp = ({ setAction }) => {
             });
           }}
         />
-        <InputUi
+        {/* <InputUi
           label="Придумайте пароль"
           placeholder="Пароль"
           type="password"
@@ -73,7 +89,7 @@ const SignUp = ({ setAction }) => {
               common: "",
             });
           }}
-        />
+        /> */}
         <Btn>Регистирация </Btn>
       </form>
       <div className="auth_bottom_section">
