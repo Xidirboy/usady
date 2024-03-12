@@ -4,11 +4,14 @@ import { Btn } from "../../../styleComponents/GlobalStyle";
 import { lockIcon, phoneIcon, userIcon } from "../../../assets/authIcons";
 import { AuthStyle } from "./AuthStyle";
 import Axios from "../../../utils/httpClient";
+import { useDispatch } from "react-redux";
 const SignUp = ({ setAction }) => {
+  const dispatch = useDispatch();
   const [sdata, setSdata] = useState({});
   const [errors, setErrors] = useState({});
   const onSubmit = (e) => {
     e.preventDefault();
+    dispatch({ type: "SET_LOADING", payload: true });
     let tt = true,
       err = {};
     if (!sdata?.name) {
@@ -20,9 +23,12 @@ const SignUp = ({ setAction }) => {
         .post(`api/v1/auth/register`, { name: sdata?.name })
         .then((r) => {})
         .catch((e) => {})
-        .finally(() => {});
+        .finally(() => {
+          dispatch({ type: "SET_LOADING", payload: false });
+        });
     } else {
       setErrors({ ...errors, ...err });
+      dispatch({ type: "SET_LOADING", payload: false });
     }
   };
   return (
@@ -59,7 +65,9 @@ const SignUp = ({ setAction }) => {
           onChange={(e) => {
             setSdata({
               ...sdata,
-              [e?.target?.name]: e?.target?.value,
+              [e?.target?.name]: e?.target?.value
+                ?.replaceAll("+", "")
+                ?.replaceAll(" ", ""),
               common: "",
             });
             setErrors({
