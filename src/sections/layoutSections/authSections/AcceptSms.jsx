@@ -14,7 +14,16 @@ const AcceptSms = ({ setAction }) => {
   return (
     <AuthStyle>
       <form onSubmit={onSubmit}>
-        <PinInputUi />
+        <PinInputUi
+          value={sdata?.sms_code}
+          onChange={(e) => {
+            console.log(e);
+            setSdata({ ...sdata, sms_code: e });
+            if(e?.length===4){
+              
+            }
+          }}
+        />
         {step > 1 ? (
           <>
             <InputUi
