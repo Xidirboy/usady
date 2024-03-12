@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import InputUi from "../../formSections/InputUi";
 import { Btn } from "../../../styleComponents/GlobalStyle";
 import { lockIcon, phoneIcon, userIcon } from "../../../assets/authIcons";
@@ -12,6 +12,24 @@ const AcceptSms = ({ setAction }) => {
   const [sdata, setSdata] = useState({});
   const [step, setStep] = useState(1);
   const [errors, setErrors] = useState({});
+  const [resetSms, setResetSms] = useState(false);
+  useEffect(() => {
+    var tt = 120;
+    const timer = setInterval(() => {
+      tt -= 1;
+      const timer_target = window.document.getElementById("timer_target");
+      if (timer_target) {
+        timer_target.innerHTML = `${parseInt(tt / 60)}:${tt % 60}`;
+      }
+      if (tt === 0) {
+        clearInterval(timer);
+        setResetSms(true);
+      }
+    }, 1000);
+    return () => {
+      clearInterval(timer);
+    };
+  }, [resetSms]);
   const onSubmit = (e) => {
     e.preventDefault();
     dispatch({ type: "SET_LOADING", payload: true });
@@ -72,6 +90,7 @@ const AcceptSms = ({ setAction }) => {
       dispatch({ type: "SET_LOADING", payload: false });
     }
   };
+
   return (
     <AuthStyle>
       <form onSubmit={onSubmit}>
@@ -144,10 +163,17 @@ const AcceptSms = ({ setAction }) => {
             <br />
             Не получили СМС ?
             <br />
-            Отправить новый код через <button className="auth_btn">
-              52
-            </button>{" "}
-            секунды.
+            {resetSms ? (
+              <button className="auth_btn">Отправить смс код еще раз</button>
+            ) : (
+              <>
+                Отправить новый код через{" "}
+                <button className="auth_btn" id="timer_target">
+                  2:0
+                </button>{" "}
+                секунды.
+              </>
+            )}
           </div>
         </div>
       ) : null}

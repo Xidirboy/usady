@@ -29,4 +29,8 @@ export const AuthStyle = styled.div`
       text-decoration: underline;
     }
   }
+  & #timer_target {
+    width: 60px;
+    padding: 0;
+  }
 `;
