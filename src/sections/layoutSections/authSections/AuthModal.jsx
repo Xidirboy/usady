@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import SignUp from "./SignUp";
 import SignIn from "./SignIn";
 import AcceptSms from "./AcceptSms";
+import Forget from "./Forget";
 
 const AuthModal = () => {
   const { auth_modal } = useSelector((s) => s);
@@ -17,6 +18,8 @@ const AuthModal = () => {
             ? "Зарегистрироваться"
             : action === 3
             ? "Код с СМС"
+            : action === 4
+            ? "Забыл пароль"
             : "Войти"
         }
         isOpen={auth_modal}
@@ -28,6 +31,8 @@ const AuthModal = () => {
           <SignUp setAction={setAction} />
         ) : action === 3 ? (
           <AcceptSms setAction={setAction} />
+        ) : action === 4 ? (
+          <Forget setAction={setAction} />
         ) : (
           <SignIn setAction={setAction} />
         )}
