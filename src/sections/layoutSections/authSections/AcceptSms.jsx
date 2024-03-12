@@ -90,7 +90,31 @@ const AcceptSms = ({ setAction }) => {
       dispatch({ type: "SET_LOADING", payload: false });
     }
   };
-
+  const resendSms = (e) => {
+    e?.preventDefault();
+    dispatch({ type: "SET_LOADING", payload: true });
+    let tt = true,
+      err = {};
+    const phone = sessionStorage.getItem("name");
+    if (!phone) {
+      tt = false;
+      err = { ...err, name: true };
+    }
+    if (tt) {
+      Axios()
+        .post(`api/v1/auth/send-sms`, { name: phone })
+        .then((r) => {
+          setResetSms(false);
+        })
+        .catch((e) => {})
+        .finally(() => {
+          dispatch({ type: "SET_LOADING", payload: false });
+        });
+    } else {
+      setErrors({ ...errors, ...err });
+      dispatch({ type: "SET_LOADING", payload: false });
+    }
+  };
   return (
     <AuthStyle>
       <form onSubmit={onSubmit}>
@@ -164,7 +188,9 @@ const AcceptSms = ({ setAction }) => {
             Не получили СМС ?
             <br />
             {resetSms ? (
-              <button className="auth_btn">Отправить смс код еще раз</button>
+              <button onClick={resendSms} className="auth_btn">
+                Отправить смс код еще раз
+              </button>
             ) : (
               <>
                 Отправить новый код через{" "}
