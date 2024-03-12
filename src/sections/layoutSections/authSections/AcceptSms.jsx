@@ -15,13 +15,13 @@ const AcceptSms = ({ setAction }) => {
       <form onSubmit={onSubmit}>
         <PinInputUi />
         <InputUi
-          label="Введите номер телефона"
-          placeholder="+998 -- --- -- --"
-          mask="+998 nn nnn nn nn"
-          icon={phoneIcon}
-          name="phone"
-          value={sdata?.phone}
-          is_error={errors?.phone}
+          label="Введите новый пароль"
+          placeholder="Пароль"
+          type="password"
+          icon={lockIcon}
+          name="password"
+          value={sdata?.password}
+          is_error={errors?.password}
           onChange={(e) => {
             setSdata({
               ...sdata,
@@ -36,7 +36,7 @@ const AcceptSms = ({ setAction }) => {
           }}
         />
         <InputUi
-          label="Введите пароль"
+          label="Повторите пароль"
           placeholder="Пароль"
           type="password"
           icon={lockIcon}
