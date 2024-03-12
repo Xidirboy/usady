@@ -3,11 +3,39 @@ import InputUi from "../../formSections/InputUi";
 import { Btn } from "../../../styleComponents/GlobalStyle";
 import { lockIcon, phoneIcon, userIcon } from "../../../assets/authIcons";
 import { AuthStyle } from "./AuthStyle";
+import { useDispatch } from "react-redux";
 const SignIn = ({ setAction }) => {
+  const dispatch = useDispatch();
   const [sdata, setSdata] = useState({});
   const [errors, setErrors] = useState({});
   const onSubmit = (e) => {
     e.preventDefault();
+    dispatch({ type: "SET_LOADING", payload: true });
+    let tt = true,
+      err = {};
+    if (!sdata?.name) {
+      tt = false;
+      err = { ...err, name: true };
+    }
+    if (!sdata?.password) {
+      tt = false;
+      err = { ...err, password: true };
+    }
+    if (tt) {
+      Axios()
+        .post(`api/v1/auth/register`, sdata)
+        .then((r) => {
+          setAction(3);
+          sessionStorage.setItem("name", sdata?.name);
+        })
+        .catch((e) => {})
+        .finally(() => {
+          dispatch({ type: "SET_LOADING", payload: false });
+        });
+    } else {
+      setErrors({ ...errors, ...err });
+      dispatch({ type: "SET_LOADING", payload: false });
+    }
   };
   return (
     <AuthStyle>
@@ -17,9 +45,9 @@ const SignIn = ({ setAction }) => {
           placeholder="+998 -- --- -- --"
           mask="+998 nn nnn nn nn"
           icon={phoneIcon}
-          name="phone"
-          value={sdata?.phone}
-          is_error={errors?.phone}
+          name="name"
+          value={sdata?.name}
+          is_error={errors?.name}
           onChange={(e) => {
             setSdata({
               ...sdata,
