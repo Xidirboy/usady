@@ -6,7 +6,7 @@ import { AuthStyle } from "./AuthStyle";
 import PinInputUi from "../../formSections/PinInputUi";
 import Axios from "../../../utils/httpClient";
 import { useDispatch } from "react-redux";
-import { setToken } from "../../../utils/tokenStorge";
+import { removeToken, setToken } from "../../../utils/tokenStorge";
 const AcceptSms = ({ setAction }) => {
   const dispatch = useDispatch();
   const [sdata, setSdata] = useState({});
@@ -33,7 +33,10 @@ const AcceptSms = ({ setAction }) => {
     if (tt) {
       Axios()
         .post(`api/v1/auth/set-password`, sdata)
-        .then((r) => {})
+        .then((r) => {
+          removeToken();
+          setAction(1);
+        })
         .catch((e) => {})
         .finally(() => {
           dispatch({ type: "SET_LOADING", payload: false });
