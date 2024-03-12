@@ -33,4 +33,20 @@ export const AuthStyle = styled.div`
     width: 60px;
     padding: 0;
   }
+  & .remember_target {
+    margin-top: 0;
+    border: 0;
+  }
+  & .remember {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 29px;
+    letter-spacing: 0.2px;
+    & .chakra-checkbox__control {
+      border-color: #235dff;
+      width: 24px;
+      height: 24px;
+      border-radius: 5px;
+    }
+  }
 `;

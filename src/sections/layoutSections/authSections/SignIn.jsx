@@ -6,6 +6,7 @@ import { AuthStyle } from "./AuthStyle";
 import { useDispatch } from "react-redux";
 import Axios from "../../../utils/httpClient";
 import { setToken } from "../../../utils/tokenStorge";
+import { Checkbox } from "@chakra-ui/react";
 const SignIn = ({ setAction }) => {
   const dispatch = useDispatch();
   const [sdata, setSdata] = useState({});
@@ -89,6 +90,14 @@ const SignIn = ({ setAction }) => {
         />
         <Btn>Войти</Btn>
       </form>
+      <div className="auth_bottom_section remember_target">
+        <div className="info_text ds_flex ">
+          <Checkbox className="remember">Запомнить</Checkbox>
+          <button className="auth_btn" onClick={() => setAction(4)}>
+            Забыли пароль ?
+          </button>
+        </div>
+      </div>
       <div className="auth_bottom_section">
         <div className="info_text">
           Нет аккаунта ?
