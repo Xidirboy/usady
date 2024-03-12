@@ -2,7 +2,7 @@ import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import styled from "styled-components";
 import LanSelect from "./headerSections/LanSelect";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 const HeaderStyle = styled.div`
   & .navs {
     border-bottom: 1px solid #235dff;
@@ -116,6 +116,7 @@ const HeaderStyle = styled.div`
 `;
 const Header = () => {
   const dispatch = useDispatch();
+  const { user } = useSelector((s) => s);
   return (
     <HeaderStyle className="container_main">
       <div className="ds_flex navs">
@@ -155,31 +156,36 @@ const Header = () => {
           </NavLink>
         </div>
         <div className="dc_flex item_right">
-          <div className="dc_flex user">
-            <div
-              className="user_name"
-              onClick={() => {
-                dispatch({ type: "SET_AUTH_MODAL", payload: true });
-              }}
-            >
-              <div className="name">Войти</div>
+          {user?.id ? (
+            <>
+              <Link to="/profile" className="dc_flex user">
+                <div className="user_icon">
+                  <img src="/images/profile/user.svg" alt="tripusk user" />
+                </div>
+                <div className="user_name">
+                  <div className="top_text">Good morning! 🌤️</div>
+                  <div className="name">Andrew Ainsley</div>
+                </div>
+              </Link>
+              <Link to="/notification" className="dc_flex user_notification">
+                <img
+                  src="/images/profile/notificationHas.svg"
+                  alt="notification user"
+                />
+              </Link>
+            </>
+          ) : (
+            <div className="dc_flex user">
+              <div
+                className="user_name"
+                onClick={() => {
+                  dispatch({ type: "SET_AUTH_MODAL", payload: true });
+                }}
+              >
+                <div className="name">Войти</div>
+              </div>
             </div>
-          </div>
-          <Link to="/profile" className="dc_flex user">
-            <div className="user_icon">
-              <img src="/images/profile/user.svg" alt="tripusk user" />
-            </div>
-            <div className="user_name">
-              <div className="top_text">Good morning! 🌤️</div>
-              <div className="name">Andrew Ainsley</div>
-            </div>
-          </Link>
-          <Link to="/notification" className="dc_flex user_notification">
-            <img
-              src="/images/profile/notificationHas.svg"
-              alt="notification user"
-            />
-          </Link>
+          )}
         </div>
       </div>
     </HeaderStyle>
