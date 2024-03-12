@@ -4,12 +4,34 @@ import { Btn } from "../../../styleComponents/GlobalStyle";
 import { lockIcon, phoneIcon, userIcon } from "../../../assets/authIcons";
 import { AuthStyle } from "./AuthStyle";
 import PinInputUi from "../../formSections/PinInputUi";
+import Axios from "../../../utils/httpClient";
+import { useDispatch } from "react-redux";
 const AcceptSms = ({ setAction }) => {
+  const dispatch = useDispatch();
   const [sdata, setSdata] = useState({});
   const [step, setStep] = useState(1);
   const [errors, setErrors] = useState({});
   const onSubmit = (e) => {
     e.preventDefault();
+  };
+  const onCheckSmsCode = (sms_code) => {
+    dispatch({ type: "SET_LOADING", payload: true });
+    let tt = true,
+      err = {};
+    if (tt) {
+      Axios()
+        .post(`api/v1/auth/accept`, { name: "", sms_code: sms_code })
+        .then((r) => {
+          setStep(2);
+        })
+        .catch((e) => {})
+        .finally(() => {
+          dispatch({ type: "SET_LOADING", payload: false });
+        });
+    } else {
+      setErrors({ ...errors, ...err });
+      dispatch({ type: "SET_LOADING", payload: false });
+    }
   };
   return (
     <AuthStyle>
@@ -19,8 +41,8 @@ const AcceptSms = ({ setAction }) => {
           onChange={(e) => {
             console.log(e);
             setSdata({ ...sdata, sms_code: e });
-            if(e?.length===4){
-              
+            if (e?.length === 4) {
+              onCheckSmsCode(e);
             }
           }}
         />
