@@ -4,6 +4,8 @@ import { Btn } from "../../../styleComponents/GlobalStyle";
 import { lockIcon, phoneIcon, userIcon } from "../../../assets/authIcons";
 import { AuthStyle } from "./AuthStyle";
 import { useDispatch } from "react-redux";
+import Axios from "../../../utils/httpClient";
+import { setToken } from "../../../utils/tokenStorge";
 const SignIn = ({ setAction }) => {
   const dispatch = useDispatch();
   const [sdata, setSdata] = useState({});
@@ -23,10 +25,9 @@ const SignIn = ({ setAction }) => {
     }
     if (tt) {
       Axios()
-        .post(`api/v1/auth/register`, sdata)
+        .post(`api/v1/auth/login`, sdata)
         .then((r) => {
-          setAction(3);
-          sessionStorage.setItem("name", sdata?.name);
+          setToken(r?.data?.access_token);
         })
         .catch((e) => {})
         .finally(() => {
@@ -51,7 +52,9 @@ const SignIn = ({ setAction }) => {
           onChange={(e) => {
             setSdata({
               ...sdata,
-              [e?.target?.name]: e?.target?.value,
+              [e?.target?.name]: e?.target?.value
+                ?.replaceAll("+", "")
+                ?.replaceAll(" ", ""),
               common: "",
             });
             setErrors({

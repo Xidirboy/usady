@@ -8,7 +8,7 @@ import AcceptSms from "./AcceptSms";
 const AuthModal = () => {
   const { auth_modal } = useSelector((s) => s);
   const dispatch = useDispatch();
-  const [action, setAction] = useState(3);
+  const [action, setAction] = useState(1);
   return (
     <>
       <UiModal
