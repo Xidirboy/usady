@@ -34,8 +34,10 @@ const AcceptSms = ({ setAction }) => {
       Axios()
         .post(`api/v1/auth/set-password`, sdata)
         .then((r) => {
-          removeToken();
+          // removeToken();
           setAction(1);
+          dispatch({ type: "SET_USER", payload: r?.data?.user ?? {} });
+          dispatch({ type: "SET_AUTH_MODAL", payload: false });
         })
         .catch((e) => {})
         .finally(() => {
@@ -59,6 +61,7 @@ const AcceptSms = ({ setAction }) => {
         .then((r) => {
           setStep(2);
           setToken(r?.data?.access_token);
+          dispatch({ type: "SET_USER", payload: r?.data?.user ?? {} });
         })
         .catch((e) => {})
         .finally(() => {

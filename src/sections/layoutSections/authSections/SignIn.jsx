@@ -28,6 +28,8 @@ const SignIn = ({ setAction }) => {
         .post(`api/v1/auth/login`, sdata)
         .then((r) => {
           setToken(r?.data?.access_token);
+          dispatch({ type: "SET_USER", payload: r?.data?.user ?? {} });
+          dispatch({ type: "SET_AUTH_MODAL", payload: false });
         })
         .catch((e) => {})
         .finally(() => {
