@@ -2,6 +2,9 @@ import styled from "styled-components";
 import Bar from "../../sections/profileSections/Bar";
 import ShowTitle from "../../sections/utilsSections/ShowTitle";
 import { Link } from "react-router-dom";
+import InputUi from "../../sections/formSections/InputUi";
+import { useState } from "react";
+import { Btn } from "../../styleComponents/GlobalStyle";
 const ProfileStyle = styled.div`
   padding: 30px;
   box-shadow: 0px 22.7px 60.5px 0px #c7ceda40;
@@ -36,9 +39,18 @@ const ProfileStyle = styled.div`
         border: 1px solid #e0e0e0;
       }
     }
+    & .btns {
+      justify-content: right;
+      padding-bottom: 20px;
+      & button {
+        width: 220px;
+      }
+    }
   }
 `;
 const Profile = () => {
+  const [sdata, setSdata] = useState({});
+  const [errors, setErrors] = useState({});
   return (
     <>
       <ShowTitle title="Личный кабинет"></ShowTitle>
@@ -57,6 +69,86 @@ const Profile = () => {
                   alt="avatar"
                   src="/images/profile/user.svg"
                 />
+              </div>
+              <InputUi
+                label="Имя"
+                placeholder="Введите имя"
+                name="full_name"
+                value={sdata?.full_name}
+                is_error={errors?.full_name}
+                onChange={(e) => {
+                  setSdata({
+                    ...sdata,
+                    [e?.target?.name]: e?.target?.value,
+                    common: "",
+                  });
+                  setErrors({
+                    ...errors,
+                    [e?.target?.name]: false,
+                    common: "",
+                  });
+                }}
+              />
+              <InputUi
+                label="Фамилия"
+                placeholder="Введите фамилию"
+                name="full_name"
+                value={sdata?.full_name}
+                is_error={errors?.full_name}
+                onChange={(e) => {
+                  setSdata({
+                    ...sdata,
+                    [e?.target?.name]: e?.target?.value,
+                    common: "",
+                  });
+                  setErrors({
+                    ...errors,
+                    [e?.target?.name]: false,
+                    common: "",
+                  });
+                }}
+              />
+              <InputUi
+                label="Обо мне"
+                placeholder="Введите описание"
+                type={"textarea"}
+                name="full_name"
+                value={sdata?.full_name}
+                is_error={errors?.full_name}
+                onChange={(e) => {
+                  setSdata({
+                    ...sdata,
+                    [e?.target?.name]: e?.target?.value,
+                    common: "",
+                  });
+                  setErrors({
+                    ...errors,
+                    [e?.target?.name]: false,
+                    common: "",
+                  });
+                }}
+              />
+              <InputUi
+                label="Электронная почта"
+                placeholder="sanjar.it@mail.ru"
+                name="full_name"
+                value={sdata?.full_name}
+                is_error={errors?.full_name}
+                onChange={(e) => {
+                  setSdata({
+                    ...sdata,
+                    [e?.target?.name]: e?.target?.value,
+                    common: "",
+                  });
+                  setErrors({
+                    ...errors,
+                    [e?.target?.name]: false,
+                    common: "",
+                  });
+                }}
+              />
+              <div className="dc_flex btns">
+                <Btn>Сохранить</Btn>
               </div>
             </form>
           </div>
