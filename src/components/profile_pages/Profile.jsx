@@ -73,9 +73,9 @@ const Profile = () => {
               <InputUi
                 label="Имя"
                 placeholder="Введите имя"
-                name="full_name"
-                value={sdata?.full_name}
-                is_error={errors?.full_name}
+                name="first_name"
+                value={sdata?.first_name}
+                is_error={errors?.first_name}
                 onChange={(e) => {
                   setSdata({
                     ...sdata,
@@ -92,9 +92,9 @@ const Profile = () => {
               <InputUi
                 label="Фамилия"
                 placeholder="Введите фамилию"
-                name="full_name"
-                value={sdata?.full_name}
-                is_error={errors?.full_name}
+                name="last_name"
+                value={sdata?.last_name}
+                is_error={errors?.last_name}
                 onChange={(e) => {
                   setSdata({
                     ...sdata,
@@ -112,9 +112,9 @@ const Profile = () => {
                 label="Обо мне"
                 placeholder="Введите описание"
                 type={"textarea"}
-                name="full_name"
-                value={sdata?.full_name}
-                is_error={errors?.full_name}
+                name="about"
+                value={sdata?.about}
+                is_error={errors?.about}
                 onChange={(e) => {
                   setSdata({
                     ...sdata,
@@ -131,9 +131,9 @@ const Profile = () => {
               <InputUi
                 label="Электронная почта"
                 placeholder="sanjar.it@mail.ru"
-                name="full_name"
-                value={sdata?.full_name}
-                is_error={errors?.full_name}
+                name="email"
+                value={sdata?.email}
+                is_error={errors?.email}
                 onChange={(e) => {
                   setSdata({
                     ...sdata,
