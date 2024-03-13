@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import InputUi from "../../sections/formSections/InputUi";
 import { useState } from "react";
 import { Btn } from "../../styleComponents/GlobalStyle";
+import { useDispatch } from "react-redux";
+import Axios from "../../utils/httpClient";
 const ProfileStyle = styled.div`
   padding: 30px;
   box-shadow: 0px 22.7px 60.5px 0px #c7ceda40;
@@ -49,8 +51,43 @@ const ProfileStyle = styled.div`
   }
 `;
 const Profile = () => {
+  const dispatch = useDispatch();
   const [sdata, setSdata] = useState({});
   const [errors, setErrors] = useState({});
+  const onSubmit = (e) => {
+    e.preventDefault();
+    dispatch({ type: "SET_LOADING", payload: true });
+    let tt = true,
+      err = {};
+    if (!sdata?.first_name) {
+      tt = false;
+      err = { ...err, first_name: true };
+    }
+    if (!sdata?.last_name) {
+      tt = false;
+      err = { ...err, last_name: true };
+    }
+    if (!sdata?.about) {
+      tt = false;
+      err = { ...err, about: true };
+    }
+    if (!sdata?.email) {
+      tt = false;
+      err = { ...err, email: true };
+    }
+    if (tt) {
+      Axios()
+        .post(`api/v1/auth/profile`, sdata)
+        .then((r) => {})
+        .catch((e) => {})
+        .finally(() => {
+          dispatch({ type: "SET_LOADING", payload: false });
+        });
+    } else {
+      setErrors({ ...errors, ...err });
+      dispatch({ type: "SET_LOADING", payload: false });
+    }
+  };
   return (
     <>
       <ShowTitle title="Личный кабинет"></ShowTitle>
@@ -62,7 +99,7 @@ const Profile = () => {
               Здесь настраивается учетная запись WEEEK. Профиль для рабочего
               пространства меняется <Link to="#">в разделе «Пользователи»</Link>
             </div>
-            <form>
+            <form onSubmit={onSubmit}>
               <div className="avatar">
                 <img
                   className="a_img"
@@ -148,7 +185,7 @@ const Profile = () => {
                 }}
               />
               <div className="dc_flex btns">
-                <Btn>Сохранить</Btn>
+                <Btn type="submit">Сохранить</Btn>
               </div>
             </form>
           </div>
