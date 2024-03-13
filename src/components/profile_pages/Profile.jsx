@@ -78,7 +78,9 @@ const Profile = () => {
     if (tt) {
       Axios()
         .post(`api/v1/auth/profile`, sdata)
-        .then((r) => {})
+        .then((r) => {
+          dispatch({ type: "SET_USER", payload: r?.data?.user ?? {} });
+        })
         .catch((e) => {})
         .finally(() => {
           dispatch({ type: "SET_LOADING", payload: false });
