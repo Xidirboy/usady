@@ -3,9 +3,9 @@ import Bar from "../../sections/profileSections/Bar";
 import ShowTitle from "../../sections/utilsSections/ShowTitle";
 import { Link } from "react-router-dom";
 import InputUi from "../../sections/formSections/InputUi";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Btn } from "../../styleComponents/GlobalStyle";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Axios from "../../utils/httpClient";
 const ProfileStyle = styled.div`
   padding: 30px;
@@ -52,32 +52,45 @@ const ProfileStyle = styled.div`
 `;
 const Profile = () => {
   const dispatch = useDispatch();
+  const { user } = useSelector((s) => s);
+  useEffect(() => {
+    setSdata(user);
+  }, [user]);
   const [sdata, setSdata] = useState({});
   const [errors, setErrors] = useState({});
   const onSubmit = (e) => {
     e.preventDefault();
     dispatch({ type: "SET_LOADING", payload: true });
     let tt = true,
-      err = {};
+      err = {},
+      formData = new FormData();
     if (!sdata?.first_name) {
       tt = false;
       err = { ...err, first_name: true };
+    } else {
+      formData.append("first_name", sdata?.first_name);
     }
     if (!sdata?.last_name) {
       tt = false;
       err = { ...err, last_name: true };
+    } else {
+      formData.append("last_name", sdata?.last_name);
     }
     if (!sdata?.about) {
       tt = false;
       err = { ...err, about: true };
+    } else {
+      formData.append("about", sdata?.about);
     }
     if (!sdata?.email) {
       tt = false;
       err = { ...err, email: true };
+    } else {
+      formData.append("email", sdata?.email);
     }
     if (tt) {
       Axios()
-        .post(`api/v1/auth/profile`, sdata)
+        .post(`api/v1/auth/profile`, formData)
         .then((r) => {
           dispatch({ type: "SET_USER", payload: r?.data?.user ?? {} });
         })
