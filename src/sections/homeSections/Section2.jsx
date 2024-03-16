@@ -12,6 +12,9 @@ const Section2Style = styled.div`
     letter-spacing: 0em;
     text-align: center;
     color: #fff;
+    @media (max-width: 900px) {
+      display: none;
+    }
   }
   & .Section2Slider {
     & .item {
@@ -19,6 +22,14 @@ const Section2Style = styled.div`
       padding: 30px;
       border-radius: 20px;
       background-color: #fff;
+      @media (max-width: 900px) {
+        width: 180px;
+        padding: 15px;
+        border-radius: 10px;
+      }
+      & > img {
+        width: 75px;
+      }
       & .item_title {
         font-size: 20px;
         font-weight: 700;
@@ -26,6 +37,11 @@ const Section2Style = styled.div`
         letter-spacing: 0em;
         text-align: left;
         padding: 16px 0;
+        @media (max-width: 900px) {
+          font-size: 10px;
+          line-height: 13px;
+          padding: 8px 0;
+        }
       }
       & .item_text {
         font-size: 16px;
@@ -33,6 +49,10 @@ const Section2Style = styled.div`
         line-height: 22px;
         letter-spacing: 0em;
         text-align: left;
+        @media (max-width: 900px) {
+          font-size: 8px;
+          line-height: 11px;
+        }
       }
     }
   }
