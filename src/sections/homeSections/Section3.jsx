@@ -21,7 +21,7 @@ const Section3Style = styled.div`
   border-radius: 16px;
   padding: 30px 0;
   @media (max-width: 900px) {
-    padding: 15px 0;
+    padding: 0;
   }
   & .form_target {
     background-color: #fff;
