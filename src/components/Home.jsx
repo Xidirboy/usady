@@ -15,7 +15,7 @@ const HomeStyle = styled.div`
     #1e2344 109.5%
   );
   @media (max-width: 900px) {
-    border-radius: 20px 20px 0 0;
+    border-radius: 16px 16px 0 0;
   }
   & .section_1 {
     min-height: 600px;
