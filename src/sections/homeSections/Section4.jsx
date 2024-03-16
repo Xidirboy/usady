@@ -6,6 +6,7 @@ const Section4Style = styled.div`
   padding: 30px 0 200px 0;
   @media (max-width: 900px) {
     padding: 15px 0 50px 0;
+    max-width: 600px;
   }
   margin: auto;
   & .title2 {
@@ -44,19 +45,34 @@ const Section4Style = styled.div`
     & .item {
       width: 280px;
       padding: 0px;
+      @media (max-width: 900px) {
+        width: 120px;
+      }
       & .s1 {
         height: 140px;
         justify-content: left;
+        @media (max-width: 900px) {
+          height: 60px;
+        }
         & img {
           width: 140px;
+          @media (max-width: 900px) {
+            width: 60px;
+          }
         }
       }
       & .s2 {
         height: 140px;
         justify-content: right;
         margin-top: -10px;
+        @media (max-width: 900px) {
+          height: 60px;
+        }
         & img {
           width: 140px;
+          @media (max-width: 900px) {
+            width: 60px;
+          }
         }
       }
     }
