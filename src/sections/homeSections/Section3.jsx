@@ -20,6 +20,9 @@ const Section3Style = styled.div`
   background-position: center;
   border-radius: 16px;
   padding: 30px 0;
+  @media (max-width: 900px) {
+    padding: 15px 0;
+  }
   & .form_target {
     background-color: #fff;
     max-width: 729px;
@@ -28,13 +31,24 @@ const Section3Style = styled.div`
     box-shadow: 0px 5.4px 5.47px 0px #235dff40;
     border: 1.34px solid #eeeeee;
     margin: auto;
+    @media (max-width: 900px) {
+      border-radius: 10px;
+      padding: 15px 5px;
+    }
     & .title_s3 {
       font-size: 32px;
       font-weight: 600;
       line-height: 51px;
       letter-spacing: 0.27px;
       text-align: center;
+      color: #1e2344;
       padding-bottom: 30px;
+      @media (max-width: 900px) {
+        font-size: 21px;
+        line-height: 34px;
+        letter-spacing: 0.15px;
+        padding-bottom: 15px;
+      }
     }
     & .app_form {
       display: flex;
