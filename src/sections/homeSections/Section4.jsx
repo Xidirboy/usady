@@ -4,6 +4,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 const Section4Style = styled.div`
   max-width: 1400px;
   padding: 30px 0 200px 0;
+  @media (max-width: 900px) {
+    padding: 15px 0 50px 0;
+  }
   margin: auto;
   & .title2 {
     font-size: 56px;
@@ -15,6 +18,11 @@ const Section4Style = styled.div`
     max-width: 700px;
     margin: auto;
     padding-bottom: 30px;
+    @media (max-width: 900px) {
+      font-size: 24px;
+      line-height: 25px;
+      padding-bottom: 10px;
+    }
   }
   & .text2 {
     font-size: 16px;
@@ -26,6 +34,11 @@ const Section4Style = styled.div`
     max-width: 670px;
     margin: auto;
     padding-bottom: 50px;
+    @media (max-width: 900px) {
+      padding-bottom: 20px;
+      font-size: 12px;
+      line-height: 15px;
+    }
   }
   & .Section4Slider {
     & .item {

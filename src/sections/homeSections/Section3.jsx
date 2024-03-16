@@ -22,6 +22,7 @@ const Section3Style = styled.div`
   padding: 30px 0;
   @media (max-width: 900px) {
     padding: 0;
+    margin-top: 15px;
   }
   & .form_target {
     background-color: #fff;
