@@ -5,6 +5,10 @@ const Section2Style = styled.div`
   max-width: 1142px;
   padding: 30px 0;
   margin: auto;
+  @media (max-width: 900px) {
+    max-width: 575px;
+    padding: 0;
+  }
   & .title2 {
     font-size: 40px;
     font-weight: 600;
@@ -22,13 +26,15 @@ const Section2Style = styled.div`
       padding: 30px;
       border-radius: 20px;
       background-color: #fff;
+      margin-right: 20px;
       @media (max-width: 900px) {
         width: 180px;
         padding: 15px;
         border-radius: 10px;
-      }
-      & > img {
-        width: 75px;
+        margin-right: 10px;
+        & > img {
+          width: 75px;
+        }
       }
       & .item_title {
         font-size: 20px;
@@ -63,7 +69,7 @@ const Section2 = () => {
       <div className="title2">Как это работает ?</div>
       <Swiper
         slidesPerView={"auto"}
-        spaceBetween={20}
+        spaceBetween={0}
         pagination={{
           clickable: true,
         }}
