@@ -58,6 +58,24 @@ const AppViewStyle = styled.div`
             }
           }
         }
+        & .desc_t {
+          padding: 0 30px 30px 30px;
+          & .desc_title {
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 34.4px;
+            letter-spacing: -0.5px;
+            text-align: left;
+            padding-bottom: 10px;
+          }
+          & .desc_text {
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 32.05px;
+            letter-spacing: 0.26px;
+            text-align: left;
+          }
+        }
       }
       & .app_v {
         width: 290px;
