@@ -102,6 +102,21 @@ const AppViewStyle = styled.div`
       }
     }
   }
+  & .offers {
+    & .o_title {
+      font-size: 32px;
+      font-weight: 600;
+      line-height: 51.2px;
+      letter-spacing: 0.27px;
+      text-align: left;
+      padding-bottom: 30px;
+      @media (max-width: 900px) {
+        padding-bottom: 15px;
+        font-size: 20px;
+        line-height: 32px;
+      }
+    }
+  }
 `;
 const AppView = () => {
   return (
@@ -134,6 +149,9 @@ const AppView = () => {
             </div>
             <div className="app_v"></div>
           </div>
+        </div>
+        <div className="offers">
+          <div className="o_title">Предложение от Турагентов</div>
         </div>
       </div>
     </AppViewStyle>
