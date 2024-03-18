@@ -3,13 +3,14 @@ import ShowTitle from "../../sections/utilsSections/ShowTitle";
 import AppInfo from "../../sections/componentSections/AppInfo";
 import { Btn } from "../../styleComponents/GlobalStyle";
 import styled from "styled-components";
+import OfferInfo from "../../sections/componentSections/OfferInfo";
 const AppViewStyle = styled.div`
   & .apps {
     padding-top: 30px;
-    padding-bottom: 50px;
+    padding-bottom: 30px;
     @media (max-width: 900px) {
       padding-top: 20px;
-      padding-bottom: 30px;
+      padding-bottom: 20px;
     }
     & .app {
       align-items: stretch;
@@ -103,6 +104,10 @@ const AppViewStyle = styled.div`
     }
   }
   & .offers {
+    padding-right: 320px;
+    @media (max-width: 900px) {
+      padding-right: 0;
+    }
     & .o_title {
       font-size: 32px;
       font-weight: 600;
@@ -152,6 +157,7 @@ const AppView = () => {
         </div>
         <div className="offers">
           <div className="o_title">Предложение от Турагентов</div>
+          <OfferInfo />
         </div>
       </div>
     </AppViewStyle>
