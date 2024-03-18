@@ -1,6 +1,7 @@
 import React, { Suspense, lazy } from "react";
 import { Outlet, Route, Routes } from "react-router-dom";
 import Layout from "../sections/layoutSections/Layout";
+import AppView from "../components/profile_pages/AppView";
 
 const Home = lazy(() => import("../components/Home"));
 const MyApp = lazy(() => import("../components/profile_pages/MyApp"));
@@ -39,6 +40,14 @@ const Routers = () => {
             element={
               <Suspense>
                 <MyApp />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/my-apps/:id"
+            element={
+              <Suspense>
+                <AppView />
               </Suspense>
             }
           />
