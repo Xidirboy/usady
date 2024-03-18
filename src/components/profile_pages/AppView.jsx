@@ -60,6 +60,9 @@ const AppViewStyle = styled.div`
         }
         & .desc_t {
           padding: 0 30px 30px 30px;
+          @media (max-width: 900px) {
+            padding: 0 15px 15px 15px;
+          }
           & .desc_title {
             font-size: 24px;
             font-weight: 500;
@@ -67,6 +70,12 @@ const AppViewStyle = styled.div`
             letter-spacing: -0.5px;
             text-align: left;
             padding-bottom: 10px;
+            @media (max-width: 900px) {
+              font-size: 16px;
+              line-height: 17px;
+              letter-spacing: -0.25px;
+              padding-bottom: 5px;
+            }
           }
           & .desc_text {
             font-size: 20px;
@@ -74,6 +83,11 @@ const AppViewStyle = styled.div`
             line-height: 32.05px;
             letter-spacing: 0.26px;
             text-align: left;
+            @media (max-width: 900px) {
+              font-size: 12px;
+              line-height: 16px;
+              letter-spacing: -0.125px;
+            }
           }
         }
       }
