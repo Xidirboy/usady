@@ -91,6 +91,14 @@ const AppView = () => {
                   </Btn>
                 </div>
               </div> */}
+              <div className="desc_t">
+                <div className="desc_title">Описание</div>
+                <div className="desc_text">
+                  Описание описание описание Описание описание описание Описание
+                  описание описание Описание описание описание Описание описание
+                  описание Описание описание описание
+                </div>
+              </div>
             </div>
             <div className="app_v"></div>
           </div>
