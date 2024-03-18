@@ -6,6 +6,8 @@ import {
   starIcon,
   usersIcon,
 } from "../../assets/homeS3Icon";
+import { Link } from "react-router-dom";
+import { Btn } from "../../styleComponents/GlobalStyle";
 const OfferInfoStyle = styled.div`
   border: 1px solid #e0e0e0;
   background-color: #fff;
@@ -98,6 +100,20 @@ const OfferInfoStyle = styled.div`
 const OfferInfo = () => {
   return (
     <OfferInfoStyle>
+      <div className="ds_flex company">
+        <div className="dc_flex comp">
+          <img src="/images/profile/com_logo.png" alt="com_logo" />
+          <div className="com_name">
+            <div className="name">Best Travel</div>
+            <div className="dc_flex star">4 {starIcon}</div>
+          </div>
+        </div>
+        <div className="links">
+          <Link to="#">
+            <Btn>Написать</Btn>
+          </Link>
+        </div>
+      </div>
       <div className="i_title">Заявка № 1233</div>
       <div className="ds_flex route">
         <span>Узбекистан, ташкент</span>
@@ -106,12 +122,6 @@ const OfferInfo = () => {
       </div>
       <div className=" ds_flex items">
         <div className="dc_flex item star">{starIcon}3-5</div>
-        <div className="dc_flex item">{usersIcon}2 взрослых</div>
-        <div className="dc_flex item">{cashIcon}15 000 000 сумм</div>
-        <div className="dc_flex item">{usersIcon}2 взрослых</div>
-        <div className="dc_flex item">{cashIcon}15 000 000 сумм</div>
-        <div className="dc_flex item">{usersIcon}2 взрослых</div>
-        <div className="dc_flex item">{cashIcon}15 000 000 сумм</div>
         <div className="dc_flex item">{usersIcon}2 взрослых</div>
         <div className="dc_flex item">{cashIcon}15 000 000 сумм</div>
       </div>
