@@ -16,6 +16,7 @@ import {
 } from "../../assets/homeS3Icon";
 import Axios from "../../utils/httpClient";
 import { useDispatch } from "react-redux";
+import { useToast } from "@chakra-ui/react";
 const Section3Style = styled.div`
   background-image: url("/images/home/s31.png");
   background-size: cover;
@@ -69,6 +70,7 @@ const Section3Style = styled.div`
 `;
 const Section3 = () => {
   const dispatch = useDispatch();
+  const toast = useToast();
   const [sdata, setSdata] = useState({});
   const [errors, setErrors] = useState({});
   const [options, setOptions] = useState({});
@@ -123,7 +125,16 @@ const Section3 = () => {
           day: 2,
           children_count: sdata?.children_count ? sdata?.children_count : 0,
         })
-        .then((r) => {})
+        .then((r) => {
+          toast({
+            title: "Ваша заявка отправлена.",
+            description:
+              "В ближайшее время вы получите предложения, соответствующие вашему заявлению.",
+            status: "success",
+            duration: 9000,
+            isClosable: true,
+          });
+        })
         .catch((e) => {})
         .finally(() => {
           dispatch({ type: "SET_LOADING", payload: false });
