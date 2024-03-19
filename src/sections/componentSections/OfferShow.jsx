@@ -121,6 +121,9 @@ const OfferShowStyle = styled.div`
       }
     }
     & .offer_price {
+      & button {
+        padding: 10px 50px;
+      }
     }
   }
 `;
