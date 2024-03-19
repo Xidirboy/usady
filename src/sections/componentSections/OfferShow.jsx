@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { dateIcon, planIcon, usersIcon } from "../../assets/homeS3Icon";
+import { Btn } from "../../styleComponents/GlobalStyle";
+import { Link } from "react-router-dom";
 const OfferShowStyle = styled.div`
   padding: 30px;
   border-top: 2px dashed #235dff4d;
@@ -82,8 +84,7 @@ const OfferShowStyle = styled.div`
       }
     }
   }
-  & .atributes{
-
+  & .atributes {
   }
 `;
 const OfferShow = () => {
@@ -101,8 +102,17 @@ const OfferShow = () => {
         </div>
       </div>
       <div className="ds_flex atributes">
-        <div className="params"></div>
-        <div className="dc_flex"></div>
+        <div className="params">
+          <div className="dc_flex param">
+            <div className="label">Отель:</div>
+            <div className="value">
+              Sultan Hamit 3* <Link>посмотреть</Link> <b>отель в</b> Booking
+            </div>
+          </div>
+        </div>
+        <div className="dc_flex">
+          <Btn>1 560 $</Btn>
+        </div>
       </div>
     </OfferShowStyle>
   );
