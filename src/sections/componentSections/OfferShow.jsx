@@ -1,6 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import { dateIcon, planIcon, usersIcon } from "../../assets/homeS3Icon";
+import {
+  dateIcon,
+  hotelIcon,
+  planIcon,
+  usersIcon,
+} from "../../assets/homeS3Icon";
 import { Btn } from "../../styleComponents/GlobalStyle";
 import { Link } from "react-router-dom";
 const OfferShowStyle = styled.div`
@@ -85,6 +90,35 @@ const OfferShowStyle = styled.div`
     }
   }
   & .atributes {
+    & .params {
+      & .param {
+        padding: 5px 0;
+        & .label {
+          font-size: 20px;
+          font-weight: 300;
+          line-height: 32px;
+          text-align: left;
+          margin-right: 10px;
+          & svg {
+            margin-right: 10px;
+          }
+        }
+        & .value {
+          font-size: 24px;
+          font-weight: 600;
+          line-height: 38.4px;
+          text-align: left;
+          & a {
+            color: #235dff !important;
+            text-decoration: underline !important;
+            opacity: 0.9;
+            &:hover {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
   }
 `;
 const OfferShow = () => {
@@ -104,7 +138,19 @@ const OfferShow = () => {
       <div className="ds_flex atributes">
         <div className="params">
           <div className="dc_flex param">
-            <div className="label">Отель:</div>
+            <div className="ds_flex label">{hotelIcon} Отель:</div>
+            <div className="value">
+              Sultan Hamit 3* <Link>посмотреть</Link> <b>отель в</b> Booking
+            </div>
+          </div>
+          <div className="dc_flex param">
+            <div className="ds_flex label">{hotelIcon} Отель:</div>
+            <div className="value">
+              Sultan Hamit 3* <Link>посмотреть</Link> <b>отель в</b> Booking
+            </div>
+          </div>
+          <div className="dc_flex param">
+            <div className="ds_flex label">{hotelIcon} Отель:</div>
             <div className="value">
               Sultan Hamit 3* <Link>посмотреть</Link> <b>отель в</b> Booking
             </div>
