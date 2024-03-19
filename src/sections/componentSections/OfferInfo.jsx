@@ -21,6 +21,36 @@ const OfferInfoStyle = styled.div`
     padding: 15px;
     margin-bottom: 15px;
   }
+  & .company {
+    & .comp {
+      & .comp_logo {
+        width: 100px;
+        height: 100px;
+      }
+      & .com_name {
+        padding-left: 20px;
+        & .name {
+          font-size: 26px;
+          font-weight: 600;
+          line-height: 41.6px;
+          text-align: left;
+        }
+        & .star {
+          font-size: 26px;
+          font-weight: 600;
+          line-height: 41.6px;
+          text-align: left;
+          justify-content: left;
+        }
+      }
+    }
+    & .links {
+      & button {
+        background: #46bb92;
+        padding: 10px 50px;
+      }
+    }
+  }
   & .i_title {
     font-size: 26px;
     font-weight: 600;
@@ -102,10 +132,14 @@ const OfferInfo = () => {
     <OfferInfoStyle>
       <div className="ds_flex company">
         <div className="dc_flex comp">
-          <img src="/images/profile/com_logo.png" alt="com_logo" />
+          <img
+            className="comp_logo"
+            src="/images/profile/com_logo.png"
+            alt="com_logo"
+          />
           <div className="com_name">
             <div className="name">Best Travel</div>
-            <div className="dc_flex star">4 {starIcon}</div>
+            <div className="ds_flex star">4 {starIcon}</div>
           </div>
         </div>
         <div className="links">

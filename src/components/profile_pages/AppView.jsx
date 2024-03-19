@@ -108,7 +108,7 @@ const AppViewStyle = styled.div`
   }
   & .offers {
     padding-right: 320px;
-    @media (max-width: 900px) {
+    @media (max-width: 1200px) {
       padding-right: 0;
     }
     & .o_title {
