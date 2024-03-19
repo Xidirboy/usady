@@ -7,6 +7,7 @@ import {
   homeIcon,
   turIcon,
 } from "../../../assets/headIcons";
+import { useDispatch, useSelector } from "react-redux";
 const MobileTabStyle = styled.div`
   display: none;
   height: 60px;
@@ -50,6 +51,8 @@ const MobileTabStyle = styled.div`
   }
 `;
 const MobileTab = () => {
+  const dispatch = useDispatch();
+  const { user } = useSelector((s) => s);
   return (
     <MobileTabStyle className="ds_flex">
       <NavLink className="link" to="/">
@@ -64,10 +67,22 @@ const MobileTab = () => {
         <div className="icon">{turIcon}</div>
         <div className="title">Горящие туры</div>
       </NavLink> */}
-      <NavLink className="link" to="/profile">
-        <div className="icon">{accountIcon}</div>
-        <div className="title">Аккаунт</div>
-      </NavLink>
+      {user?.id ? (
+        <NavLink className="link" to="/profile">
+          <div className="icon">{accountIcon}</div>
+          <div className="title">Аккаунт</div>
+        </NavLink>
+      ) : (
+        <div
+          className="link"
+          onClick={() => {
+            dispatch({ type: "SET_AUTH_MODAL", payload: true });
+          }}
+        >
+          <div className="icon">{accountIcon}</div>
+          <div className="title">Войти</div>
+        </div>
+      )}
     </MobileTabStyle>
   );
 };
