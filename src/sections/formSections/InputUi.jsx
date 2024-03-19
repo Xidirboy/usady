@@ -87,6 +87,7 @@ const InputUi = ({
   onChange = () => {},
   is_error = false,
   thin_label = false,
+  options = [],
 }) => {
   const [showPass, setShowPass] = useState(false);
   return (
@@ -156,9 +157,11 @@ const InputUi = ({
               focusBorderColor="#235dff"
               style={icon ? { paddingLeft: 40 } : {}}
             >
-              <option value="option1">Option 1</option>
-              <option value="option2">Option 2</option>
-              <option value="option3">Option 3</option>
+              {options.map((o, io) => (
+                <option key={io} value={o?.value}>
+                  {o?.label}
+                </option>
+              ))}
             </Select>
           ) : (
             <Input

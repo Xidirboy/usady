@@ -69,6 +69,7 @@ const Section3Style = styled.div`
 const Section3 = () => {
   const [sdata, setSdata] = useState({});
   const [errors, setErrors] = useState({});
+  const [options, setOptions] = useState({});
   useEffect(() => {
     getOptions();
   }, []);
@@ -78,7 +79,9 @@ const Section3 = () => {
   const getOptions = () => {
     Axios()
       .get("api/v1/application/options")
-      .then((r) => {})
+      .then((r) => {
+        setOptions(r?.data?.data ?? {});
+      })
       .catch((e) => {})
       .finally(() => {});
   };
@@ -109,6 +112,10 @@ const Section3 = () => {
                   common: "",
                 });
               }}
+              options={options?.countries?.map((o) => ({
+                value: o?.id,
+                label: o?.name_translate || o?.id,
+              }))}
             />
           </div>
           <div className="fi50">
@@ -133,6 +140,10 @@ const Section3 = () => {
                   common: "",
                 });
               }}
+              options={options?.countries?.map((o) => ({
+                value: o?.id,
+                label: o?.name_translate || o?.id,
+              }))}
             />
           </div>
           <div className="fi50">
@@ -226,6 +237,10 @@ const Section3 = () => {
                   common: "",
                 });
               }}
+              options={options?.aircraft_classes?.map((o) => ({
+                value: o?.id,
+                label: o?.name_translate || o?.id,
+              }))}
             />
           </div>
           <div className="fi50">
@@ -250,6 +265,10 @@ const Section3 = () => {
                   common: "",
                 });
               }}
+              options={options?.hotel_ratings?.map((o) => ({
+                value: o?.id,
+                label: o?.name || o?.id,
+              }))}
             />
           </div>
           <div className="fi50">
@@ -274,6 +293,10 @@ const Section3 = () => {
                   common: "",
                 });
               }}
+              options={options?.type_nutrition?.map((o) => ({
+                value: o?.id,
+                label: o?.name_translate || o?.id,
+              }))}
             />
           </div>
           <div className="fi100">
