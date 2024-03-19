@@ -90,9 +90,10 @@ const OfferShowStyle = styled.div`
     }
   }
   & .atributes {
+    align-items: flex-end;
     & .params {
       & .param {
-        padding: 5px 0;
+        padding-top: 10px;
         & .label {
           font-size: 20px;
           font-weight: 300;
@@ -119,6 +120,8 @@ const OfferShowStyle = styled.div`
         }
       }
     }
+    & .offer_price {
+    }
   }
 `;
 const OfferShow = () => {
@@ -139,24 +142,22 @@ const OfferShow = () => {
         <div className="params">
           <div className="dc_flex param">
             <div className="ds_flex label">{hotelIcon} Отель:</div>
-            <div className="value">
-              Sultan Hamit 3* <Link>посмотреть</Link> <b>отель в</b> Booking
-            </div>
+            <div className="value">Sultansdfds</div>
           </div>
           <div className="dc_flex param">
             <div className="ds_flex label">{hotelIcon} Отель:</div>
-            <div className="value">
-              Sultan Hamit 3* <Link>посмотреть</Link> <b>отель в</b> Booking
-            </div>
+            <div className="value">Sultansdfds</div>
           </div>
           <div className="dc_flex param">
             <div className="ds_flex label">{hotelIcon} Отель:</div>
-            <div className="value">
-              Sultan Hamit 3* <Link>посмотреть</Link> <b>отель в</b> Booking
-            </div>
+            <div className="value">Sultansdfds</div>
+          </div>
+          <div className="dc_flex param">
+            <div className="ds_flex label">{hotelIcon} Отель:</div>
+            <div className="value">Sultansdfds</div>
           </div>
         </div>
-        <div className="dc_flex">
+        <div className="dc_flex offer_price">
           <Btn>1 560 $</Btn>
         </div>
       </div>
