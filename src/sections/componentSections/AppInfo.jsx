@@ -1,11 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 import {
+  babyIcon,
   cashIcon,
+  dateIcon,
   planIcon,
   starIcon,
   usersIcon,
 } from "../../assets/homeS3Icon";
+import { get } from "lodash";
 const AppInfoStyle = styled.div`
   padding: 30px;
   background-image: url("/images/profile/appinfo.png");
@@ -98,16 +101,28 @@ const AppInfo = ({ item }) => {
     <AppInfoStyle>
       <div className="i_title">Заявка № {item?.id}</div>
       <div className="ds_flex route">
-        <span>Узбекистан, ташкент</span>
+        <span>{get(item, "from_r.name_translate", "")}</span>
         <span className="icon">{planIcon}</span>
-        <span>Турция, стамбул</span>
+        <span>{get(item, "to_r.name_translate", "")}</span>
       </div>
       <div className=" ds_flex items">
         <div className="dc_flex item star">{starIcon}3-5</div>
-        <div className="dc_flex item">{usersIcon}2 взрослых</div>
-        <div className="dc_flex item">{cashIcon}15 000 000 сумм</div>
-        <div className="dc_flex item">{usersIcon}2 взрослых</div>
-        <div className="dc_flex item">{cashIcon}15 000 000 сумм</div>
+        <div className="dc_flex item">
+          {usersIcon}
+          {get(item, "people_count", "0")} взрослых
+        </div>
+        <div className="dc_flex item">
+          {cashIcon}
+          {get(item, "price", "0")} сумм
+        </div>
+        <div className="dc_flex item">
+          {babyIcon}
+          {get(item, "children_count", "0")} взрослых
+        </div>
+        <div className="dc_flex item">
+          {dateIcon} {get(item, "departure_date", "0")} {get(item, "day", "0")}{" "}
+          дн.
+        </div>
         <div className="dc_flex item">{usersIcon}2 взрослых</div>
         <div className="dc_flex item">{cashIcon}15 000 000 сумм</div>
         <div className="dc_flex item">{usersIcon}2 взрослых</div>
