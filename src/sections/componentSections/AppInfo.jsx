@@ -93,10 +93,10 @@ const AppInfoStyle = styled.div`
     }
   }
 `;
-const AppInfo = () => {
+const AppInfo = ({ item }) => {
   return (
     <AppInfoStyle>
-      <div className="i_title">Заявка № 1233</div>
+      <div className="i_title">Заявка № {item?.id}</div>
       <div className="ds_flex route">
         <span>Узбекистан, ташкент</span>
         <span className="icon">{planIcon}</span>
