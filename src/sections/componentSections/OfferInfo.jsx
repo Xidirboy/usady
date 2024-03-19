@@ -13,15 +13,14 @@ const OfferInfoStyle = styled.div`
   background-color: #fff;
   box-shadow: 0px 22.7px 60.5px 0px #c7ceda40;
   width: 100%;
-  padding: 30px;
   border-radius: 15.13px;
   margin-bottom: 30px;
   @media (max-width: 900px) {
     border-radius: 10px;
-    padding: 15px;
     margin-bottom: 15px;
   }
   & .company {
+    padding: 30px;
     & .comp {
       & .comp_logo {
         width: 100px;
