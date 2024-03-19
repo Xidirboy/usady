@@ -21,6 +21,7 @@ const MobileTabStyle = styled.div`
     display: flex;
   }
   & .link {
+    cursor: pointer;
     & .icon {
       display: flex;
       justify-content: center;
@@ -34,12 +35,24 @@ const MobileTabStyle = styled.div`
       letter-spacing: 0.2px;
       text-align: center;
     }
+    &:hover,
+    &.active {
+      & .icon {
+        & path {
+          fill: #235dff;
+        }
+      }
+      & .title {
+        font-weight: 700;
+        color: #235dff;
+      }
+    }
   }
 `;
 const MobileTab = () => {
   return (
     <MobileTabStyle className="ds_flex">
-      <NavLink className="link" to="#">
+      <NavLink className="link" to="/">
         <div className="icon">{homeIcon}</div>
         <div className="title">Главная</div>
       </NavLink>
@@ -51,7 +64,7 @@ const MobileTab = () => {
         <div className="icon">{turIcon}</div>
         <div className="title">Горящие туры</div>
       </NavLink> */}
-      <NavLink className="link" to="#">
+      <NavLink className="link" to="/profile">
         <div className="icon">{accountIcon}</div>
         <div className="title">Аккаунт</div>
       </NavLink>

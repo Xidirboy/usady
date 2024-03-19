@@ -4,7 +4,11 @@ import Axios from "../../utils/httpClient";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 
-const LayoutStyle = styled.div``;
+const LayoutStyle = styled.div`
+  @media (max-width: 900px) {
+    padding-bottom: 120px;
+  }
+`;
 const Layout = ({ children }) => {
   const dispatch = useDispatch();
   const { user } = useSelector((s) => s);
