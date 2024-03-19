@@ -8,6 +8,7 @@ import {
 } from "../../assets/homeS3Icon";
 import { Link } from "react-router-dom";
 import { Btn } from "../../styleComponents/GlobalStyle";
+import OfferShow from "./OfferShow";
 const OfferInfoStyle = styled.div`
   border: 1px solid #e0e0e0;
   background-color: #fff;
@@ -147,8 +148,10 @@ const OfferInfo = () => {
           </Link>
         </div>
       </div>
+      <div className="offer_items">
+        <OfferShow />
+      </div>
 
-      
       <div className="i_title">Заявка № 1233</div>
       <div className="ds_flex route">
         <span>Узбекистан, ташкент</span>
