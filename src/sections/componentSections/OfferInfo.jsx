@@ -22,18 +22,32 @@ const OfferInfoStyle = styled.div`
   }
   & .company {
     padding: 30px;
+    @media (max-width: 900px) {
+      padding: 15px;
+    }
     & .comp {
       & .comp_logo {
         width: 100px;
         height: 100px;
+        @media (max-width: 900px) {
+          width: 62px;
+          height: 62px;
+        }
       }
       & .com_name {
         padding-left: 20px;
+        @media (max-width: 900px) {
+          padding-left: 10px;
+        }
         & .name {
           font-size: 26px;
           font-weight: 600;
           line-height: 41.6px;
           text-align: left;
+          @media (max-width: 900px) {
+            font-size: 16px;
+            line-height: 25.6px;
+          }
         }
         & .star {
           font-size: 26px;
@@ -41,6 +55,10 @@ const OfferInfoStyle = styled.div`
           line-height: 41.6px;
           text-align: left;
           justify-content: left;
+          @media (max-width: 900px) {
+            font-size: 16px;
+            line-height: 25.6px;
+          }
         }
       }
     }
@@ -48,6 +66,13 @@ const OfferInfoStyle = styled.div`
       & button {
         background: #46bb92;
         padding: 10px 50px;
+        @media (max-width: 900px) {
+          padding: 5px 30px;
+          font-size: 18px;
+          font-weight: 700;
+          line-height: 31.77px;
+          height: auto;
+        }
       }
     }
   }
