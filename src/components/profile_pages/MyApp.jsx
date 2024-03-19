@@ -2,6 +2,9 @@ import styled from "styled-components";
 import ShowTitle from "../../sections/utilsSections/ShowTitle";
 import AppInfo from "../../sections/componentSections/AppInfo";
 import { Btn } from "../../styleComponents/GlobalStyle";
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import Axios from "../../utils/httpClient";
 const MyAppStyle = styled.div`
   & .apps {
     padding-top: 30px;
@@ -71,45 +74,47 @@ const MyAppStyle = styled.div`
   }
 `;
 const MyApp = () => {
+  const dispatch = useDispatch();
+  const [list, setList] = useState({});
+  useEffect(() => {
+    getList();
+  }, []);
+  const getList = () => {
+    dispatch({ type: "SET_LOADING", payload: true });
+    Axios()
+      .get("api/v1/application/list")
+      .then((r) => {
+        setList(r?.data?.data ?? {});
+      })
+      .catch((e) => {})
+      .finally(() => {
+        dispatch({ type: "SET_LOADING", payload: false });
+      });
+  };
   return (
     <MyAppStyle>
       <ShowTitle title="Мои заявки"></ShowTitle>
       <div className="container_main ">
         <div className="apps">
-          <div className="ds_flex app">
-            <div className="app_info">
-              <AppInfo />
-              <div className="ds_flex footer_app">
-                <div className="count">
-                  Ответов: <span>56</span>
-                </div>
-                <div className="btn_target">
-                  <Btn>
-                    Посмотреть все предложения
-                    <span className="btn__c">- 56</span>
-                  </Btn>
-                </div>
-              </div>
-            </div>
-            <div className="app_v"></div>
-          </div>
-          <div className="ds_flex app">
-            <div className="app_info">
-              <AppInfo />
-              <div className="ds_flex footer_app">
-                <div className="count">
-                  Ответов: <span>56</span>
-                </div>
-                <div className="btn_target">
-                  <Btn>
-                    Посмотреть все предложения
-                    <span className="btn__c">- 56</span>
-                  </Btn>
+          {list?.data?.map((item, index) => (
+            <div className="ds_flex app" key={index}>
+              <div className="app_info">
+                <AppInfo item={item} />
+                <div className="ds_flex footer_app">
+                  <div className="count">
+                    Ответов: <span>56</span>
+                  </div>
+                  <div className="btn_target">
+                    <Btn>
+                      Посмотреть все предложения
+                      <span className="btn__c">- 56</span>
+                    </Btn>
+                  </div>
                 </div>
               </div>
+              <div className="app_v"></div>
             </div>
-            <div className="app_v"></div>
-          </div>
+          ))}
         </div>
       </div>
     </MyAppStyle>
