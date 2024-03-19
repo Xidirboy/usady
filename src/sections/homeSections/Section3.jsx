@@ -15,6 +15,7 @@ import {
   usersIcon,
 } from "../../assets/homeS3Icon";
 import Axios from "../../utils/httpClient";
+import { useDispatch } from "react-redux";
 const Section3Style = styled.div`
   background-image: url("/images/home/s31.png");
   background-size: cover;
@@ -67,6 +68,7 @@ const Section3Style = styled.div`
   }
 `;
 const Section3 = () => {
+  const dispatch = useDispatch();
   const [sdata, setSdata] = useState({});
   const [errors, setErrors] = useState({});
   const [options, setOptions] = useState({});
@@ -75,6 +77,57 @@ const Section3 = () => {
   }, []);
   const onSubmit = (e) => {
     e.preventDefault();
+    dispatch({ type: "SET_LOADING", payload: true });
+    let tt = true,
+      err = {};
+    if (!sdata?.from) {
+      tt = false;
+      err = { ...err, from: true };
+    }
+    if (!sdata?.to) {
+      tt = false;
+      err = { ...err, to: true };
+    }
+    if (!sdata?.people_count) {
+      tt = false;
+      err = { ...err, people_count: true };
+    }
+    if (!sdata?.departure_date) {
+      tt = false;
+      err = { ...err, departure_date: true };
+    }
+    if (!sdata?.aircraft_class) {
+      tt = false;
+      err = { ...err, aircraft_class: true };
+    }
+    if (!sdata?.hotel_rating) {
+      tt = false;
+      err = { ...err, hotel_rating: true };
+    }
+    if (!sdata?.type_nutrition) {
+      tt = false;
+      err = { ...err, type_nutrition: true };
+    }
+    if (!sdata?.desc) {
+      tt = false;
+      err = { ...err, desc: true };
+    }
+    if (!sdata?.price) {
+      tt = false;
+      err = { ...err, price: true };
+    }
+    if (tt) {
+      Axios()
+        .post("api/v1/application/create", sdata)
+        .then((r) => {})
+        .catch((e) => {})
+        .finally(() => {
+          dispatch({ type: "SET_LOADING", payload: false });
+        });
+    } else {
+      setErrors(err);
+      dispatch({ type: "SET_LOADING", payload: false });
+    }
   };
   const getOptions = () => {
     Axios()
