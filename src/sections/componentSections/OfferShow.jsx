@@ -11,6 +11,9 @@ import { Link } from "react-router-dom";
 const OfferShowStyle = styled.div`
   padding: 30px;
   border-top: 2px dashed #235dff4d;
+  @media (max-width: 900px) {
+    padding: 15px;
+  }
   & .i_title {
     font-size: 26px;
     font-weight: 600;
@@ -91,6 +94,10 @@ const OfferShowStyle = styled.div`
   }
   & .atributes {
     align-items: flex-end;
+    @media (max-width: 900px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
     & .params {
       & .param {
         padding-top: 10px;
@@ -100,8 +107,18 @@ const OfferShowStyle = styled.div`
           line-height: 32px;
           text-align: left;
           margin-right: 10px;
+          @media (max-width: 900px) {
+            font-size: 16px;
+            line-height: 25.6px;
+            margin-right: 5px;
+          }
           & svg {
             margin-right: 10px;
+            @media (max-width: 900px) {
+              width: 25px;
+              height: 25px;
+              margin-right: 5px;
+            }
           }
         }
         & .value {
@@ -109,6 +126,10 @@ const OfferShowStyle = styled.div`
           font-weight: 600;
           line-height: 38.4px;
           text-align: left;
+          @media (max-width: 900px) {
+            font-size: 18px;
+            line-height: 28.8px;
+          }
           & a {
             color: #235dff !important;
             text-decoration: underline !important;
@@ -121,6 +142,12 @@ const OfferShowStyle = styled.div`
       }
     }
     & .offer_price {
+      @media (max-width: 900px) {
+        margin-top: 10px;
+      }
+      @media (max-width: 500px) {
+        width: 100%;
+      }
       & button {
         padding: 10px 50px;
       }
