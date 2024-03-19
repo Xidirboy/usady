@@ -7,6 +7,7 @@ import OfferInfo from "../../sections/componentSections/OfferInfo";
 import { useDispatch } from "react-redux";
 import Axios from "../../utils/httpClient";
 import { useParams } from "react-router-dom";
+import { get } from "lodash";
 const AppViewStyle = styled.div`
   & .apps {
     padding-top: 30px;
@@ -128,7 +129,7 @@ const AppViewStyle = styled.div`
 `;
 const AppView = () => {
   const dispatch = useDispatch();
-  const [list, setList] = useState({});
+  const [app, setApp] = useState({});
   const params = useParams();
   useEffect(() => {
     getList();
@@ -136,9 +137,9 @@ const AppView = () => {
   const getList = () => {
     dispatch({ type: "SET_LOADING", payload: true });
     Axios()
-      .get(`api/v1/application/list/${params?.id}`)
+      .get(`api/v1/application/${params?.id}/show`)
       .then((r) => {
-        setList(r?.data?.data ?? {});
+        setApp(r?.data?.data ?? {});
       })
       .catch((e) => {})
       .finally(() => {
@@ -152,7 +153,7 @@ const AppView = () => {
         <div className="apps">
           <div className="ds_flex app">
             <div className="app_info">
-              <AppInfo />
+              <AppInfo item={app} />
               {/* <div className="ds_flex footer_app">
                 <div className="count">
                   Ответов: <span>56</span>
@@ -166,11 +167,7 @@ const AppView = () => {
               </div> */}
               <div className="desc_t">
                 <div className="desc_title">Описание</div>
-                <div className="desc_text">
-                  Описание описание описание Описание описание описание Описание
-                  описание описание Описание описание описание Описание описание
-                  описание Описание описание описание
-                </div>
+                <div className="desc_text">{get(app, "desc", "---")}</div>
               </div>
             </div>
             <div className="app_v"></div>

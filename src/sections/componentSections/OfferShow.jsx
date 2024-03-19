@@ -76,8 +76,14 @@ const OfferShowStyle = styled.div`
           height: 15px;
           margin-right: 5px;
         }
+        /* & path {
+          fill: #235dff;
+        } */
       }
     }
+  }
+  & .atributes{
+
   }
 `;
 const OfferShow = () => {
@@ -93,6 +99,10 @@ const OfferShow = () => {
         <div className="dc_flex item">
           {dateIcon} 29.01.2024 - 30.01.2024, 7 дней
         </div>
+      </div>
+      <div className="ds_flex atributes">
+        <div className="params"></div>
+        <div className="dc_flex"></div>
       </div>
     </OfferShowStyle>
   );
