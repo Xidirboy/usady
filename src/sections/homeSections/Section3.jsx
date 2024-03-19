@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import InputUi from "../formSections/InputUi";
 import { userIcon } from "../../assets/authIcons";
@@ -14,6 +14,7 @@ import {
   typeIcon,
   usersIcon,
 } from "../../assets/homeS3Icon";
+import Axios from "../../utils/httpClient";
 const Section3Style = styled.div`
   background-image: url("/images/home/s31.png");
   background-size: cover;
@@ -68,8 +69,18 @@ const Section3Style = styled.div`
 const Section3 = () => {
   const [sdata, setSdata] = useState({});
   const [errors, setErrors] = useState({});
+  useEffect(() => {
+    getOptions();
+  }, []);
   const onSubmit = (e) => {
     e.preventDefault();
+  };
+  const getOptions = () => {
+    Axios()
+      .get("api/v1/application/options")
+      .then((r) => {})
+      .catch((e) => {})
+      .finally(() => {});
   };
   return (
     <Section3Style>
