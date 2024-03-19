@@ -52,7 +52,7 @@ const OfferInfoStyle = styled.div`
     }
   }
 `;
-const OfferInfo = () => {
+const OfferInfo = ({ offer, app }) => {
   return (
     <OfferInfoStyle>
       <div className="ds_flex company">
@@ -74,10 +74,8 @@ const OfferInfo = () => {
         </div>
       </div>
       <div className="offer_items">
-        <OfferShow />
+        <OfferShow offer={offer} app={app} />
       </div>
-
-      
     </OfferInfoStyle>
   );
 };

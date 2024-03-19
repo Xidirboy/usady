@@ -124,10 +124,10 @@ const OfferShowStyle = styled.div`
     }
   }
 `;
-const OfferShow = () => {
+const OfferShow = ({ offer, app }) => {
   return (
     <OfferShowStyle>
-      <div className="i_title">Предложение № 1</div>
+      <div className="i_title">Предложение № {offer?.id}</div>
       <div className="ds_flex route">
         <span>Узбекистан, ташкент</span>
         <span className="icon">{planIcon}</span>
