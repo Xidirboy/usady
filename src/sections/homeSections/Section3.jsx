@@ -118,7 +118,11 @@ const Section3 = () => {
     }
     if (tt) {
       Axios()
-        .post("api/v1/application/create", sdata)
+        .post("api/v1/application/create", {
+          ...sdata,
+          day: 2,
+          children_count: sdata?.children_count ? sdata?.children_count : 0,
+        })
         .then((r) => {})
         .catch((e) => {})
         .finally(() => {
