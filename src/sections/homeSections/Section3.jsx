@@ -17,6 +17,7 @@ import {
 import Axios from "../../utils/httpClient";
 import { useDispatch } from "react-redux";
 import { useToast } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 const Section3Style = styled.div`
   background-image: url("/images/home/s31.png");
   background-size: cover;
@@ -70,6 +71,7 @@ const Section3Style = styled.div`
 `;
 const Section3 = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const toast = useToast();
   const [sdata, setSdata] = useState({});
   const [errors, setErrors] = useState({});
@@ -134,6 +136,8 @@ const Section3 = () => {
             duration: 9000,
             isClosable: true,
           });
+          window.scrollTo({ top: 0 });
+          navigate("/my-apps");
         })
         .catch((e) => {})
         .finally(() => {
