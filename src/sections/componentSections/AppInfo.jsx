@@ -4,8 +4,10 @@ import {
   babyIcon,
   cashIcon,
   dateIcon,
+  footIcon,
   planIcon,
   starIcon,
+  typeIcon,
   usersIcon,
 } from "../../assets/homeS3Icon";
 import { get } from "lodash";
@@ -106,7 +108,9 @@ const AppInfo = ({ item }) => {
         <span>{get(item, "to_r.name_translate", "")}</span>
       </div>
       <div className=" ds_flex items">
-        <div className="dc_flex item star">{starIcon}3-5</div>
+        <div className="dc_flex item star">
+          {starIcon} {get(item, "hotel_rating_r.name", "-")}
+        </div>
         <div className="dc_flex item">
           {usersIcon}
           {get(item, "people_count", "0")} взрослых
@@ -120,13 +124,15 @@ const AppInfo = ({ item }) => {
           {get(item, "children_count", "0")} взрослых
         </div>
         <div className="dc_flex item">
-          {dateIcon} {get(item, "departure_date", "0")} {get(item, "day", "0")}{" "}
+          {dateIcon} {get(item, "departure_date", "0")}, {get(item, "day", "0")}{" "}
           дн.
         </div>
-        <div className="dc_flex item">{usersIcon}2 взрослых</div>
-        <div className="dc_flex item">{cashIcon}15 000 000 сумм</div>
-        <div className="dc_flex item">{usersIcon}2 взрослых</div>
-        <div className="dc_flex item">{cashIcon}15 000 000 сумм</div>
+        <div className="dc_flex item">
+          {typeIcon} {get(item, "aircraft_class_r.name_translate", "-")}
+        </div>
+        <div className="dc_flex item">
+          {footIcon} {get(item, "type_nutrition_r.name_translate", "-")}
+        </div>
       </div>
     </AppInfoStyle>
   );
