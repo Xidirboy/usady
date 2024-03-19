@@ -147,6 +147,8 @@ const OfferInfo = () => {
           </Link>
         </div>
       </div>
+
+      
       <div className="i_title">Заявка № 1233</div>
       <div className="ds_flex route">
         <span>Узбекистан, ташкент</span>
