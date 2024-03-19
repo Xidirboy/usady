@@ -96,9 +96,9 @@ const Section3 = () => {
               label="Откуда"
               placeholder="Откуда"
               icon={fromCIcon}
-              name="full_name"
-              value={sdata?.full_name}
-              is_error={errors?.full_name}
+              name="from"
+              value={sdata?.from}
+              is_error={errors?.from}
               thin_label={true}
               onChange={(e) => {
                 setSdata({
@@ -124,9 +124,9 @@ const Section3 = () => {
               label="Куда"
               placeholder="Куда"
               icon={toCIcon}
-              name="full_name"
-              value={sdata?.full_name}
-              is_error={errors?.full_name}
+              name="to"
+              value={sdata?.to}
+              is_error={errors?.to}
               thin_label={true}
               onChange={(e) => {
                 setSdata({
@@ -151,9 +151,10 @@ const Section3 = () => {
               label="Взрослых"
               placeholder="Взрослых"
               icon={usersIcon}
-              name="full_name"
-              value={sdata?.full_name}
-              is_error={errors?.full_name}
+              type="number"
+              name="people_count"
+              value={sdata?.people_count}
+              is_error={errors?.people_count}
               thin_label={true}
               onChange={(e) => {
                 setSdata({
@@ -174,9 +175,9 @@ const Section3 = () => {
               label="Детей"
               placeholder="Детей"
               icon={babyIcon}
-              name="full_name"
-              value={sdata?.full_name}
-              is_error={errors?.full_name}
+              name="children_count"
+              value={sdata?.children_count}
+              is_error={errors?.children_count}
               thin_label={true}
               onChange={(e) => {
                 setSdata({
@@ -197,9 +198,10 @@ const Section3 = () => {
               label="Дата вылета  и кол-во дней"
               placeholder="Дата вылета  и кол-во дней"
               icon={dateIcon}
-              name="full_name"
-              value={sdata?.full_name}
-              is_error={errors?.full_name}
+              type="date"
+              name="departure_date"
+              value={sdata?.departure_date}
+              is_error={errors?.departure_date}
               thin_label={true}
               onChange={(e) => {
                 setSdata({
@@ -221,9 +223,9 @@ const Section3 = () => {
               label="Класс самолета"
               placeholder="Класс самолета"
               icon={typeIcon}
-              name="full_name"
-              value={sdata?.full_name}
-              is_error={errors?.full_name}
+              name="aircraft_class"
+              value={sdata?.aircraft_class}
+              is_error={errors?.aircraft_class}
               thin_label={true}
               onChange={(e) => {
                 setSdata({
@@ -249,9 +251,9 @@ const Section3 = () => {
               label="Рейтинг отелей"
               placeholder="Рейтинг отелей"
               icon={hotelIcon}
-              name="full_name"
-              value={sdata?.full_name}
-              is_error={errors?.full_name}
+              name="hotel_rating"
+              value={sdata?.hotel_rating}
+              is_error={errors?.hotel_rating}
               thin_label={true}
               onChange={(e) => {
                 setSdata({
@@ -277,9 +279,9 @@ const Section3 = () => {
               label="Тип питания"
               placeholder="Тип питания"
               icon={footIcon}
-              name="full_name"
-              value={sdata?.full_name}
-              is_error={errors?.full_name}
+              name="type_nutrition"
+              value={sdata?.type_nutrition}
+              is_error={errors?.type_nutrition}
               thin_label={true}
               onChange={(e) => {
                 setSdata({
@@ -303,9 +305,10 @@ const Section3 = () => {
             <InputUi
               label="Напишите ваш бюджет"
               placeholder="до 15 000 000 сум "
-              name="full_name"
-              value={sdata?.full_name}
-              is_error={errors?.full_name}
+              name="price"
+              type="number"
+              value={sdata?.price}
+              is_error={errors?.price}
               icon={cashIcon}
               thin_label={true}
               onChange={(e) => {
@@ -327,9 +330,9 @@ const Section3 = () => {
               type={"textarea"}
               label="Дополнительная информация"
               placeholder="Напишите дополнительную которые нужно учесть. Например:  Отел должен быть рядом с пляжем"
-              name="full_name"
-              value={sdata?.full_name}
-              is_error={errors?.full_name}
+              name="desc"
+              value={sdata?.desc}
+              is_error={errors?.desc}
               thin_label={true}
               onChange={(e) => {
                 setSdata({
