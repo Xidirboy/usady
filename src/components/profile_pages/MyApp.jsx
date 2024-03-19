@@ -5,6 +5,7 @@ import { Btn } from "../../styleComponents/GlobalStyle";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import Axios from "../../utils/httpClient";
+import { Link } from "react-router-dom";
 const MyAppStyle = styled.div`
   & .apps {
     padding-top: 30px;
@@ -105,10 +106,12 @@ const MyApp = () => {
                     Ответов: <span>56</span>
                   </div>
                   <div className="btn_target">
-                    <Btn>
-                      Посмотреть все предложения
-                      <span className="btn__c">- 56</span>
-                    </Btn>
+                    <Link to={`/my-apps/${item?.id}`}>
+                      <Btn>
+                        Посмотреть все предложения
+                        <span className="btn__c">- 56</span>
+                      </Btn>
+                    </Link>
                   </div>
                 </div>
               </div>

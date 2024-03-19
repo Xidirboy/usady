@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ShowTitle from "../../sections/utilsSections/ShowTitle";
 import AppInfo from "../../sections/componentSections/AppInfo";
 import { Btn } from "../../styleComponents/GlobalStyle";
 import styled from "styled-components";
 import OfferInfo from "../../sections/componentSections/OfferInfo";
+import { useDispatch } from "react-redux";
+import Axios from "../../utils/httpClient";
+import { useParams } from "react-router-dom";
 const AppViewStyle = styled.div`
   & .apps {
     padding-top: 30px;
@@ -124,6 +127,24 @@ const AppViewStyle = styled.div`
   }
 `;
 const AppView = () => {
+  const dispatch = useDispatch();
+  const [list, setList] = useState({});
+  const params = useParams();
+  useEffect(() => {
+    getList();
+  }, []);
+  const getList = () => {
+    dispatch({ type: "SET_LOADING", payload: true });
+    Axios()
+      .get(`api/v1/application/list/${params?.id}`)
+      .then((r) => {
+        setList(r?.data?.data ?? {});
+      })
+      .catch((e) => {})
+      .finally(() => {
+        dispatch({ type: "SET_LOADING", payload: false });
+      });
+  };
   return (
     <AppViewStyle>
       <ShowTitle title="Мои заявки"></ShowTitle>
