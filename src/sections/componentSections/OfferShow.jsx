@@ -2,8 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import {
   dateIcon,
+  footIcon,
   hotelIcon,
   planIcon,
+  typeIcon,
   usersIcon,
 } from "../../assets/homeS3Icon";
 import { Btn } from "../../styleComponents/GlobalStyle";
@@ -182,17 +184,17 @@ const OfferShow = ({ offer, app }) => {
             <div className="value">{offer?.room_type}</div>
           </div>
           <div className="dc_flex param">
-            <div className="ds_flex label">{hotelIcon} Туристов:</div>
+            <div className="ds_flex label">{usersIcon} Туристов:</div>
             <div className="value">
               {offer?.people_count} взрослых, {offer?.children_count} детей
             </div>
           </div>
           <div className="dc_flex param">
-            <div className="ds_flex label">{hotelIcon} Питание:</div>
+            <div className="ds_flex label">{footIcon} Питание:</div>
             <div className="value">{offer?.nutrition}</div>
           </div>
           <div className="dc_flex param">
-            <div className="ds_flex label">{hotelIcon} Класс самолета:</div>
+            <div className="ds_flex label">{typeIcon} Класс самолета:</div>
             <div className="value">{offer?.aircraft_class}</div>
           </div>
         </div>
