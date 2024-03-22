@@ -8,6 +8,7 @@ import {
 } from "../../assets/homeS3Icon";
 import { Btn } from "../../styleComponents/GlobalStyle";
 import { Link } from "react-router-dom";
+import { get } from "lodash";
 const OfferShowStyle = styled.div`
   padding: 30px;
   border-top: 2px dashed #235dff4d;
@@ -101,6 +102,7 @@ const OfferShowStyle = styled.div`
     & .params {
       & .param {
         padding-top: 10px;
+        justify-content: left;
         & .label {
           font-size: 20px;
           font-weight: 300;
@@ -159,36 +161,43 @@ const OfferShow = ({ offer, app }) => {
     <OfferShowStyle>
       <div className="i_title">Предложение № {offer?.id}</div>
       <div className="ds_flex route">
-        <span>Узбекистан, ташкент</span>
+        <span>{get(app, "from_r.name_translate", "")}</span>
         <span className="icon">{planIcon}</span>
-        <span>Турция, стамбул</span>
+        <span>{get(app, "to_r.name_translate", "")}</span>
       </div>
       <div className=" ds_flex items">
         <div className="dc_flex item">
-          {dateIcon} 29.01.2024 - 30.01.2024, 7 дней
+          {dateIcon} {get(app, "departure_date", "0")}, {get(app, "day", "0")}{" "}
+          дней
         </div>
       </div>
       <div className="ds_flex atributes">
         <div className="params">
           <div className="dc_flex param">
             <div className="ds_flex label">{hotelIcon} Отель:</div>
-            <div className="value">Sultansdfds</div>
+            <div className="value">{offer?.hotel}</div>
           </div>
           <div className="dc_flex param">
-            <div className="ds_flex label">{hotelIcon} Отель:</div>
-            <div className="value">Sultansdfds</div>
+            <div className="ds_flex label">{hotelIcon} Тип номера:</div>
+            <div className="value">{offer?.room_type}</div>
           </div>
           <div className="dc_flex param">
-            <div className="ds_flex label">{hotelIcon} Отель:</div>
-            <div className="value">Sultansdfds</div>
+            <div className="ds_flex label">{hotelIcon} Туристов:</div>
+            <div className="value">
+              {offer?.people_count} взрослых, {offer?.children_count} детей
+            </div>
           </div>
           <div className="dc_flex param">
-            <div className="ds_flex label">{hotelIcon} Отель:</div>
-            <div className="value">Sultansdfds</div>
+            <div className="ds_flex label">{hotelIcon} Питание:</div>
+            <div className="value">{offer?.nutrition}</div>
+          </div>
+          <div className="dc_flex param">
+            <div className="ds_flex label">{hotelIcon} Класс самолета:</div>
+            <div className="value">{offer?.aircraft_class}</div>
           </div>
         </div>
         <div className="dc_flex offer_price">
-          <Btn>1 560 $</Btn>
+          <Btn>{offer?.price} $</Btn>
         </div>
       </div>
     </OfferShowStyle>
