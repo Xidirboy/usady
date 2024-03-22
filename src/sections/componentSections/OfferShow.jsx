@@ -23,10 +23,9 @@ const OfferShowStyle = styled.div`
     line-height: 42px;
     letter-spacing: 0em;
     color: #2b3f5a;
+    cursor: pointer;
     text-align: left;
-    padding-bottom: 20px;
     @media (max-width: 900px) {
-      padding-bottom: 10px;
       font-size: 20px;
       font-weight: 400;
       line-height: 26px;
@@ -36,8 +35,10 @@ const OfferShowStyle = styled.div`
     justify-content: left;
     flex-wrap: wrap;
     padding-bottom: 24px;
+    padding-top: 20px;
     @media (max-width: 900px) {
       padding-bottom: 10px;
+      padding-top: 10px;
     }
     & span {
       font-size: 24px;
