@@ -175,7 +175,11 @@ const AppView = () => {
         </div>
         <div className="offers">
           <div className="o_title">Предложение от Турагентов</div>
-          <OfferInfo />
+          {get(app, "offers", []).map((offer, oindex) => (
+            <div key={oindex}>
+              <OfferInfo offer={offer} app={app} />
+            </div>
+          ))}
         </div>
       </div>
     </AppViewStyle>

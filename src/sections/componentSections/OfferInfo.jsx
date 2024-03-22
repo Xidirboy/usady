@@ -84,16 +84,20 @@ const OfferInfo = ({ offer, app }) => {
         <div className="dc_flex comp">
           <img
             className="comp_logo"
-            src="/images/profile/com_logo.png"
+            src={offer?.avatar_image}
+            onError={(e) => {
+              e.target.onerror = null;
+              e.target.src = "/images/profile/com_logo.png";
+            }}
             alt="com_logo"
           />
           <div className="com_name">
-            <div className="name">Best Travel</div>
-            <div className="ds_flex star">4 {starIcon}</div>
+            <div className="name">{offer?.name}</div>
+            <div className="ds_flex star">{offer?.rating??0} {starIcon}</div>
           </div>
         </div>
         <div className="links">
-          <Link to="#">
+          <Link to={offer?.telegram_nickname ?? "#"}>
             <Btn>Написать</Btn>
           </Link>
         </div>
