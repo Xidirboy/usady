@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import {
   cashIcon,
@@ -78,6 +78,7 @@ const OfferInfoStyle = styled.div`
   }
 `;
 const OfferInfo = ({ offer, app }) => {
+  const [openOffer, setOpenOffer] = useState(0);
   return (
     <OfferInfoStyle>
       <div className="ds_flex company">
@@ -107,7 +108,12 @@ const OfferInfo = ({ offer, app }) => {
       <div className="offer_items">
         {offer?.offers?.map((item, index) => (
           <div key={index}>
-            <OfferShow offer={item} app={app} />
+            <OfferShow
+              offer={item}
+              app={app}
+              openOffer={openOffer === index}
+              setOpenOffer={() => setOpenOffer(index)}
+            />
           </div>
         ))}
       </div>

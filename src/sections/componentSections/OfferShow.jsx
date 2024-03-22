@@ -158,50 +158,54 @@ const OfferShowStyle = styled.div`
     }
   }
 `;
-const OfferShow = ({ offer, app }) => {
+const OfferShow = ({ offer, app, openOffer, setOpenOffer }) => {
   return (
-    <OfferShowStyle>
+    <OfferShowStyle onClick={() => setOpenOffer()}>
       <div className="i_title">Предложение № {offer?.id}</div>
-      <div className="ds_flex route">
-        <span>{get(app, "from_r.name_translate", "")}</span>
-        <span className="icon">{planIcon}</span>
-        <span>{get(app, "to_r.name_translate", "")}</span>
-      </div>
-      <div className=" ds_flex items">
-        <div className="dc_flex item">
-          {dateIcon} {get(app, "departure_date", "0")}, {get(app, "day", "0")}{" "}
-          дней
-        </div>
-      </div>
-      <div className="ds_flex atributes">
-        <div className="params">
-          <div className="dc_flex param">
-            <div className="ds_flex label">{hotelIcon} Отель:</div>
-            <div className="value">{offer?.hotel}</div>
+      {openOffer ? (
+        <>
+          <div className="ds_flex route">
+            <span>{get(app, "from_r.name_translate", "")}</span>
+            <span className="icon">{planIcon}</span>
+            <span>{get(app, "to_r.name_translate", "")}</span>
           </div>
-          <div className="dc_flex param">
-            <div className="ds_flex label">{hotelIcon} Тип номера:</div>
-            <div className="value">{offer?.room_type}</div>
-          </div>
-          <div className="dc_flex param">
-            <div className="ds_flex label">{usersIcon} Туристов:</div>
-            <div className="value">
-              {offer?.people_count} взрослых, {offer?.children_count} детей
+          <div className=" ds_flex items">
+            <div className="dc_flex item">
+              {dateIcon} {get(app, "departure_date", "0")},{" "}
+              {get(app, "day", "0")} дней
             </div>
           </div>
-          <div className="dc_flex param">
-            <div className="ds_flex label">{footIcon} Питание:</div>
-            <div className="value">{offer?.nutrition}</div>
+          <div className="ds_flex atributes">
+            <div className="params">
+              <div className="dc_flex param">
+                <div className="ds_flex label">{hotelIcon} Отель:</div>
+                <div className="value">{offer?.hotel}</div>
+              </div>
+              <div className="dc_flex param">
+                <div className="ds_flex label">{hotelIcon} Тип номера:</div>
+                <div className="value">{offer?.room_type}</div>
+              </div>
+              <div className="dc_flex param">
+                <div className="ds_flex label">{usersIcon} Туристов:</div>
+                <div className="value">
+                  {offer?.people_count} взрослых, {offer?.children_count} детей
+                </div>
+              </div>
+              <div className="dc_flex param">
+                <div className="ds_flex label">{footIcon} Питание:</div>
+                <div className="value">{offer?.nutrition}</div>
+              </div>
+              <div className="dc_flex param">
+                <div className="ds_flex label">{typeIcon} Класс самолета:</div>
+                <div className="value">{offer?.aircraft_class}</div>
+              </div>
+            </div>
+            <div className="dc_flex offer_price">
+              <Btn>{offer?.price} $</Btn>
+            </div>
           </div>
-          <div className="dc_flex param">
-            <div className="ds_flex label">{typeIcon} Класс самолета:</div>
-            <div className="value">{offer?.aircraft_class}</div>
-          </div>
-        </div>
-        <div className="dc_flex offer_price">
-          <Btn>{offer?.price} $</Btn>
-        </div>
-      </div>
+        </>
+      ) : null}
     </OfferShowStyle>
   );
 };
