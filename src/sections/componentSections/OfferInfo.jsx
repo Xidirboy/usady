@@ -93,7 +93,9 @@ const OfferInfo = ({ offer, app }) => {
           />
           <div className="com_name">
             <div className="name">{offer?.name}</div>
-            <div className="ds_flex star">{offer?.rating??0} {starIcon}</div>
+            <div className="ds_flex star">
+              {offer?.rating ?? 0} {starIcon}
+            </div>
           </div>
         </div>
         <div className="links">
@@ -103,7 +105,11 @@ const OfferInfo = ({ offer, app }) => {
         </div>
       </div>
       <div className="offer_items">
-        <OfferShow offer={offer} app={app} />
+        {offer?.offers?.map((item, index) => (
+          <div key={index}>
+            <OfferShow offer={item} app={app} />
+          </div>
+        ))}
       </div>
     </OfferInfoStyle>
   );
