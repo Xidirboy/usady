@@ -139,7 +139,8 @@ const Section3 = () => {
               isClosable: true,
             });
             window.scrollTo({ top: 0 });
-            navigate("/my-apps");
+            // navigate("/my-apps");
+            dispatch({ type: "SET_PAY_MODAL", payload: false });
           })
           .catch((e) => {})
           .finally(() => {
