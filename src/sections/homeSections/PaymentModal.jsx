@@ -3,9 +3,17 @@ import UiModal from "../utilsSections/UiModal";
 import { Link } from "react-router-dom";
 import { Btn } from "../../styleComponents/GlobalStyle";
 const PaymentModalStyle = styled.div`
+  & .app {
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 41.6px;
+    text-align: left;
+  }
+
   & .desc {
     text-align: center;
   }
+
   & .pays {
     & .pay {
       border-radius: 20px;
@@ -28,13 +36,14 @@ const PaymentModal = ({ payObj, setPayObj }) => {
   return (
     <>
       <UiModal
-        title={"Оплата"}
+        title={"Оплата заявки"}
         isOpen={payObj?.pay_modal}
         setIsOpen={() => {
           setPayObj({ ...payObj, pay_modal: false });
         }}
       >
         <PaymentModalStyle>
+          <div className="app">Заявка № 1233</div>
           <div className="desc">
             Внесите оплату для подачи заявки на поездку
           </div>

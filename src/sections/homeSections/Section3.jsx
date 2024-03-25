@@ -78,7 +78,7 @@ const Section3 = () => {
   const [sdata, setSdata] = useState({});
   const [errors, setErrors] = useState({});
   const [options, setOptions] = useState({});
-  const [payObj, setPayObj] = useState({});
+  const [payObj, setPayObj] = useState({ pay_modal: true });
   useEffect(() => {
     getOptions();
   }, []);
