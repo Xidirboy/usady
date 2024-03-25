@@ -15,7 +15,7 @@ import {
   usersIcon,
 } from "../../assets/homeS3Icon";
 import Axios from "../../utils/httpClient";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useToast } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 const Section3Style = styled.div`
@@ -73,6 +73,7 @@ const Section3 = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const toast = useToast();
+  const { user } = useSelector((s) => s);
   const [sdata, setSdata] = useState({});
   const [errors, setErrors] = useState({});
   const [options, setOptions] = useState({});
@@ -121,28 +122,33 @@ const Section3 = () => {
       err = { ...err, price: true };
     }
     if (tt) {
-      Axios()
-        .post("api/v1/application/create", {
-          ...sdata,
-          day: 2,
-          children_count: sdata?.children_count ? sdata?.children_count : 0,
-        })
-        .then((r) => {
-          toast({
-            title: "Ваша заявка отправлена.",
-            description:
-              "В ближайшее время вы получите предложения, соответствующие вашему заявлению.",
-            status: "success",
-            duration: 9000,
-            isClosable: true,
+      if (user?.id) {
+        Axios()
+          .post("api/v1/application/create", {
+            ...sdata,
+            day: 2,
+            children_count: sdata?.children_count ? sdata?.children_count : 0,
+          })
+          .then((r) => {
+            toast({
+              title: "Ваша заявка отправлена.",
+              description:
+                "В ближайшее время вы получите предложения, соответствующие вашему заявлению.",
+              status: "success",
+              duration: 9000,
+              isClosable: true,
+            });
+            window.scrollTo({ top: 0 });
+            navigate("/my-apps");
+          })
+          .catch((e) => {})
+          .finally(() => {
+            dispatch({ type: "SET_LOADING", payload: false });
           });
-          window.scrollTo({ top: 0 });
-          navigate("/my-apps");
-        })
-        .catch((e) => {})
-        .finally(() => {
-          dispatch({ type: "SET_LOADING", payload: false });
-        });
+      } else {
+        dispatch({ type: "SET_LOADING", payload: false });
+        dispatch({ type: "SET_AUTH_MODAL", payload: true });
+      }
     } else {
       setErrors(err);
       dispatch({ type: "SET_LOADING", payload: false });
