@@ -78,6 +78,7 @@ const Section3 = () => {
   const [sdata, setSdata] = useState({});
   const [errors, setErrors] = useState({});
   const [options, setOptions] = useState({});
+  const [payObj, setPayObj] = useState({});
   useEffect(() => {
     getOptions();
   }, []);
@@ -141,7 +142,7 @@ const Section3 = () => {
             });
             window.scrollTo({ top: 0 });
             // navigate("/my-apps");
-            dispatch({ type: "SET_PAY_MODAL", payload: false });
+            setPayObj({ pay_modal: true, click: r?.data?.data?.click_url });
           })
           .catch((e) => {})
           .finally(() => {
@@ -435,7 +436,7 @@ const Section3 = () => {
           </form>
         </div>
       </Section3Style>
-      <PaymentModal pay_modal={true} payModalOpen={() => {}} payObj={{}} />
+      <PaymentModal payObj={payObj} setPayObj={setPayObj} />
     </>
   );
 };
