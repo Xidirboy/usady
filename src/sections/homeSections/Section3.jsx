@@ -141,8 +141,8 @@ const Section3 = () => {
               isClosable: true,
             });
             window.scrollTo({ top: 0 });
-            // navigate("/my-apps");
             setPayObj({ pay_modal: true, click: r?.data?.data?.click_url });
+            navigate("/my-apps");
           })
           .catch((e) => {})
           .finally(() => {
