@@ -83,7 +83,7 @@ const MyApp = () => {
   const getList = () => {
     dispatch({ type: "SET_LOADING", payload: true });
     Axios()
-      .get("api/v1/application/list")
+      .get("api/v1/application/list?per_page=100")
       .then((r) => {
         setList(r?.data?.data ?? {});
       })

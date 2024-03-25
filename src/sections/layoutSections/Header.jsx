@@ -157,7 +157,7 @@ const Header = () => {
             <NavLink className="item" to="/agets">
               Агенты
             </NavLink>
-            <NavLink className="item" to="/my-applications">
+            <NavLink className="item" to="/my-apps">
               Мои заявки
             </NavLink>
             <NavLink className="item" to="/travel-agencies">
