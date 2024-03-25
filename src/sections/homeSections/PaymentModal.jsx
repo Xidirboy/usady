@@ -2,6 +2,8 @@ import styled from "styled-components";
 import UiModal from "../utilsSections/UiModal";
 import { Link } from "react-router-dom";
 import { Btn } from "../../styleComponents/GlobalStyle";
+import { planIcon } from "../../assets/homeS3Icon";
+import { get } from "lodash";
 const PaymentModalStyle = styled.div`
   & .app {
     font-size: 26px;
@@ -9,11 +11,50 @@ const PaymentModalStyle = styled.div`
     line-height: 41.6px;
     text-align: left;
   }
-
-  & .desc {
-    text-align: center;
+  & .route {
+    justify-content: left;
+    flex-wrap: wrap;
+    padding: 10px 0;
+    @media (max-width: 900px) {
+      padding: 5px 0;
+    }
+    & span {
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 34px;
+      letter-spacing: -0.52px;
+      text-align: left;
+      background: #0096ff14;
+      padding: 4px 8px;
+      border-radius: 10px;
+      @media (max-width: 900px) {
+        font-size: 20px;
+      }
+    }
+    & .icon {
+      padding: 0 10px;
+      background: transparent;
+      @media (max-width: 900px) {
+        padding: 0 5px;
+      }
+    }
   }
-
+  & .title {
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 41.6px;
+    text-align: left;
+  }
+  & .list {
+    padding-left: 30px;
+    & ul {
+      list-style-type: disc !important;
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 38px;
+      text-align: left;
+    }
+  }
   & .pays {
     & .pay {
       border-radius: 20px;
@@ -32,7 +73,7 @@ const PaymentModalStyle = styled.div`
     }
   }
 `;
-const PaymentModal = ({ payObj, setPayObj }) => {
+const PaymentModal = ({ payObj, setPayObj, item }) => {
   return (
     <>
       <UiModal
@@ -43,9 +84,20 @@ const PaymentModal = ({ payObj, setPayObj }) => {
         }}
       >
         <PaymentModalStyle>
-          <div className="app">Заявка № 1233</div>
-          <div className="desc">
-            Внесите оплату для подачи заявки на поездку
+          <div className="app">Заявка № {item?.id}</div>
+          <div className="ds_flex route">
+            <span>{get(item, "from_r.name_translate", "")} sd</span>
+            <span className="icon">{planIcon}</span>
+            <span>{get(item, "to_r.name_translate", "")} serf</span>
+          </div>
+          <div className="title">Что вы получите ?</div>
+          <div className="list">
+            <ul>
+              <li>Лучшее предложение от 100+ операторов</li>
+              <li>Экономия времени</li>
+              <li>Экономия денег</li>
+              <li>Бесплатный гайд по вашему направлению</li>
+            </ul>
           </div>
           <div className="dc_flex pays">
             <Link
