@@ -3,6 +3,7 @@ import Header from "./Header";
 import Axios from "../../utils/httpClient";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
+import PaymentModal from "../homeSections/PaymentModal";
 
 const LayoutStyle = styled.div`
   @media (max-width: 900px) {

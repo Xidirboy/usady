@@ -18,6 +18,7 @@ import Axios from "../../utils/httpClient";
 import { useDispatch, useSelector } from "react-redux";
 import { useToast } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
+import PaymentModal from "./PaymentModal";
 const Section3Style = styled.div`
   background-image: url("/images/home/s31.png");
   background-size: cover;
@@ -165,274 +166,277 @@ const Section3 = () => {
       .finally(() => {});
   };
   return (
-    <Section3Style>
-      <div className="form_target">
-        <div className="title_s3">Подать заявку</div>
-        <form className="app_form" onSubmit={onSubmit}>
-          <div className="fi50">
-            <InputUi
-              type="select"
-              label="Откуда"
-              placeholder="Откуда"
-              icon={fromCIcon}
-              name="from"
-              value={sdata?.from}
-              is_error={errors?.from}
-              thin_label={true}
-              onChange={(e) => {
-                setSdata({
-                  ...sdata,
-                  [e?.target?.name]: e?.target?.value,
-                  common: "",
-                });
-                setErrors({
-                  ...errors,
-                  [e?.target?.name]: false,
-                  common: "",
-                });
-              }}
-              options={options?.countries?.map((o) => ({
-                value: o?.id,
-                label: o?.name_translate || o?.id,
-              }))}
-            />
-          </div>
-          <div className="fi50">
-            <InputUi
-              type="select"
-              label="Куда"
-              placeholder="Куда"
-              icon={toCIcon}
-              name="to"
-              value={sdata?.to}
-              is_error={errors?.to}
-              thin_label={true}
-              onChange={(e) => {
-                setSdata({
-                  ...sdata,
-                  [e?.target?.name]: e?.target?.value,
-                  common: "",
-                });
-                setErrors({
-                  ...errors,
-                  [e?.target?.name]: false,
-                  common: "",
-                });
-              }}
-              options={options?.countries?.map((o) => ({
-                value: o?.id,
-                label: o?.name_translate || o?.id,
-              }))}
-            />
-          </div>
-          <div className="fi50">
-            <InputUi
-              label="Взрослых"
-              placeholder="Взрослых"
-              icon={usersIcon}
-              type="number"
-              name="people_count"
-              value={sdata?.people_count}
-              is_error={errors?.people_count}
-              thin_label={true}
-              onChange={(e) => {
-                setSdata({
-                  ...sdata,
-                  [e?.target?.name]: e?.target?.value,
-                  common: "",
-                });
-                setErrors({
-                  ...errors,
-                  [e?.target?.name]: false,
-                  common: "",
-                });
-              }}
-            />
-          </div>
-          <div className="fi50">
-            <InputUi
-              label="Детей"
-              placeholder="Детей"
-              icon={babyIcon}
-              name="children_count"
-              value={sdata?.children_count}
-              is_error={errors?.children_count}
-              thin_label={true}
-              onChange={(e) => {
-                setSdata({
-                  ...sdata,
-                  [e?.target?.name]: e?.target?.value,
-                  common: "",
-                });
-                setErrors({
-                  ...errors,
-                  [e?.target?.name]: false,
-                  common: "",
-                });
-              }}
-            />
-          </div>
-          <div className="fi50">
-            <InputUi
-              label="Дата вылета  и кол-во дней"
-              placeholder="Дата вылета  и кол-во дней"
-              icon={dateIcon}
-              type="date"
-              name="departure_date"
-              value={sdata?.departure_date}
-              is_error={errors?.departure_date}
-              thin_label={true}
-              onChange={(e) => {
-                setSdata({
-                  ...sdata,
-                  [e?.target?.name]: e?.target?.value,
-                  common: "",
-                });
-                setErrors({
-                  ...errors,
-                  [e?.target?.name]: false,
-                  common: "",
-                });
-              }}
-            />
-          </div>
-          <div className="fi50">
-            <InputUi
-              type="select"
-              label="Класс самолета"
-              placeholder="Класс самолета"
-              icon={typeIcon}
-              name="aircraft_class"
-              value={sdata?.aircraft_class}
-              is_error={errors?.aircraft_class}
-              thin_label={true}
-              onChange={(e) => {
-                setSdata({
-                  ...sdata,
-                  [e?.target?.name]: e?.target?.value,
-                  common: "",
-                });
-                setErrors({
-                  ...errors,
-                  [e?.target?.name]: false,
-                  common: "",
-                });
-              }}
-              options={options?.aircraft_classes?.map((o) => ({
-                value: o?.id,
-                label: o?.name_translate || o?.id,
-              }))}
-            />
-          </div>
-          <div className="fi50">
-            <InputUi
-              type="select"
-              label="Рейтинг отелей"
-              placeholder="Рейтинг отелей"
-              icon={hotelIcon}
-              name="hotel_rating"
-              value={sdata?.hotel_rating}
-              is_error={errors?.hotel_rating}
-              thin_label={true}
-              onChange={(e) => {
-                setSdata({
-                  ...sdata,
-                  [e?.target?.name]: e?.target?.value,
-                  common: "",
-                });
-                setErrors({
-                  ...errors,
-                  [e?.target?.name]: false,
-                  common: "",
-                });
-              }}
-              options={options?.hotel_ratings?.map((o) => ({
-                value: o?.id,
-                label: o?.name || o?.id,
-              }))}
-            />
-          </div>
-          <div className="fi50">
-            <InputUi
-              type="select"
-              label="Тип питания"
-              placeholder="Тип питания"
-              icon={footIcon}
-              name="type_nutrition"
-              value={sdata?.type_nutrition}
-              is_error={errors?.type_nutrition}
-              thin_label={true}
-              onChange={(e) => {
-                setSdata({
-                  ...sdata,
-                  [e?.target?.name]: e?.target?.value,
-                  common: "",
-                });
-                setErrors({
-                  ...errors,
-                  [e?.target?.name]: false,
-                  common: "",
-                });
-              }}
-              options={options?.type_nutrition?.map((o) => ({
-                value: o?.id,
-                label: o?.name_translate || o?.id,
-              }))}
-            />
-          </div>
-          <div className="fi100">
-            <InputUi
-              label="Напишите ваш бюджет"
-              placeholder="до 15 000 000 сум "
-              name="price"
-              type="number"
-              value={sdata?.price}
-              is_error={errors?.price}
-              icon={cashIcon}
-              thin_label={true}
-              onChange={(e) => {
-                setSdata({
-                  ...sdata,
-                  [e?.target?.name]: e?.target?.value,
-                  common: "",
-                });
-                setErrors({
-                  ...errors,
-                  [e?.target?.name]: false,
-                  common: "",
-                });
-              }}
-            />
-          </div>
-          <div className="fi100">
-            <InputUi
-              type={"textarea"}
-              label="Дополнительная информация"
-              placeholder="Напишите дополнительную которые нужно учесть. Например:  Отел должен быть рядом с пляжем"
-              name="desc"
-              value={sdata?.desc}
-              is_error={errors?.desc}
-              thin_label={true}
-              onChange={(e) => {
-                setSdata({
-                  ...sdata,
-                  [e?.target?.name]: e?.target?.value,
-                  common: "",
-                });
-                setErrors({
-                  ...errors,
-                  [e?.target?.name]: false,
-                  common: "",
-                });
-              }}
-            />
-          </div>
-          <div className="fi100">
-            <Btn>Отправить заявку</Btn>
-          </div>
-        </form>
-      </div>
-    </Section3Style>
+    <>
+      <Section3Style>
+        <div className="form_target">
+          <div className="title_s3">Подать заявку</div>
+          <form className="app_form" onSubmit={onSubmit}>
+            <div className="fi50">
+              <InputUi
+                type="select"
+                label="Откуда"
+                placeholder="Откуда"
+                icon={fromCIcon}
+                name="from"
+                value={sdata?.from}
+                is_error={errors?.from}
+                thin_label={true}
+                onChange={(e) => {
+                  setSdata({
+                    ...sdata,
+                    [e?.target?.name]: e?.target?.value,
+                    common: "",
+                  });
+                  setErrors({
+                    ...errors,
+                    [e?.target?.name]: false,
+                    common: "",
+                  });
+                }}
+                options={options?.countries?.map((o) => ({
+                  value: o?.id,
+                  label: o?.name_translate || o?.id,
+                }))}
+              />
+            </div>
+            <div className="fi50">
+              <InputUi
+                type="select"
+                label="Куда"
+                placeholder="Куда"
+                icon={toCIcon}
+                name="to"
+                value={sdata?.to}
+                is_error={errors?.to}
+                thin_label={true}
+                onChange={(e) => {
+                  setSdata({
+                    ...sdata,
+                    [e?.target?.name]: e?.target?.value,
+                    common: "",
+                  });
+                  setErrors({
+                    ...errors,
+                    [e?.target?.name]: false,
+                    common: "",
+                  });
+                }}
+                options={options?.countries?.map((o) => ({
+                  value: o?.id,
+                  label: o?.name_translate || o?.id,
+                }))}
+              />
+            </div>
+            <div className="fi50">
+              <InputUi
+                label="Взрослых"
+                placeholder="Взрослых"
+                icon={usersIcon}
+                type="number"
+                name="people_count"
+                value={sdata?.people_count}
+                is_error={errors?.people_count}
+                thin_label={true}
+                onChange={(e) => {
+                  setSdata({
+                    ...sdata,
+                    [e?.target?.name]: e?.target?.value,
+                    common: "",
+                  });
+                  setErrors({
+                    ...errors,
+                    [e?.target?.name]: false,
+                    common: "",
+                  });
+                }}
+              />
+            </div>
+            <div className="fi50">
+              <InputUi
+                label="Детей"
+                placeholder="Детей"
+                icon={babyIcon}
+                name="children_count"
+                value={sdata?.children_count}
+                is_error={errors?.children_count}
+                thin_label={true}
+                onChange={(e) => {
+                  setSdata({
+                    ...sdata,
+                    [e?.target?.name]: e?.target?.value,
+                    common: "",
+                  });
+                  setErrors({
+                    ...errors,
+                    [e?.target?.name]: false,
+                    common: "",
+                  });
+                }}
+              />
+            </div>
+            <div className="fi50">
+              <InputUi
+                label="Дата вылета  и кол-во дней"
+                placeholder="Дата вылета  и кол-во дней"
+                icon={dateIcon}
+                type="date"
+                name="departure_date"
+                value={sdata?.departure_date}
+                is_error={errors?.departure_date}
+                thin_label={true}
+                onChange={(e) => {
+                  setSdata({
+                    ...sdata,
+                    [e?.target?.name]: e?.target?.value,
+                    common: "",
+                  });
+                  setErrors({
+                    ...errors,
+                    [e?.target?.name]: false,
+                    common: "",
+                  });
+                }}
+              />
+            </div>
+            <div className="fi50">
+              <InputUi
+                type="select"
+                label="Класс самолета"
+                placeholder="Класс самолета"
+                icon={typeIcon}
+                name="aircraft_class"
+                value={sdata?.aircraft_class}
+                is_error={errors?.aircraft_class}
+                thin_label={true}
+                onChange={(e) => {
+                  setSdata({
+                    ...sdata,
+                    [e?.target?.name]: e?.target?.value,
+                    common: "",
+                  });
+                  setErrors({
+                    ...errors,
+                    [e?.target?.name]: false,
+                    common: "",
+                  });
+                }}
+                options={options?.aircraft_classes?.map((o) => ({
+                  value: o?.id,
+                  label: o?.name_translate || o?.id,
+                }))}
+              />
+            </div>
+            <div className="fi50">
+              <InputUi
+                type="select"
+                label="Рейтинг отелей"
+                placeholder="Рейтинг отелей"
+                icon={hotelIcon}
+                name="hotel_rating"
+                value={sdata?.hotel_rating}
+                is_error={errors?.hotel_rating}
+                thin_label={true}
+                onChange={(e) => {
+                  setSdata({
+                    ...sdata,
+                    [e?.target?.name]: e?.target?.value,
+                    common: "",
+                  });
+                  setErrors({
+                    ...errors,
+                    [e?.target?.name]: false,
+                    common: "",
+                  });
+                }}
+                options={options?.hotel_ratings?.map((o) => ({
+                  value: o?.id,
+                  label: o?.name || o?.id,
+                }))}
+              />
+            </div>
+            <div className="fi50">
+              <InputUi
+                type="select"
+                label="Тип питания"
+                placeholder="Тип питания"
+                icon={footIcon}
+                name="type_nutrition"
+                value={sdata?.type_nutrition}
+                is_error={errors?.type_nutrition}
+                thin_label={true}
+                onChange={(e) => {
+                  setSdata({
+                    ...sdata,
+                    [e?.target?.name]: e?.target?.value,
+                    common: "",
+                  });
+                  setErrors({
+                    ...errors,
+                    [e?.target?.name]: false,
+                    common: "",
+                  });
+                }}
+                options={options?.type_nutrition?.map((o) => ({
+                  value: o?.id,
+                  label: o?.name_translate || o?.id,
+                }))}
+              />
+            </div>
+            <div className="fi100">
+              <InputUi
+                label="Напишите ваш бюджет"
+                placeholder="до 15 000 000 сум "
+                name="price"
+                type="number"
+                value={sdata?.price}
+                is_error={errors?.price}
+                icon={cashIcon}
+                thin_label={true}
+                onChange={(e) => {
+                  setSdata({
+                    ...sdata,
+                    [e?.target?.name]: e?.target?.value,
+                    common: "",
+                  });
+                  setErrors({
+                    ...errors,
+                    [e?.target?.name]: false,
+                    common: "",
+                  });
+                }}
+              />
+            </div>
+            <div className="fi100">
+              <InputUi
+                type={"textarea"}
+                label="Дополнительная информация"
+                placeholder="Напишите дополнительную которые нужно учесть. Например:  Отел должен быть рядом с пляжем"
+                name="desc"
+                value={sdata?.desc}
+                is_error={errors?.desc}
+                thin_label={true}
+                onChange={(e) => {
+                  setSdata({
+                    ...sdata,
+                    [e?.target?.name]: e?.target?.value,
+                    common: "",
+                  });
+                  setErrors({
+                    ...errors,
+                    [e?.target?.name]: false,
+                    common: "",
+                  });
+                }}
+              />
+            </div>
+            <div className="fi100">
+              <Btn>Отправить заявку</Btn>
+            </div>
+          </form>
+        </div>
+      </Section3Style>
+      <PaymentModal pay_modal={true} payModalOpen={() => {}} payObj={{}} />
+    </>
   );
 };
 
