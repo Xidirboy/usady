@@ -1,264 +1,264 @@
 @charset "UTF-8";
 @-ms-viewport {
-  width: device-width;
+	width: device-width;
 }
 
 @font-face {
-  src: url("/fonts/webfonts/Urbanist[ital,wght].woff2") format("woff2");
-  font-family: "Urbanist";
-  /* font-style: italic;
+	src: url('/fonts/webfonts/Urbanist[ital,wght].woff2') format('woff2');
+	font-family: 'Urbanist';
+	/* font-style: italic;
   font-display: swap;
   font-weight: 400; */
 }
 @font-face {
-  src: url("/fonts/webfonts/Urbanist-Thin.woff2") format("woff2");
-  font-family: "Urbanist";
-  font-style: normal;
-  font-display: swap;
-  font-weight: 100;
+	src: url('/fonts/webfonts/Urbanist-Thin.woff2') format('woff2');
+	font-family: 'Urbanist';
+	font-style: normal;
+	font-display: swap;
+	font-weight: 100;
 }
 @font-face {
-  src: url("/fonts/webfonts/Urbanist-ThinItalic.woff2") format("woff2");
-  font-family: "Urbanist";
-  font-style: italic;
-  font-display: swap;
-  font-weight: 100;
+	src: url('/fonts/webfonts/Urbanist-ThinItalic.woff2') format('woff2');
+	font-family: 'Urbanist';
+	font-style: italic;
+	font-display: swap;
+	font-weight: 100;
 }
 @font-face {
-  src: url("/fonts/webfonts/Urbanist-ExtraLight.woff2") format("woff2");
-  font-family: "Urbanist";
-  font-style: normal;
-  font-display: swap;
-  font-weight: 200;
+	src: url('/fonts/webfonts/Urbanist-ExtraLight.woff2') format('woff2');
+	font-family: 'Urbanist';
+	font-style: normal;
+	font-display: swap;
+	font-weight: 200;
 }
 @font-face {
-  src: url("/fonts/webfonts/Urbanist-ExtraLightItalic.woff2") format("woff2");
-  font-family: "Urbanist";
-  font-style: italic;
-  font-display: swap;
-  font-weight: 200;
+	src: url('/fonts/webfonts/Urbanist-ExtraLightItalic.woff2') format('woff2');
+	font-family: 'Urbanist';
+	font-style: italic;
+	font-display: swap;
+	font-weight: 200;
 }
 @font-face {
-  src: url("/fonts/webfonts/Urbanist-Light.woff2") format("woff2");
-  font-family: "Urbanist";
-  font-style: normal;
-  font-display: swap;
-  font-weight: 300;
+	src: url('/fonts/webfonts/Urbanist-Light.woff2') format('woff2');
+	font-family: 'Urbanist';
+	font-style: normal;
+	font-display: swap;
+	font-weight: 300;
 }
 @font-face {
-  src: url("/fonts/webfonts/Urbanist-LightItalic.woff2") format("woff2");
-  font-family: "Urbanist";
-  font-style: italic;
-  font-display: swap;
-  font-weight: 300;
+	src: url('/fonts/webfonts/Urbanist-LightItalic.woff2') format('woff2');
+	font-family: 'Urbanist';
+	font-style: italic;
+	font-display: swap;
+	font-weight: 300;
 }
 @font-face {
-  src: url("/fonts/webfonts/Urbanist-Regular.woff2") format("woff2");
-  font-family: "Urbanist";
-  font-style: normal;
-  font-display: swap;
-  font-weight: 400;
+	src: url('/fonts/webfonts/Urbanist-Regular.woff2') format('woff2');
+	font-family: 'Urbanist';
+	font-style: normal;
+	font-display: swap;
+	font-weight: 400;
 }
 @font-face {
-  src: url("/fonts/webfonts/Urbanist-Italic.woff2") format("woff2");
-  font-family: "Urbanist";
-  font-style: italic;
-  font-display: swap;
-  font-weight: 400;
+	src: url('/fonts/webfonts/Urbanist-Italic.woff2') format('woff2');
+	font-family: 'Urbanist';
+	font-style: italic;
+	font-display: swap;
+	font-weight: 400;
 }
 @font-face {
-  src: url("/fonts/webfonts/Urbanist-Medium.woff2") format("woff2");
-  font-family: "Urbanist";
-  font-style: normal;
-  font-display: swap;
-  font-weight: 500;
+	src: url('/fonts/webfonts/Urbanist-Medium.woff2') format('woff2');
+	font-family: 'Urbanist';
+	font-style: normal;
+	font-display: swap;
+	font-weight: 500;
 }
 @font-face {
-  src: url("/fonts/webfonts/Urbanist-MediumItalic.woff2") format("woff2");
-  font-family: "Urbanist";
-  font-style: italic;
-  font-display: swap;
-  font-weight: 500;
+	src: url('/fonts/webfonts/Urbanist-MediumItalic.woff2') format('woff2');
+	font-family: 'Urbanist';
+	font-style: italic;
+	font-display: swap;
+	font-weight: 500;
 }
 @font-face {
-  src: url("/fonts/webfonts/Urbanist-SemiBold.woff2") format("woff2");
-  font-family: "Urbanist";
-  font-style: normal;
-  font-display: swap;
-  font-weight: 600;
+	src: url('/fonts/webfonts/Urbanist-SemiBold.woff2') format('woff2');
+	font-family: 'Urbanist';
+	font-style: normal;
+	font-display: swap;
+	font-weight: 600;
 }
 @font-face {
-  src: url("/fonts/webfonts/Urbanist-SemiBoldItalic.woff2") format("woff2");
-  font-family: "Urbanist";
-  font-style: italic;
-  font-display: swap;
-  font-weight: 600;
+	src: url('/fonts/webfonts/Urbanist-SemiBoldItalic.woff2') format('woff2');
+	font-family: 'Urbanist';
+	font-style: italic;
+	font-display: swap;
+	font-weight: 600;
 }
 @font-face {
-  src: url("/fonts/webfonts/Urbanist-Bold.woff2") format("woff2");
-  font-family: "Urbanist";
-  font-style: normal;
-  font-display: swap;
-  font-weight: 700;
+	src: url('/fonts/webfonts/Urbanist-Bold.woff2') format('woff2');
+	font-family: 'Urbanist';
+	font-style: normal;
+	font-display: swap;
+	font-weight: 700;
 }
 @font-face {
-  src: url("/fonts/webfonts/Urbanist-BoldItalic.woff2") format("woff2");
-  font-family: "Urbanist";
-  font-style: italic;
-  font-display: swap;
-  font-weight: 700;
+	src: url('/fonts/webfonts/Urbanist-BoldItalic.woff2') format('woff2');
+	font-family: 'Urbanist';
+	font-style: italic;
+	font-display: swap;
+	font-weight: 700;
 }
 @font-face {
-  src: url("/fonts/webfonts/Urbanist-ExtraBold.woff2") format("woff2");
-  font-family: "Urbanist";
-  font-style: normal;
-  font-display: swap;
-  font-weight: 800;
+	src: url('/fonts/webfonts/Urbanist-ExtraBold.woff2') format('woff2');
+	font-family: 'Urbanist';
+	font-style: normal;
+	font-display: swap;
+	font-weight: 800;
 }
 @font-face {
-  src: url("/fonts/webfonts/Urbanist-ExtraBoldItalic.woff2") format("woff2");
-  font-family: "Urbanist";
-  font-style: italic;
-  font-display: swap;
-  font-weight: 800;
+	src: url('/fonts/webfonts/Urbanist-ExtraBoldItalic.woff2') format('woff2');
+	font-family: 'Urbanist';
+	font-style: italic;
+	font-display: swap;
+	font-weight: 800;
 }
 @font-face {
-  src: url("/fonts/webfonts/Urbanist-Black.woff2") format("woff2");
-  font-family: "Urbanist";
-  font-style: normal;
-  font-display: swap;
-  font-weight: 900;
+	src: url('/fonts/webfonts/Urbanist-Black.woff2') format('woff2');
+	font-family: 'Urbanist';
+	font-style: normal;
+	font-display: swap;
+	font-weight: 900;
 }
 @font-face {
-  src: url("/fonts/webfonts/Urbanist-BlackItalic.woff2") format("woff2");
-  font-family: "Urbanist";
-  font-style: italic;
-  font-display: swap;
-  font-weight: 900;
+	src: url('/fonts/webfonts/Urbanist-BlackItalic.woff2') format('woff2');
+	font-family: 'Urbanist';
+	font-style: italic;
+	font-display: swap;
+	font-weight: 900;
 }
 
 :root {
-  --bold: #2b3f5a !important;
-  --black: #2b3f5a !important;
-  --brown: #6e7892 !important;
-  --blue: #235dff !important;
-  --yellow: #ffe984 !important;
-  --light-brown: #f9f6f3 !important;
-  --brown-light: rgba(110, 120, 146, 0.5) !important;
-  --white: #ffffff !important;
-  --red: #ff5749 !important;
-  --green: #46cb5c !important;
-  --toastify-color-info: #5254f1;
-  --toastify-color-success: #46cb5c;
-  --toastify-color-warning: #f1c40f;
-  --toastify-color-error: #ff5749;
+	--bold: #2b3f5a !important;
+	--black: #2b3f5a !important;
+	--brown: #6e7892 !important;
+	--blue: #235dff !important;
+	--yellow: #ffe984 !important;
+	--light-brown: #f9f6f3 !important;
+	--brown-light: rgba(110, 120, 146, 0.5) !important;
+	--white: #ffffff !important;
+	--red: #ff5749 !important;
+	--green: #46cb5c !important;
+	--toastify-color-info: #5254f1;
+	--toastify-color-success: #46cb5c;
+	--toastify-color-warning: #f1c40f;
+	--toastify-color-error: #ff5749;
 }
 * {
-  box-sizing: border-box;
-  user-select: text;
-  font-family: "Urbanist", sans-serif !important;
-  /* color: var(--black); */
+	box-sizing: border-box;
+	user-select: text;
+	font-family: 'Urbanist', sans-serif !important;
+	/* color: var(--black); */
 }
 html {
-  scroll-behavior: smooth;
+	scroll-behavior: smooth;
 }
 body {
-  background: #fff !important;
-  overflow-y: scroll;
-  font-weight: 400 !important;
-  margin: 0;
-  color: var(--black);
+	background: #fff !important;
+	overflow-y: scroll;
+	font-weight: 400 !important;
+	margin: 0;
+	color: var(--black);
 }
 body,
 button,
 select,
 input,
 textarea {
-  font-family: "Urbanist", sans-serif !important;
+	font-family: 'Urbanist', sans-serif !important;
 }
 ::selection {
-  background: var(--yellow);
-  color: var(--black);
+	background: var(--yellow);
+	color: var(--black);
 }
 ::-webkit-scrollbar {
-  width: 7px;
+	width: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--white);
+	background: var(--white);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--blue);
-  border-radius: 3px;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  -o-border-radius: 3px;
+	background: var(--blue);
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-o-border-radius: 3px;
 }
 a {
-  text-decoration: none !important;
-  cursor: pointer;
-  color: var(--black) !important;
+	text-decoration: none !important;
+	cursor: pointer;
+	color: var(--black) !important;
 }
 a:hover,
 a.active {
-  color: var(--blue) !important;
+	color: var(--blue) !important;
 }
 ul {
-  list-style-type: none !important;
-  padding: 0;
+	list-style-type: none !important;
+	padding: 0;
 }
 input {
-  outline: none !important;
-  box-shadow: none !important;
-  font-family: "Urbanist", sans-serif;
+	outline: none !important;
+	box-shadow: none !important;
+	font-family: 'Urbanist', sans-serif;
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+	-webkit-appearance: none;
+	margin: 0;
 }
-input[type="number"] {
-  -moz-appearance: textfield;
+input[type='number'] {
+	-moz-appearance: textfield;
 }
-input[type="date"] {
-  cursor: text !important;
+input[type='date'] {
+	cursor: text !important;
 }
 textarea {
-  resize: none !important;
+	resize: none !important;
 }
 button {
-  outline: none !important;
-  box-shadow: none !important;
-  cursor: pointer;
+	outline: none !important;
+	box-shadow: none !important;
+	cursor: pointer;
 }
 .chakra-modal__overlay,
 .chakra-modal__content-container {
-  width: 100% !important;
-  height: 100% !important;
+	width: 100% !important;
+	height: 100% !important;
 }
 .ui_modal_content {
-  border-radius: 16px !important;
-  max-width: 452px !important;
+	border-radius: 16px !important;
+	max-width: 452px !important;
 }
 
 .container_main {
-  width: 100% !important;
-  box-sizing: border-box !important;
-  padding: 0 calc(50% - 720px) !important;
+	width: 100% !important;
+	box-sizing: border-box !important;
+	padding: 0 calc(50% - 678px) !important;
 }
 @media only screen and (max-width: 1400px) {
-  .container_main {
-    padding: 0 10px !important;
-  }
+	.container_main {
+		padding: 0 10px !important;
+	}
 }
 
 .dc_flex {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 .ds_flex {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
