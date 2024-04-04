@@ -199,7 +199,7 @@ const Section3 = () => {
 								is_error={errors?.to}
 								thin_label={true}
 								onChange={SetSelectTo}
-								options={options?.countries?.map(o => ({
+								options={options?.from_country?.map(o => ({
 									value: o?.id,
 									label: o?.name_translate || o?.id,
 								}))}

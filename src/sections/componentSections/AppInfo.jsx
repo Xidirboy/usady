@@ -133,7 +133,7 @@ const AppInfo = ({ item }) => {
         <div className="dc_flex item">
           {footIcon} {get(item, "type_nutrition_r.name_translate", "-")}
         </div>
-      </div>
+      </div> 
     </AppInfoStyle>
   );
 };

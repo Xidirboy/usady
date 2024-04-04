@@ -182,6 +182,7 @@ textarea {
 }
 ::-webkit-scrollbar {
 	width: 7px;
+	height: 0;
 }
 ::-webkit-scrollbar-track {
 	background: var(--white);
@@ -218,7 +219,7 @@ input::-webkit-inner-spin-button {
 	margin: 0;
 }
 input[type='number'] {
-	-moz-appearance: textfield;
+	appearance: textfield;
 }
 input[type='date'] {
 	cursor: text !important;

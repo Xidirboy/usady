@@ -28,14 +28,14 @@ const Routers = () => {
 							</Suspense>
 						}
 					/>
-					<Route
+					{/* <Route
 						path='/home2'
 						element={
 							<Suspense>
 								<Home2 />
 							</Suspense>
 						}
-					/>
+					/> */}
 					<Route
 						path='/profile'
 						element={
