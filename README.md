@@ -1,9 +1,11 @@
-#CancerRegister
+# CancerRegister
 
 npm install
 
-tailwind css instalation
+## tailwind css instalation
 
 1.npm install -D tailwindcss
-2.npx tailwindcss init
-3.npm install flowbite-react
+
+2.npm install flowbite-react
+
+3.npx tailwindcss init
