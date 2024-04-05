@@ -1,5 +1,8 @@
 {
   "translations": {
-    "site_name": "Tripusk"
+    "site_name": "Cancer Register",
+    "home": {
+      "title": "Home"
+    }
   }
 }
