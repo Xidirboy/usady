@@ -1,4 +1,4 @@
-# CancerRegister
+# React App
 
 npm install
 
