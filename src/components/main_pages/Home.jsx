@@ -1,7 +1,8 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const Home = () => {
-  const {t} = useTranlation()
+  const {t} = useTranslation()
   return (
     <div className="container text-dodgerBlue">
       {t("home.title")}
