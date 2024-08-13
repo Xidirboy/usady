@@ -15,7 +15,7 @@ const Helper = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const numericPhoneNumber = phone_number
-      .replace(/[-()_]/g, ""); // Improved regex to replace all non-numeric characters
+      .replace(/[-()_]/g, ""); 
     if (numericPhoneNumber.length < 13) {
       setError("Телефонный номер должен содержать минимум 9 цифр");
       return;
@@ -48,7 +48,7 @@ const Helper = () => {
             duration: 1,
             ease: "power2.out",
           });
-          setAnimationPlayed(true); // Set this to true after animation plays
+          setAnimationPlayed(true); 
         }
       });
     };

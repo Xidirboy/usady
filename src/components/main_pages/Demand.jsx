@@ -37,7 +37,6 @@ const Demand = () => {
   const textSectionRef = useRef(null);
   const formSectionRef = useRef(null);
 
-  // States to track if the animation has been triggered
   const [hasAnimatedTextSection, setHasAnimatedTextSection] = useState(false);
   const [hasAnimatedFormSection, setHasAnimatedFormSection] = useState(false);
 
@@ -52,7 +51,7 @@ const Demand = () => {
               duration: 1,
               ease: "power2.out",
             });
-            setHasAnimatedTextSection(true); // Set flag to true after animation
+            setHasAnimatedTextSection(true); 
           } else if (entry.target.classList.contains('form-section') && !hasAnimatedFormSection) {
             gsap.to(entry.target, {
               x: 0,
@@ -60,7 +59,7 @@ const Demand = () => {
               duration: 1,
               ease: "power2.out",
             });
-            setHasAnimatedFormSection(true); // Set flag to true after animation
+            setHasAnimatedFormSection(true); 
           }
         } else {
           if (!hasAnimatedTextSection && entry.target.classList.contains('text-section')) {

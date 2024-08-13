@@ -42,7 +42,7 @@ const WhyChoose = () => {
       <div className="container">
         <h1 className="text-white font-bold text-[38px] lg:text-left text-center leading-[51.3px]">
           Почему выбирают <br />{" "}
-          <span className="text-[#4EAE32]">именно нас?</span>{" "}
+          <span className="text-[#4EAE32]">именно нас?</span>
         </h1>
 
         <div className="scroll-section grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 mt-[40px] opacity-0 translate-y-12 transition-transform duration-1000 ease-out">

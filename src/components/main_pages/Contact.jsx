@@ -43,7 +43,7 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const numericPhoneNumber = phone_number.replace(/[-()_]/g, ""); // Simplified phone number cleaning
+    const numericPhoneNumber = phone_number.replace(/[-()_]/g, ""); 
 
     if (numericPhoneNumber.length < 13) {
       setError("Telefon raqami kamida 9 ta raqamdan iborat bo'lishi kerak.");

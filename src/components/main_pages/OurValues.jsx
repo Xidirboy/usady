@@ -20,7 +20,7 @@ const OurValues = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Trigger on initial render
+    handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, [hasAnimated]);
