@@ -4,6 +4,9 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "./style.css";
 import "toastr/build/toastr.min.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<App />);

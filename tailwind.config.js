@@ -9,15 +9,24 @@ module.exports = {
   theme: {
     container: {
       padding: {
-        DEFAULT: "1rem",
+        DEFAULT: "10px",
         sm: "2rem",
         lg: "3rem",
         xl: "4rem",
-        "2xl": "9rem",
+        "2xl": "70px",
       },
       center: true,
     },
     extend: {
+      keyframes: {
+        spin: {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
+        },
+      },
+      animation: {
+        spin: 'spin 2s linear infinite',
+      },
       colors: {
         ...defaultColors,
         dark: "#23262F",
@@ -47,6 +56,10 @@ module.exports = {
           "0px 101px 40px rgba(0, 87, 255, 0.02), 0px 57px 34px rgba(0, 87, 255, 0.08), 0px 25px 25px rgba(0, 87, 255, 0.13), 0px 6px 14px rgba(0, 87, 255, 0.15)",
         redShadow:
           "0px 101px 40px rgba(206, 90, 103, 0.02), 0px 57px 34px rgba(206, 90, 103, 0.08), 0px 25px 25px rgba(206, 90, 103, 0.13), 0px 6px 14px rgba(206, 90, 103, 0.15)",
+      },
+      backgroundImage: {
+        "custom-gradient":
+          "linear-gradient(107.67deg, rgba(24, 19, 38, 0.96) 23.58%, rgba(24, 19, 38, 0.879377) 47.9%, rgba(24, 19, 38, 0.911744) 61.57%, rgba(24, 19, 38, 0.880592) 70.72%, rgba(24, 19, 38, 0.94) 79.14%)",
       },
     },
     fontFamily: {

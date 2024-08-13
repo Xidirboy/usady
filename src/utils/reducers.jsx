@@ -12,6 +12,7 @@ const reducers = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         loading: action?.payload,
+        user: action?.user
       };
     case "SET_USER":
       return {

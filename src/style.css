@@ -5,9 +5,9 @@
 @font-face {
   src: url("../public/fonts/webfonts/Urbanist[ital,wght].woff2") format("woff2");
   font-family: "Urbanist";
-  /* font-style: italic;
+  font-style: italic;
   font-display: swap;
-  font-weight: 400; */
+  font-weight: 400;
 }
 @font-face {
   src: url("../public/fonts/webfonts/Urbanist-Thin.woff2") format("woff2");
@@ -140,6 +140,7 @@
   font-style: italic;
   font-display: swap;
   font-weight: 900;
+  
 }
 
 :root {
@@ -161,7 +162,7 @@
 * {
   box-sizing: border-box;
   user-select: text;
-  font-family: "Urbanist", sans-serif !important;
+  font-family: "gilroy", sans-serif !important;
 }
 html {
   scroll-behavior: smooth;
@@ -178,6 +179,7 @@ select,
 input,
 textarea {
   font-family: "Urbanist", sans-serif !important;
+  overflow-x: hidden;
 }
 ::selection {
   background: var(--yellow);
@@ -256,4 +258,9 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.slick-slide img {
+  height: auto; /* Rasm balandligini avtomatik sozlash */
+  max-height: 300px; /* Maksimal balandlik */
+  object-fit: cover; /* Rasmni to'liq qamrab olish */
 }
